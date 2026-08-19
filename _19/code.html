@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إدارة الطوابع - موسوعة الطوابع الجزائرية</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-primary-fixed": "#00210d",
+                "on-secondary-fixed-variant": "#5d4201",
+                "on-background": "#191c1d",
+                "on-secondary-fixed": "#261900",
+                "primary-fixed-dim": "#86d89d",
+                "on-tertiary-fixed": "#410008",
+                "secondary-container": "#fed488",
+                "surface-bright": "#f8f9fa",
+                "inverse-surface": "#2e3132",
+                "on-surface-variant": "#3f4940",
+                "primary-fixed": "#a1f5b7",
+                "on-surface": "#191c1d",
+                "surface-container-high": "#e7e8e9",
+                "surface-variant": "#e1e3e4",
+                "surface-tint": "#146c3c",
+                "on-primary": "#ffffff",
+                "on-primary-fixed-variant": "#00522a",
+                "on-secondary": "#ffffff",
+                "on-primary-container": "#89dba0",
+                "on-error-container": "#93000a",
+                "secondary-fixed-dim": "#e9c176",
+                "surface-container": "#edeeef",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed-variant": "#92001f",
+                "ink": "#1A202C",
+                "primary-container": "#006233",
+                "tertiary-container": "#ad0027",
+                "secondary": "#775a19",
+                "on-secondary-container": "#785a1a",
+                "parchment-base": "#FDFCF8",
+                "inverse-primary": "#86d89d",
+                "tertiary-fixed": "#ffdad9",
+                "surface-container-low": "#f3f4f5",
+                "surface": "#f8f9fa",
+                "secondary-fixed": "#ffdea5",
+                "tertiary-fixed-dim": "#ffb3b2",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-highest": "#e1e3e4",
+                "background": "#f8f9fa",
+                "primary": "#004824",
+                "error-container": "#ffdad6",
+                "tertiary": "#81001a",
+                "on-error": "#ffffff",
+                "on-tertiary-container": "#ffb8b7",
+                "on-tertiary": "#ffffff",
+                "outline-variant": "#bfc9be",
+                "outline": "#6f7a70",
+                "border-subtle": "#E5E7EB",
+                "surface-dim": "#d9dadb",
+                "inverse-on-surface": "#f0f1f2"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "16px",
+                "margin-desktop": "40px",
+                "container-max": "1280px",
+                "unit": "8px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "label-sm": [
+                        "Libre Franklin"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "caption": [
+                        "Libre Franklin"
+                ],
+                "body-lg": [
+                        "Libre Franklin"
+                ],
+                "body-md": [
+                        "Libre Franklin"
+                ]
+        },
+        "fontSize": {
+                "label-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "36px",
+                        {
+                                "lineHeight": "44px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "caption": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .table-row-hover:hover {
+            background-color: theme('colors.surface-container-low');
+        }
+    </style>
+</head>
+<body class="flex flex-col md:flex-row min-h-screen bg-parchment-base text-on-surface">
+<!-- Mobile Top Navigation -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile w-full sticky top-0 z-40 h-16 bg-surface border-b border-border-subtle shadow-sm">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">menu</span>
+<div class="font-headline-md text-primary">إدارة الطوابع</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors duration-200">notifications</span>
+<img alt="Administrator profile" class="w-8 h-8 rounded-full border border-border-subtle object-cover" data-alt="A small circular profile picture of an administrator, featuring a distinguished looking individual against a muted background. Professional studio lighting, subtle shadow. High contrast modern heritage style, suitable for an archive dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBReZ-LAtizfQE0Mppeg_px0CN21CEigyQRwKpDdFbGW0VLFQ-Z3CkVraqUDy5hY9qWcVJhbTvI3J8kTehuxvYDXjGigzrn-2F1dsS__8t7JiVezuAzkLhBRDqHy_qzUfqimGlayXtfqiZy-Ai5Ym4mEdrfCiBcoMd7hwneM5F2IMrRsdNOSdhdZ3KT5FIsU6johoVEHBfIjC25BnnTOcMZy07oHiKkEELNiDQ2OqqPVfFT0l5hhPK0"/>
+</div>
+</header>
+<!-- Side Navigation (Desktop) / Mobile Menu Overlay -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed md:sticky right-0 top-0 z-50 bg-surface border-l border-border-subtle py-8 px-4 gap-4" id="mobile-menu">
+<!-- Mobile close button -->
+<div class="md:hidden flex justify-end mb-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" onclick="document.getElementById('mobile-menu').classList.add('hidden')">close</span>
+</div>
+<div class="flex flex-col items-center mb-8">
+<div class="w-16 h-16 mb-4 rounded-full border border-outline-variant flex items-center justify-center bg-surface-container-lowest overflow-hidden shadow-sm">
+<span class="material-symbols-outlined filled text-4xl text-primary">local_post_office</span>
+</div>
+<div class="font-headline-md text-primary text-center">لوحة التحكم</div>
+<div class="font-label-sm text-on-surface-variant text-center mt-1">موسوعة الطوابع الجزائرية</div>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<!-- Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out cursor-pointer active:opacity-70 font-label-sm" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>لوحة القيادة</span>
+</a>
+<!-- Active -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-primary bg-surface-container-high border-r-4 border-primary font-semibold transition-all duration-150 ease-in-out cursor-pointer active:opacity-70 font-label-sm shadow-sm" href="#">
+<span class="material-symbols-outlined">local_activity</span>
+<span>الطوابع</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out cursor-pointer active:opacity-70 font-label-sm" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span>الحقب الزمنية</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out cursor-pointer active:opacity-70 font-label-sm" href="#">
+<span class="material-symbols-outlined">collections_bookmark</span>
+<span>السلاسل</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out cursor-pointer active:opacity-70 font-label-sm" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>المستخدمين</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out cursor-pointer active:opacity-70 font-label-sm" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>الإعدادات</span>
+</a>
+</div>
+<div class="mt-auto border-t border-border-subtle pt-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT text-on-surface-variant hover:bg-error-container hover:text-error transition-all duration-150 ease-in-out cursor-pointer active:opacity-70 font-label-sm" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>تسجيل الخروج</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col p-margin-mobile md:p-margin-desktop gap-8 max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h1 class="font-display-lg text-primary mb-2">إدارة الطوابع</h1>
+<p class="font-body-md text-on-surface-variant">استعراض، تعديل، وإضافة الطوابع إلى الأرشيف الوطني.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-DEFAULT font-label-sm hover:bg-primary-container transition-colors shadow-sm active:shadow-inner w-full md:w-auto justify-center">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                إضافة طابع جديد
+            </button>
+</div>
+<!-- Filters and Search Bar -->
+<div class="bg-surface border border-border-subtle rounded-lg p-4 shadow-sm flex flex-col lg:flex-row gap-4 relative overflow-hidden">
+<div class="flex-grow relative z-10">
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-4 pr-10 py-2.5 bg-background border border-border-subtle focus:border-primary rounded-DEFAULT outline-none font-body-md transition-colors placeholder:text-outline" placeholder="البحث برقم الطابع أو الاسم..." type="text"/>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 z-10">
+<div class="relative min-w-[150px]">
+<select class="w-full appearance-none bg-background border border-border-subtle px-4 py-2.5 rounded-DEFAULT outline-none font-body-md text-on-surface focus:border-primary transition-colors cursor-pointer">
+<option value="">كل الحقب</option>
+<option value="1">فترة الاستعمار</option>
+<option value="2">الاستقلال (1962-1970)</option>
+<option value="3">السبعينات</option>
+</select>
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+<div class="relative min-w-[150px]">
+<select class="w-full appearance-none bg-background border border-border-subtle px-4 py-2.5 rounded-DEFAULT outline-none font-body-md text-on-surface focus:border-primary transition-colors cursor-pointer">
+<option value="">كل الفئات</option>
+<option value="1">شخصيات تاريخية</option>
+<option value="2">تراث ثقافي</option>
+<option value="3">مناسبات وطنية</option>
+</select>
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+<div class="relative min-w-[120px]">
+<select class="w-full appearance-none bg-background border border-border-subtle px-4 py-2.5 rounded-DEFAULT outline-none font-body-md text-on-surface focus:border-primary transition-colors cursor-pointer">
+<option value="">السنة</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+</select>
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Stamps Table Area -->
+<div class="bg-surface border border-border-subtle rounded-xl overflow-hidden shadow-sm flex flex-col overflow-x-auto">
+<table class="w-full text-right border-collapse min-w-[900px]">
+<thead class="bg-surface-container-low border-b border-border-subtle">
+<tr>
+<th class="p-4 font-label-sm text-on-surface-variant font-normal w-16">صورة</th>
+<th class="p-4 font-label-sm text-on-surface-variant font-normal">الاسم</th>
+<th class="p-4 font-label-sm text-on-surface-variant font-normal">السنة</th>
+<th class="p-4 font-label-sm text-on-surface-variant font-normal">القيمة</th>
+<th class="p-4 font-label-sm text-on-surface-variant font-normal">السلسلة</th>
+<th class="p-4 font-label-sm text-on-surface-variant font-normal">الحالة</th>
+<th class="p-4 font-label-sm text-on-surface-variant font-normal">تاريخ الإضافة</th>
+<th class="p-4 font-label-sm text-on-surface-variant font-normal text-left">إجراء</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle">
+<!-- Row 1 -->
+<tr class="table-row-hover transition-colors duration-150 group">
+<td class="p-4">
+<div class="w-12 h-14 border border-border-subtle p-0.5 bg-white shadow-sm relative overflow-hidden">
+<img alt="Thumbnail" class="w-full h-full object-cover" data-alt="A macro shot of a vintage Algerian postage stamp featuring the Emir Abdelkader. The stamp has distinct perforated edges and rests on a textured parchment background. Warm, directional lighting highlighting the paper texture and the faded emerald green ink of the stamp. High contrast, modern heritage aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuDn56uHOCNcdttnGDpYEqD6vk4TfIm6oLpC_4gP6U0ebS_b3R1p3OiKZJ8MJ1aepFgM-I18Gyi6qOcrYRF4EuOwyDJ6v975dc-bUZZep-rUv4Qyn3jqMI1e1BMwZOZij-_dgYWJtQBr69gzyHREdsJ3o_s9t8i9PTA11a25o2c27zGXBJMjYwBJhCHhPtWBWk9FKJWG4LS3Qp5BpCUowT7b7kvQPdikbCuAU_8d_MQx8GCUVAKyUV"/>
+</div>
+</td>
+<td class="p-4">
+<div class="font-body-md font-semibold text-primary">الذكرى الأولى للاستقلال</div>
+<div class="font-caption text-on-surface-variant font-mono mt-0.5" dir="ltr">DZ-196201</div>
+</td>
+<td class="p-4 font-body-md text-on-surface">1963</td>
+<td class="p-4 font-body-md text-on-surface font-mono" dir="ltr">1.00 DA</td>
+<td class="p-4 font-body-md text-on-surface-variant">مناسبات وطنية</td>
+<td class="p-4">
+<span class="px-2.5 py-1 bg-surface border border-outline/30 text-on-surface rounded-DEFAULT font-caption flex items-center gap-1.5 w-max shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-tint"></span> منشور
+                        </span>
+</td>
+<td class="p-4 font-caption text-on-surface-variant font-mono" dir="ltr">2023-10-12</td>
+<td class="p-4 text-left">
+<div class="flex items-center justify-end gap-1 text-on-surface-variant">
+<button class="p-1.5 hover:bg-surface-variant rounded-DEFAULT transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 hover:bg-error-container hover:text-error rounded-DEFAULT transition-colors"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="table-row-hover transition-colors duration-150 group">
+<td class="p-4">
+<div class="w-12 h-14 border border-border-subtle p-0.5 bg-white shadow-sm relative overflow-hidden">
+<img alt="Thumbnail" class="w-full h-full object-cover" data-alt="A detailed close-up of a rare 1970s Algerian stamp depicting traditional Saharan architecture. Deep crimson and ochre colors on aged paper with clear perforations. Soft diffused lighting creating a museum archive feel. Minimalist presentation, emphasis on the artifact." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu2GZHZx7P4vltJMo7xcmZrohwm0tqaCXD9oJ_g-xLRGOrdehQXFgNVWy727BrVu2jrGfoFR048aMPY7skyKjyFj4cdJ6mRnEKpugYLc2HfpXWj-SpK9bSaS00oZOjcudPh5gY6cdIfi-gzRNNHY2cMzQxO0Xc1X7dBpHAsabNqPuOg59_zlS0QBcI8UGuTizR1adamFO5027reBDDJFwuuogkYdoDywea3B7fHaDy6G_Icp_moJuX"/>
+</div>
+</td>
+<td class="p-4">
+<div class="font-body-md font-semibold text-primary">العمارة الصحراوية التقليدية</div>
+<div class="font-caption text-on-surface-variant font-mono mt-0.5" dir="ltr">DZ-197542</div>
+</td>
+<td class="p-4 font-body-md text-on-surface">1975</td>
+<td class="p-4 font-body-md text-on-surface font-mono" dir="ltr">0.50 DA</td>
+<td class="p-4 font-body-md text-on-surface-variant">تراث ثقافي</td>
+<td class="p-4">
+<span class="px-2.5 py-1 bg-surface-container border border-border-subtle text-on-surface-variant rounded-DEFAULT font-caption flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span> مسودة
+                        </span>
+</td>
+<td class="p-4 font-caption text-on-surface-variant font-mono" dir="ltr">2023-11-05</td>
+<td class="p-4 text-left">
+<div class="flex items-center justify-end gap-1 text-on-surface-variant">
+<button class="p-1.5 hover:bg-surface-variant rounded-DEFAULT transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 hover:bg-error-container hover:text-error rounded-DEFAULT transition-colors"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="table-row-hover transition-colors duration-150 group">
+<td class="p-4">
+<div class="w-12 h-14 border border-border-subtle p-0.5 bg-white shadow-sm relative overflow-hidden">
+<img alt="Thumbnail" class="w-full h-full object-cover" data-alt="A modern commemorative stamp of Algeria featuring a highly stylized golden fennec fox against a deep green background. Pristine condition, sharp perforations. The stamp is presented in a digital archive setting with subtle drop shadows on a neutral parchment surface. Luxurious, authoritative aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMs8-uv5THECweGnGFyXqcYnBBh3m4wCbSqa3rFgJD5aqqotNjiygwgY96fn54-PFWlVi3hxZVZWyHYJTjJEhFAP7Sx2Www4rBlZrYJO5s9LNziJJE4zM4nhI5Rb9Yc8Y2xPhkCUaoEmGkViP6B-ks2IRmhYzrFH5NKwXP_SD3ItYZ-h4pgqSwJB520NqaijaBlPlE6X4bpmvysfJH3uLeLoV6HCAOGdn0Zx4ephoR_BBf5J2JOGVa"/>
+</div>
+</td>
+<td class="p-4">
+<div class="font-body-md font-semibold text-primary">الفنك الجزائري (إصدار خاص)</div>
+<div class="font-caption text-on-surface-variant font-mono mt-0.5" dir="ltr">DZ-202301</div>
+</td>
+<td class="p-4 font-body-md text-on-surface">2023</td>
+<td class="p-4 font-body-md text-on-surface font-mono" dir="ltr">50.00 DA</td>
+<td class="p-4 font-body-md text-on-surface-variant">إصدارات خاصة</td>
+<td class="p-4">
+<span class="px-2.5 py-1 bg-secondary-container/20 border border-secondary-container text-on-surface rounded-DEFAULT font-caption flex items-center gap-1.5 w-max shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> قيد المراجعة
+                        </span>
+</td>
+<td class="p-4 font-caption text-on-surface-variant font-mono" dir="ltr">2023-11-18</td>
+<td class="p-4 text-left">
+<div class="flex items-center justify-end gap-1 text-on-surface-variant">
+<button class="p-1.5 hover:bg-surface-variant rounded-DEFAULT transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 hover:bg-error-container hover:text-error rounded-DEFAULT transition-colors"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Footer -->
+<div class="p-4 border-t border-border-subtle bg-surface flex justify-between items-center">
+<div class="font-caption text-on-surface-variant">
+                    عرض 1 إلى 3 من أصل 124 طابع
+                </div>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-DEFAULT hover:bg-surface-variant text-on-surface transition-colors" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-DEFAULT bg-primary text-on-primary font-body-md">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-DEFAULT hover:bg-surface-variant text-on-surface transition-colors font-body-md">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-DEFAULT hover:bg-surface-variant text-on-surface transition-colors font-body-md">3</button>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-DEFAULT hover:bg-surface-variant text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

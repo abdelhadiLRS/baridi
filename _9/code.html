@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مجموعتي الشخصية - Philately DZ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#410008",
+                    "tertiary": "#4f3700",
+                    "on-surface-variant": "#404941",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dbdad5",
+                    "secondary-fixed-dim": "#ffb3b2",
+                    "secondary": "#ba002a",
+                    "surface": "#fbf9f4",
+                    "surface-container-low": "#f5f3ee",
+                    "secondary-container": "#e2213d",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#256b42",
+                    "on-tertiary-container": "#f6bd47",
+                    "on-surface": "#1b1c19",
+                    "on-primary-fixed": "#00210f",
+                    "primary": "#004524",
+                    "on-primary-fixed-variant": "#01522c",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1b1c19",
+                    "surface-container": "#f0eee9",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#92001f",
+                    "tertiary-fixed-dim": "#f7bd48",
+                    "surface-container-high": "#eae8e3",
+                    "outline": "#707971",
+                    "background": "#fbf9f4",
+                    "tertiary-fixed": "#ffdea6",
+                    "tertiary-container": "#6c4d00",
+                    "on-tertiary-fixed": "#271900",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#8fd6a5",
+                    "on-primary-container": "#8fd5a4",
+                    "surface-bright": "#fbf9f4",
+                    "on-secondary-container": "#fffbff",
+                    "inverse-on-surface": "#f2f1ec",
+                    "primary-fixed": "#abf3bf",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#155e37",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e4e2dd",
+                    "outline-variant": "#bfc9bf",
+                    "on-tertiary-fixed-variant": "#5d4200",
+                    "inverse-surface": "#30312e",
+                    "primary-fixed-dim": "#8fd6a5",
+                    "secondary-fixed": "#ffdad9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "label-caps": ["Inter"],
+                    "display-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .parchment-texture {
+            background-color: #fbf9f4;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+        .album-card {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .album-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+        .stamp-inset {
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="parchment-texture text-on-background font-body-md min-h-screen flex flex-col pt-20">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center gap-6">
+<span class="font-display-lg text-headline-sm text-primary italic">Philately DZ</span>
+<div class="hidden md:flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Periods</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Categories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Museum</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Archive</a>
+<a class="text-secondary border-b-2 border-secondary font-bold pb-1" href="#">مجموعتي الشخصية</a>
+</div>
+</div>
+<div class="flex items-center gap-4 text-primary">
+<button class="hover:text-primary-container"><span class="material-symbols-outlined" data-icon="language">language</span></button>
+<button class="hover:text-primary-container"><span class="material-symbols-outlined" data-icon="search">search</span></button>
+<button class="hover:text-primary-container"><span class="material-symbols-outlined" data-icon="account_circle">account_circle</span></button>
+</div>
+</nav>
+<!-- Main Content Grid -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Sidebar Analytics -->
+<aside class="lg:col-span-3 space-y-6">
+<!-- Profile Summary -->
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant album-card">
+<div class="text-center mb-6">
+<div class="w-24 h-24 mx-auto bg-surface-variant rounded-full mb-4 flex items-center justify-center border-2 border-primary">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="person">person</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary">أحمد بن بلة</h2>
+<p class="text-on-surface-variant text-sm">عضو منذ ٢٠٢١</p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-2 border-b border-outline-variant/50">
+<span class="text-on-surface-variant">إجمالي الطوابع</span>
+<span class="font-bold text-primary">٤,٥٢١</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-outline-variant/50">
+<span class="text-on-surface-variant">السلاسل المكتملة</span>
+<span class="font-bold text-primary">٣٤</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-outline-variant/50">
+<span class="text-on-surface-variant">نسبة الإكتمال</span>
+<span class="font-bold text-secondary">٤٢٪</span>
+</div>
+</div>
+<div class="mt-6 flex flex-col gap-3">
+<button class="w-full py-2 bg-primary text-on-primary rounded font-label-caps flex items-center justify-center gap-2 hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span> تصدير بصيغة PDF
+                    </button>
+<button class="w-full py-2 bg-transparent border border-outline text-primary rounded font-label-caps flex items-center justify-center gap-2 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span> مشاركة المجموعة
+                    </button>
+</div>
+</div>
+<!-- Distribution Chart -->
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant album-card">
+<h3 class="font-headline-md text-headline-sm text-primary mb-4">التوزيع الزمني</h3>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span>الفترة الاستعمارية</span>
+<span>٢,١٠٠</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span>فترة الثورة</span>
+<span>٨٥٠</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span>فترة الاستقلال</span>
+<span>١,٥٧١</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-tertiary h-2 rounded-full" style="width: 30%"></div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<section class="lg:col-span-9">
+<!-- Tabs -->
+<div class="flex border-b border-outline-variant mb-6 overflow-x-auto">
+<button class="px-6 py-3 text-secondary border-b-2 border-secondary font-bold whitespace-nowrap">مجموعتي</button>
+<button class="px-6 py-3 text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">قائمة الرغبات</button>
+<button class="px-6 py-3 text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">طوابع للمبادلة</button>
+</div>
+<!-- Collection Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Stamp Card 1 (Owned) -->
+<div class="bg-surface p-4 border border-[#cfb997] album-card flex flex-col h-full relative">
+<div class="absolute top-2 right-2 bg-primary text-on-primary px-2 py-1 rounded text-xs font-bold z-10">جديد (Mint)</div>
+<div class="absolute top-2 left-2 bg-surface-container-high px-2 py-1 rounded text-xs text-on-surface-variant z-10 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="filter_none">filter_none</span> x٢
+                    </div>
+<div class="aspect-[3/4] bg-surface-variant mb-4 stamp-inset flex items-center justify-center p-4 relative overflow-hidden">
+<img class="object-cover w-full h-full shadow-sm" data-alt="A macro photograph of an authentic vintage Algerian postage stamp from the 1960s featuring independence motifs. The stamp has distinct perforated edges and a slight paper texture, resting on a clean parchment background. The lighting is soft and directional, highlighting the tactile quality of the paper. The color palette incorporates deep greens and rich reds characteristic of the era. The aesthetic is museum-archival, emphasizing historical preservation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOU8U8zljv5xHLO5J9WIWcZiXX35jQiYj71ka7GGxfxffNVXt8ErzckNg7OFAkoDmtgPhUf6AVkCHhw2YlrylMVpVb6Aw1xzRYc1HwsYSQRDadDyGdlJkF7diJM-yghv6yKWArNd-SUpakuzsqwJ8mMrPAJkaUJtccHzPRSpYFN4znvGDH6CTM1cFQH9gPC3-R4ABQPPA-D30Pzkqgo-ws959jNOvQ8-ekg_jf6rEXtF3O3HquJRjr"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<h4 class="font-headline-sm text-lg text-primary mb-1">الذكرى العاشرة للاستقلال</h4>
+<p class="text-on-surface-variant text-sm mb-2">إصدار ١٩٧٢ • سلسلة الاحتفالات</p>
+</div>
+<div class="flex justify-between items-center mt-4 border-t border-outline-variant/30 pt-3">
+<button class="text-primary hover:text-secondary text-sm flex items-center gap-1 transition-colors"><span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span> تفاصيل</button>
+<button class="text-on-surface-variant hover:text-primary text-sm flex items-center gap-1 transition-colors"><span class="material-symbols-outlined text-[18px]" data-icon="swap_horiz">swap_horiz</span> مبادلة</button>
+</div>
+</div>
+</div>
+<!-- Stamp Card 2 (Empty Slot / Wishlist) -->
+<div class="bg-surface/50 p-4 border border-dashed border-outline-variant album-card flex flex-col h-full relative opacity-70 hover:opacity-100 transition-opacity">
+<div class="aspect-[3/4] bg-surface-variant/50 mb-4 stamp-inset flex items-center justify-center p-4">
+<span class="material-symbols-outlined text-6xl text-outline-variant" data-icon="bookmark_add">bookmark_add</span>
+</div>
+<div class="flex-grow flex flex-col justify-between text-center">
+<div>
+<h4 class="font-headline-sm text-lg text-on-surface-variant mb-1">البريد الجوي الأول</h4>
+<p class="text-outline text-sm mb-2">إصدار ١٩٣٠ • مفقود من السلسلة</p>
+</div>
+<div class="mt-4 border-t border-outline-variant/30 pt-3">
+<button class="w-full text-secondary hover:text-secondary-container text-sm flex items-center justify-center gap-1 transition-colors"><span class="material-symbols-outlined text-[18px]" data-icon="add_shopping_cart">add_shopping_cart</span> البحث في السوق</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop mt-20 bg-surface-container-highest border-t border-outline-variant">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="font-display-lg text-headline-md text-primary">Philately DZ</span>
+<div class="flex flex-wrap gap-6 justify-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Historical Context</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Philately Dictionary</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">User Contributions</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</div>
+<p class="text-sm text-on-surface-variant">© 2024 Algerian Philately Encyclopedia. A Digital Conservatory.</p>
+</div>
+</footer>
+</body></html>

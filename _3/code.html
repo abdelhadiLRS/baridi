@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interactive Timeline - Philately DZ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#8fd6a5",
+                    "on-background": "#1b1c19",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#dbdad5",
+                    "on-secondary-fixed-variant": "#92001f",
+                    "outline": "#707971",
+                    "primary": "#004524",
+                    "outline-variant": "#bfc9bf",
+                    "surface": "#fbf9f4",
+                    "on-primary-container": "#8fd5a4",
+                    "secondary-fixed-dim": "#ffb3b2",
+                    "on-secondary-fixed": "#410008",
+                    "tertiary-fixed-dim": "#f7bd48",
+                    "inverse-on-surface": "#f2f1ec",
+                    "tertiary-container": "#6c4d00",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#f6bd47",
+                    "secondary": "#ba002a",
+                    "surface-container": "#f0eee9",
+                    "surface-bright": "#fbf9f4",
+                    "surface-container-highest": "#e4e2dd",
+                    "on-tertiary-fixed": "#271900",
+                    "on-primary-fixed-variant": "#01522c",
+                    "on-surface-variant": "#404941",
+                    "background": "#fbf9f4",
+                    "primary-fixed-dim": "#8fd6a5",
+                    "tertiary-fixed": "#ffdea6",
+                    "surface-container-high": "#eae8e3",
+                    "surface-variant": "#e4e2dd",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#155e37",
+                    "tertiary": "#4f3700",
+                    "on-surface": "#1b1c19",
+                    "secondary-container": "#e2213d",
+                    "on-secondary-container": "#fffbff",
+                    "surface-container-low": "#f5f3ee",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#5d4200",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#abf3bf",
+                    "inverse-surface": "#30312e",
+                    "surface-tint": "#256b42",
+                    "on-primary-fixed": "#00210f",
+                    "secondary-fixed": "#ffdad9",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "headline-sm": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .timeline-scroll {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .timeline-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .paper-texture {
+            background-color: #fbf9f4;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col paper-texture selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<img alt="Philately DZ Logo" class="h-10 w-10 object-contain rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4F9UzTyazc_i8zmogsvnOd9IN9HqaRyu2yKtGscQuYdzT4Lr-zUyBFE51IRpRTdt5yhxJl6ihUZYB6Ug5axxunD9QuM3_0Q_Ct3k8yhEGPdsgkL2W2pq_7BRyhsaoEfglpXcnshoYXtpj0EG_UNX3sbrrDCtJAgkrl3AV9nyEmggT8ZvzoSc60gGpghsXaqoyQJ61YzrveV35MvEYJyjp1zk5dPTHXIHZj5pPWLtZk8_QCylIMPFI"/>
+<span class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary italic">Philately DZ</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+<a class="text-secondary border-b-2 border-secondary font-bold pb-1 hover:text-primary transition-colors duration-300" href="#">Periods</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Categories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Museum</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Archive</a>
+</nav>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="scale-95 active:opacity-80 transition-all hover:text-primary">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="scale-95 active:opacity-80 transition-all hover:text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="scale-95 active:opacity-80 transition-all hover:text-primary">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop flex flex-col items-center">
+<div class="max-w-container-max w-full flex flex-col items-center mb-16">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary text-center mb-4">Chronicles of Philately</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl text-center">Journey through the epochs of Algerian history, curated through the intricate artistry of postage stamps. Select a milestone to uncover the artifacts that bore witness to the era.</p>
+</div>
+<!-- Interactive Timeline Component -->
+<div class="w-full relative py-12 mb-16">
+<!-- Center Line (Gold/Brass equivalent) -->
+<div class="absolute top-1/2 left-0 w-full h-px bg-tertiary-container/30 transform -translate-y-1/2 z-0"></div>
+<div class="timeline-scroll w-full overflow-x-auto flex items-center gap-16 px-12 relative z-10 py-8 cursor-ew-resize">
+<!-- 1924 Milestone -->
+<div class="flex flex-col items-center group relative cursor-pointer" onclick="updateEraPreview('1924', 'The French Occupation', 'Stamps from this era often depict classical French allegories and colonial architecture, printed with meticulous intaglio techniques.')">
+<div class="text-on-surface-variant font-label-caps text-label-caps mb-4 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-8 whitespace-nowrap">French Occupation</div>
+<div class="w-4 h-4 rounded-full bg-surface border-2 border-tertiary-container shadow-sm group-hover:bg-secondary group-hover:border-secondary transition-colors duration-300 relative z-10 flex items-center justify-center">
+<div class="w-1 h-1 bg-tertiary-container rounded-full group-hover:bg-on-secondary transition-colors duration-300"></div>
+</div>
+<div class="mt-4 font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors duration-300">1924</div>
+</div>
+<!-- 1954 Milestone -->
+<div class="flex flex-col items-center group relative cursor-pointer" onclick="updateEraPreview('1954', 'The Revolution Begins', 'Clandestine issues and propaganda stamps marked the beginning of the struggle for independence, characterized by urgent typography and stark imagery.')">
+<div class="text-on-surface-variant font-label-caps text-label-caps mb-4 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-8 whitespace-nowrap">Revolution Begins</div>
+<div class="w-4 h-4 rounded-full bg-surface border-2 border-tertiary-container shadow-sm group-hover:bg-secondary group-hover:border-secondary transition-colors duration-300 relative z-10 flex items-center justify-center">
+<div class="w-1 h-1 bg-tertiary-container rounded-full group-hover:bg-on-secondary transition-colors duration-300"></div>
+</div>
+<div class="mt-4 font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors duration-300">1954</div>
+</div>
+<!-- 1962 Milestone (Active/Highlighted by default in preview) -->
+<div class="flex flex-col items-center group relative cursor-pointer" onclick="updateEraPreview('1962', 'Dawn of Independence', 'The first sovereign issues celebrated national identity, heroes, and culture. The 1+1 Franc issue stands as a monumental artifact of freedom.')">
+<div class="text-secondary font-label-caps text-label-caps mb-4 absolute -top-8 whitespace-nowrap font-bold">Dawn of Independence</div>
+<div class="w-6 h-6 rounded-full bg-secondary border-2 border-secondary shadow-md relative z-10 flex items-center justify-center ring-4 ring-secondary/20">
+<div class="w-2 h-2 bg-on-secondary rounded-full"></div>
+</div>
+<div class="mt-4 font-headline-md text-headline-md text-secondary font-bold">1962</div>
+</div>
+<!-- 1971 Milestone -->
+<div class="flex flex-col items-center group relative cursor-pointer" onclick="updateEraPreview('1971', 'Agrarian Revolution', 'Stamps documented the sweeping land reforms, depicting agricultural workers, tractors, and the modernization of the countryside.')">
+<div class="text-on-surface-variant font-label-caps text-label-caps mb-4 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-8 whitespace-nowrap">Agrarian Revolution</div>
+<div class="w-4 h-4 rounded-full bg-surface border-2 border-tertiary-container shadow-sm group-hover:bg-secondary group-hover:border-secondary transition-colors duration-300 relative z-10 flex items-center justify-center">
+<div class="w-1 h-1 bg-tertiary-container rounded-full group-hover:bg-on-secondary transition-colors duration-300"></div>
+</div>
+<div class="mt-4 font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors duration-300">1971</div>
+</div>
+<!-- 1990 Milestone -->
+<div class="flex flex-col items-center group relative cursor-pointer" onclick="updateEraPreview('1990', 'Modern Commemoratives', 'A shift towards full-color lithography, celebrating international events, local fauna, and intricate Islamic geometric patterns.')">
+<div class="text-on-surface-variant font-label-caps text-label-caps mb-4 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-8 whitespace-nowrap">Modern Era</div>
+<div class="w-4 h-4 rounded-full bg-surface border-2 border-tertiary-container shadow-sm group-hover:bg-secondary group-hover:border-secondary transition-colors duration-300 relative z-10 flex items-center justify-center">
+<div class="w-1 h-1 bg-tertiary-container rounded-full group-hover:bg-on-secondary transition-colors duration-300"></div>
+</div>
+<div class="mt-4 font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors duration-300">1990</div>
+</div>
+<!-- 2024 Milestone -->
+<div class="flex flex-col items-center group relative cursor-pointer" onclick="updateEraPreview('2024', 'Digital Age Archive', 'Contemporary issues blend traditional motifs with modern digital security features, preserving heritage for the future.')">
+<div class="text-on-surface-variant font-label-caps text-label-caps mb-4 opacity-0 group-hover:opacity-100 transition-opacity absolute -top-8 whitespace-nowrap">Present Day</div>
+<div class="w-4 h-4 rounded-full bg-surface border-2 border-tertiary-container shadow-sm group-hover:bg-secondary group-hover:border-secondary transition-colors duration-300 relative z-10 flex items-center justify-center">
+<div class="w-1 h-1 bg-tertiary-container rounded-full group-hover:bg-on-secondary transition-colors duration-300"></div>
+</div>
+<div class="mt-4 font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors duration-300">2024</div>
+</div>
+</div>
+</div>
+<!-- Dynamic Era Preview Section (Bento Grid Style) -->
+<div class="w-full max-w-container-max transition-opacity duration-500 opacity-100" id="era-preview-section">
+<div class="flex flex-col items-center mb-12">
+<span class="font-display-lg text-display-lg text-secondary mb-2 opacity-50" id="preview-year">1962</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-4" id="preview-title">Dawn of Independence</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl text-center" id="preview-desc">The first sovereign issues celebrated national identity, heroes, and culture. The 1+1 Franc issue stands as a monumental artifact of freedom.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Highlight Stamp Card (Spans 8 cols on desktop) -->
+<div class="md:col-span-8 bg-surface-container-low border border-tertiary-container/20 rounded-lg p-6 md:p-8 flex flex-col md:flex-row items-center gap-8 shadow-sm relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-surface to-surface-container-high opacity-50"></div>
+<!-- Stamp Frame (Skeuomorphic touches) -->
+<div class="relative z-10 bg-surface p-4 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border border-outline-variant/30 transform transition-transform group-hover:scale-[1.02] duration-500">
+<div class="absolute inset-0 border border-tertiary-container/30 m-1"></div> <!-- Inner gold line -->
+<!-- Perforation simulation (css simplified) -->
+<div class="w-48 h-64 bg-surface-variant relative flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A meticulously detailed macro photograph of a vintage 1962 Algerian postage stamp celebrating independence. The stamp features a deep red and crisp white color palette, with elegant intaglio printing lines visible. The paper texture is slightly aged, and the lighting is soft museum spotlighting, creating a reverent, archival mood against a stark white background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWtmXc9OMVXCvjSlvyYArgEJlP-dYAVlmuQa9p-jnIEG7-NF3c4I91b_Af5JijnKjru5Qka2L_PlWX__5km07LDnFbWxOX_R2-u6Sx5Uqnq0IEmOUc4T0BRuVK-XsYf6SEtOv7WWaAvRo4R1RsHc2ZlAt97o9_lv-uA3rkspO12tYC73PR4--hmwquQmo1a-YzC8claF707X1o6A1WFjk7rGonGaym3vYh34YWSyh9erzkAglQxiNH')"></div>
+</div>
+</div>
+<div class="relative z-10 flex flex-col justify-center max-w-md">
+<div class="font-label-caps text-label-caps text-secondary mb-2 tracking-widest uppercase">Artifact 01-A</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">1+1 Franc Independence Issue</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Issued on July 5, 1962, this highly sought-after stamp symbolized the immediate assertion of postal sovereignty. The precise engraving showcases the newly established national emblem.</p>
+<button class="self-start flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded font-label-caps text-label-caps tracking-widest hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">zoom_in</span>
+                            Inspect Artifact
+                        </button>
+</div>
+</div>
+<!-- Secondary Stamps (Stack of 2, spans 4 cols) -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<!-- Secondary Card 1 -->
+<div class="bg-surface-container-low border border-tertiary-container/10 rounded-lg p-4 flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="bg-surface p-2 shadow-sm border border-outline-variant/20 flex-shrink-0">
+<div class="w-16 h-20 bg-cover bg-center" data-alt="A vintage 1962 Algerian postage stamp depicting a stylized profile of a freedom fighter, printed in deep indigo and sepia tones on textured paper. Museum quality lighting, macro focus." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzdK5lromOQ-kG4EqHm62ujNyhL06FJ2xtQzzVxG_PohQ1if8M8GU280lYAphJ1FnONb9wPz2y4orenOO2OBbgXS9yJfNbIStcrv7lf406sG64ZA2z45VugsXCz1xaz94Pfuyo2tQP-HevtjcVgV4K6LA6-lOmMMJlNnJye-59jur--Ean9bQTlaZF6zNwqO5UJvxOJlPokuyYArb_ylCEH0gYzWf-z_9cSyfVN918ovDcuy3ANniy')"></div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">July 1962</div>
+<h4 class="font-body-lg text-body-lg text-primary font-semibold group-hover:text-secondary transition-colors">Martyrs Memorial Series</h4>
+</div>
+</div>
+<!-- Secondary Card 2 -->
+<div class="bg-surface-container-low border border-tertiary-container/10 rounded-lg p-4 flex items-center gap-4 hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="bg-surface p-2 shadow-sm border border-outline-variant/20 flex-shrink-0">
+<div class="w-16 h-20 bg-cover bg-center" data-alt="A 1962 Algerian postage stamp showing an agricultural scene, printed in monochrome green ink on slightly yellowed archival paper. Soft, diffused lighting highlighting the paper grain." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCyLs7I9uc4un9zefBqIHqcO40FEHsdZMkZefVTBkI6FiH4I-0kvjfRrHlA2CsbIWqHHrD1tPrxpY18HvesNDpv3phHSlHBu-kdV_KTl-2MKNT5sDdefQmTdkkeKs-oaFLT_wh--ZKTTVbfd3HvQbKjccuPemOOzIouVlEhtDi-x6Zn-_6SvV2ZDhOb_Hj_uKDn5oH2Ga0Lalpic9RA9bviTq4nbKxSMRJnvK_QdYGJnJLcNirH-qqh')"></div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Nov 1962</div>
+<h4 class="font-body-lg text-body-lg text-primary font-semibold group-hover:text-secondary transition-colors">First Anniversary Issue</h4>
+</div>
+</div>
+<!-- View All Era Button -->
+<button class="mt-auto w-full py-4 border border-tertiary-container text-tertiary-container font-label-caps text-label-caps rounded flex items-center justify-center gap-2 hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors">
+                        View Complete 1962 Collection
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop mt-20 bg-surface-container-highest border-t border-outline-variant flex flex-col items-center justify-center">
+<div class="max-w-container-max w-full flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<img alt="Philately DZ Logo" class="h-8 w-8 object-contain grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4F9UzTyazc_i8zmogsvnOd9IN9HqaRyu2yKtGscQuYdzT4Lr-zUyBFE51IRpRTdt5yhxJl6ihUZYB6Ug5axxunD9QuM3_0Q_Ct3k8yhEGPdsgkL2W2pq_7BRyhsaoEfglpXcnshoYXtpj0EG_UNX3sbrrDCtJAgkrl3AV9nyEmggT8ZvzoSc60gGpghsXaqoyQJ61YzrveV35MvEYJyjp1zk5dPTHXIHZj5pPWLtZk8_QCylIMPFI"/>
+<span class="font-display-lg text-headline-md text-primary opacity-80">Philately DZ</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-6 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all" href="#">Historical Context</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all" href="#">Philately Dictionary</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all" href="#">User Contributions</a>
+<a class="text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all" href="#">Privacy Policy</a>
+</nav>
+</div>
+<div class="mt-8 text-center text-on-surface-variant text-sm opacity-70">
+            © 2024 Algerian Philately Encyclopedia. A Digital Conservatory.
+        </div>
+</footer>
+<script>
+        // Simple script to handle dummy interactions for the timeline
+        function updateEraPreview(year, title, desc) {
+            const section = document.getElementById('era-preview-section');
+            
+            // Fade out
+            section.classList.remove('opacity-100');
+            section.classList.add('opacity-0');
+            
+            setTimeout(() => {
+                // Update content
+                document.getElementById('preview-year').innerText = year;
+                document.getElementById('preview-title').innerText = title;
+                document.getElementById('preview-desc').innerText = desc;
+                
+                // Fade in
+                section.classList.remove('opacity-0');
+                section.classList.add('opacity-100');
+            }, 300); // Wait for fade out
+        }
+    </script>
+</body></html>

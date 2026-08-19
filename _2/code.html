@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Philately DZ - Explore &amp; Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#8fd6a5",
+                        "on-background": "#1b1c19",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary-fixed-variant": "#92001f",
+                        "outline": "#707971",
+                        "primary": "#004524",
+                        "outline-variant": "#bfc9bf",
+                        "surface": "#fbf9f4",
+                        "on-primary-container": "#8fd5a4",
+                        "secondary-fixed-dim": "#ffb3b2",
+                        "on-secondary-fixed": "#410008",
+                        "tertiary-fixed-dim": "#f7bd48",
+                        "inverse-on-surface": "#f2f1ec",
+                        "tertiary-container": "#6c4d00",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#f6bd47",
+                        "secondary": "#ba002a",
+                        "surface-container": "#f0eee9",
+                        "surface-bright": "#fbf9f4",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-tertiary-fixed": "#271900",
+                        "on-primary-fixed-variant": "#01522c",
+                        "on-surface-variant": "#404941",
+                        "background": "#fbf9f4",
+                        "primary-fixed-dim": "#8fd6a5",
+                        "tertiary-fixed": "#ffdea6",
+                        "surface-container-high": "#eae8e3",
+                        "surface-variant": "#e4e2dd",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#155e37",
+                        "tertiary": "#4f3700",
+                        "on-surface": "#1b1c19",
+                        "secondary-container": "#e2213d",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container-low": "#f5f3ee",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#abf3bf",
+                        "inverse-surface": "#30312e",
+                        "surface-tint": "#256b42",
+                        "on-primary-fixed": "#00210f",
+                        "secondary-fixed": "#ffdad9",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            /* Subtle paper texture */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .stamp-card {
+            border: 1px solid theme('colors.outline-variant');
+            transition: all 0.3s ease;
+        }
+        .stamp-card:hover {
+            border-color: theme('colors.primary');
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transform: translateY(-2px);
+        }
+        .stamp-inset {
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+        }
+        /* Custom scrollbar for scholarly feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface-container-low'); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant'); 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline'); 
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/90 backdrop-blur-md border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-4">
+<img alt="Algerian Stamps Encyclopedia Logo" class="h-10 w-10 object-contain rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4F9UzTyazc_i8zmogsvnOd9IN9HqaRyu2yKtGscQuYdzT4Lr-zUyBFE51IRpRTdt5yhxJl6ihUZYB6Ug5axxunD9QuM3_0Q_Ct3k8yhEGPdsgkL2W2pq_7BRyhsaoEfglpXcnshoYXtpj0EG_UNX3sbrrDCtJAgkrl3AV9nyEmggT8ZvzoSc60gGpghsXaqoyQJ61YzrveV35MvEYJyjp1zk5dPTHXIHZj5pPWLtZk8_QCylIMPFI"/>
+<span class="font-display-lg text-headline-sm text-primary dark:text-primary-fixed italic hidden md:block">Philately DZ</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary font-body-md text-body-md transition-colors duration-300" href="#">Periods</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary font-body-md text-body-md transition-colors duration-300" href="#">Categories</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary font-body-md text-body-md transition-colors duration-300" href="#">Museum</a>
+<a class="text-secondary border-b-2 border-secondary font-bold pb-1 font-body-md text-body-md" href="#">Archive</a>
+</nav>
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed">
+<button class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 scale-95 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 scale-95 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 scale-95 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="md:hidden hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 scale-95 active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow flex flex-col md:flex-row px-margin-mobile md:px-margin-desktop py-8 gap-gutter max-w-container-max mx-auto w-full">
+<!-- Left Sidebar: Advanced Filters -->
+<aside class="w-full md:w-64 flex-shrink-0 mb-8 md:mb-0 hidden md:block">
+<div class="sticky top-28 space-y-8">
+<div class="pb-4 border-b border-outline-variant">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-2">Filters</h2>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Refine your archival search.</p>
+</div>
+<!-- Filter Groups -->
+<div class="space-y-6">
+<!-- Category -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase tracking-wider">Category</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="form-checkbox text-primary border-outline rounded-sm focus:ring-primary focus:ring-offset-background" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Definitive</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox text-primary border-outline rounded-sm focus:ring-primary focus:ring-offset-background" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Commemorative</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="form-checkbox text-primary border-outline rounded-sm focus:ring-primary focus:ring-offset-background" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Airmail</span>
+</label>
+</div>
+</div>
+<!-- Year Range -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase tracking-wider">Year Range</h3>
+<div class="flex items-center gap-2">
+<input class="w-full bg-transparent border-b border-outline-variant border-x-0 border-t-0 focus:border-primary focus:ring-0 font-body-md text-body-md py-1 px-0 placeholder-outline-variant transition-colors" placeholder="1962" type="number"/>
+<span class="text-on-surface-variant">-</span>
+<input class="w-full bg-transparent border-b border-outline-variant border-x-0 border-t-0 focus:border-primary focus:ring-0 font-body-md text-body-md py-1 px-0 placeholder-outline-variant transition-colors" placeholder="2024" type="number"/>
+</div>
+</div>
+<!-- Color -->
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase tracking-wider">Dominant Color</h3>
+<div class="flex flex-wrap gap-2">
+<button aria-label="Red" class="w-6 h-6 rounded-full border border-outline-variant bg-[#800000] ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-primary hover:scale-110 transition-transform"></button>
+<button aria-label="Green" class="w-6 h-6 rounded-full border border-outline-variant bg-[#004d40] ring-2 ring-offset-2 ring-offset-background ring-primary hover:scale-110 transition-transform"></button>
+<button aria-label="Blue" class="w-6 h-6 rounded-full border border-outline-variant bg-[#0d47a1] ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-primary hover:scale-110 transition-transform"></button>
+<button aria-label="Gold" class="w-6 h-6 rounded-full border border-outline-variant bg-[#f57f17] ring-2 ring-offset-2 ring-offset-background ring-transparent focus:ring-primary hover:scale-110 transition-transform"></button>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-body-md text-body-md py-2 rounded-DEFAULT hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+                    Apply Filters
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<section class="flex-grow flex flex-col">
+<!-- Search Header & Controls -->
+<div class="mb-8 flex flex-col lg:flex-row lg:items-end justify-between gap-4 border-b border-outline-variant pb-4">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-1">Archive Search</p>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background">Browsing: Independence Era</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">124 artifacts found matching your criteria.</p>
+</div>
+<div class="flex items-center gap-4 mt-4 lg:mt-0">
+<!-- Sort Dropdown -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-low border border-outline-variant text-on-surface font-body-md text-body-md py-2 pl-4 pr-10 rounded-DEFAULT focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary cursor-pointer">
+<option>Sort by: Year (Oldest First)</option>
+<option>Sort by: Year (Newest First)</option>
+<option>Sort by: Rarity</option>
+<option>Sort by: Value</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 transform -translate-y-1/2 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<!-- View Toggles -->
+<div class="flex border border-outline-variant rounded-DEFAULT overflow-hidden bg-surface-container-low">
+<button class="p-2 bg-primary-container text-on-primary-container hover:bg-primary-container/80 transition-colors" title="Grid View">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant transition-colors" title="List View">
+<span class="material-symbols-outlined" data-icon="view_list">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Active Filters Tags -->
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="inline-flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full font-body-md text-sm text-on-surface border border-outline-variant">
+                    Category: Definitive
+                    <button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[16px]" data-icon="close">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full font-body-md text-sm text-on-surface border border-outline-variant">
+                    Color: Green
+                    <button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-[16px]" data-icon="close">close</span></button>
+</span>
+<button class="text-secondary font-body-md text-sm hover:underline ml-2">Clear All</button>
+</div>
+<!-- Stamp Gallery Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<article class="stamp-card bg-surface p-4 flex flex-col cursor-pointer group">
+<div class="stamp-inset bg-surface-container p-4 mb-4 flex justify-center items-center aspect-square relative overflow-hidden">
+<img class="w-3/4 h-3/4 object-contain shadow-sm group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A macro photograph of an authentic vintage Algerian postage stamp from 1962, focusing on the intricate engraving details. The stamp depicts a symbolic independence motif in deep forest green ink on slightly aged, off-white perforated paper. Lighting is soft and highly controlled, emphasizing the tactile texture of the paper grain and the precise lines of the intaglio printing process. The aesthetic is scholarly, archival, and deeply rooted in historical preservation, set against a very subtle, clean minimalist background to ensure the artifact remains the absolute focal point." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6cl7J0VO1n71umbFfWxtxqiNOOaADgceSAYrLufgq3SZ_tXX1jZa_BIN4XvCeirTPK4nYZRWKZSbG4uISu_9BPQELnSt4kOe529GjIM1k1sw1C7VlHJyUzWTqEwizMEEa4xUfK7PuSrWhPnu6RaNPQmf_WhioENKJa4bkMTUIowi4YnSb7tTKIP3xmJ78Ig5zeV5o2PhG1Kh4_PAGgPrl1oHGV4HJm_I-dy_4d6wntOS7hb-HpTBr"/>
+</div>
+<div class="flex-grow">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">1962 • Definitive</p>
+<h3 class="font-headline-md text-[20px] text-on-background leading-tight mb-2 group-hover:text-primary transition-colors">Proclamation of Independence</h3>
+</div>
+<div class="flex justify-between items-end mt-4 pt-4 border-t border-outline-variant/50">
+<span class="font-body-md text-body-md font-semibold text-primary">1+0.25 DA</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors" data-icon="bookmark_border">bookmark_border</span>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="stamp-card bg-surface p-4 flex flex-col cursor-pointer group">
+<div class="stamp-inset bg-surface-container p-4 mb-4 flex justify-center items-center aspect-square relative overflow-hidden">
+<img class="w-3/4 h-3/4 object-contain shadow-sm group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A high-resolution archival scan of a classic Algerian postage stamp from 1964. The stamp features an intricate geometric arabesque pattern printed in rich, vibrant crimson red and gold foil accents. The edges show distinct, crisp perforations. The lighting is extremely flat and even, characteristic of museum digitization, capturing every subtle fiber of the vintage paper stock. The overall mood is luxurious yet strictly academic, presented in a clean, light-mode environment with a very soft, diffuse drop shadow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-x3CvUZSzNyJ6yCpDB9nXfAEbGmzjDU5hTP7qh8bZr8xfpnR-Ao9tmWMDUYQiY7exjxWx0WjOwsFWNa6Wkg4nzW3lNofGmMcqTaA1mQ1EMuZ8z6FbE0ud19zIxaVrR5JLyWs-ZiVqBbC5SWNi4w5SvBDrRi6PCP-dBDI01JnW7q_wLh169LL5zKPbZ2Io-QZ1QcwX-NogQtHwidX971L1XTl3V98UBdQCLeo955O3bqHvL1GT6tlw"/>
+</div>
+<div class="flex-grow">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">1964 • Commemorative</p>
+<h3 class="font-headline-md text-[20px] text-on-background leading-tight mb-2 group-hover:text-primary transition-colors">First Anniversary of the Constitution</h3>
+</div>
+<div class="flex justify-between items-end mt-4 pt-4 border-t border-outline-variant/50">
+<span class="font-body-md text-body-md font-semibold text-primary">0.50 DA</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors" data-icon="bookmark_border">bookmark_border</span>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="stamp-card bg-surface p-4 flex flex-col cursor-pointer group">
+<div class="stamp-inset bg-surface-container p-4 mb-4 flex justify-center items-center aspect-square relative overflow-hidden">
+<img class="w-3/4 h-3/4 object-contain shadow-sm group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A detailed, close-up view of a rare Algerian airmail stamp from the late 1960s. The design prominently features an illustration of a vintage aircraft flying over a stylized desert landscape, printed in contrasting hues of indigo and ochre. The paper exhibits slight, authentic yellowing at the edges, indicating age. The setting is a bright, clinical archival space, designed to highlight the stamp as a historical document. The aesthetic is clean, minimalist, and focused entirely on the tactile quality of the printed artifact." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHk-PKhXpiNyiWJtEm0rDk8unTppIgloZ3CftWIUkAVClUoIPNzF4kGrGptQpPDFGVsVxL8KE22s6fmkg4N1uECVt6ycuovMhnOyV_-U5flSVrUg_ykOtRtDp4g2WJToqFME1p3fThE8PNdXx-rh3l3WX_vUai5pdFEgZSN2lNPOuUKG2gQhv5Bss--XgTFG993W2XZdNJUXoNqz1uky8YoJRcOWAM1e_us2x38AciiwMpyvxWjBbS"/>
+</div>
+<div class="flex-grow">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">1968 • Airmail</p>
+<h3 class="font-headline-md text-[20px] text-on-background leading-tight mb-2 group-hover:text-primary transition-colors">Sahara Aviation Route</h3>
+</div>
+<div class="flex justify-between items-end mt-4 pt-4 border-t border-outline-variant/50">
+<span class="font-body-md text-body-md font-semibold text-primary">5.00 DA</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors" data-icon="bookmark_border">bookmark_border</span>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="stamp-card bg-surface p-4 flex flex-col cursor-pointer group">
+<div class="stamp-inset bg-surface-container p-4 mb-4 flex justify-center items-center aspect-square relative overflow-hidden">
+<img class="w-3/4 h-3/4 object-contain shadow-sm group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="An immaculate archival photograph of a pristine 1970s Algerian definitive stamp. The design is a stark, modernist interpretation of an industrial landscape, rendered in monochromatic steel-blue ink. The perforations are impeccably sharp, suggesting a mint-condition specimen. The lighting is designed to eliminate glare while enhancing the subtle surface texture of the ungummed paper. The overall visual style is rigorous, highly structured, and suitable for a high-end digital museum catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXxqCYlrBTQ61oczt68spGWi2sTPoUdwCSkLxquK6pozcugDgfasmdX9hL9q7psue4fFA4E2hLCjuXgy7qeLmYBw8MUgpzEz4IJorrFZSi7u4_6tfabg3rol6yeSSvFCBTqvdMt-ssWwDhS--DqbJq5jkZmufRLr6cxSubpoThZmR0p0t4H4ak90oDCO-r9SF06h5rIS3wSgoGmRPi64BHWBDn9xNknSPL33-VfH3QQjMSF0GJQrIP"/>
+</div>
+<div class="flex-grow">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">1971 • Definitive</p>
+<h3 class="font-headline-md text-[20px] text-on-background leading-tight mb-2 group-hover:text-primary transition-colors">National Industrialization</h3>
+</div>
+<div class="flex justify-between items-end mt-4 pt-4 border-t border-outline-variant/50">
+<span class="font-body-md text-body-md font-semibold text-primary">1.20 DA</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors" data-icon="bookmark_border">bookmark_border</span>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="stamp-card bg-surface p-4 flex flex-col cursor-pointer group">
+<div class="stamp-inset bg-surface-container p-4 mb-4 flex justify-center items-center aspect-square relative overflow-hidden">
+<img class="w-3/4 h-3/4 object-contain shadow-sm group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A macro studio shot of an Algerian stamp commemorating cultural heritage, dating circa 1975. The artwork shows a traditional Berber jewelry piece, intricately detailed in deep black and shimmering metallic gold inks on off-white paper. The rough texture of the paper grain is visible under the soft, directional lighting. The presentation is distinctly curatorial, evoking a sense of historical reverence within a modern, minimalist digital interface framework." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiuD10VUo_xyaAJCPp73A3hi-aQajBAPkDNkXJhuzIEmaFxYWyKf18gw0h8tE9e80pp0VQtYXurrqw_8GxJqEO5uHWI6vQcFxYadynnHPGkabkn6_edES3grAEcCtjoCzeQ1YItzstxLvEX1Lkb60CmHWJ4n-mQG0yFE2Oi4t1geZlMpPu5hggqHJFMjwVbyERfxX-mG1NlK-yUWbrWbSK1v_Z3NYHbKtWPyKk73Bh0mTwwWWv2Tmg"/>
+</div>
+<div class="flex-grow">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">1975 • Commemorative</p>
+<h3 class="font-headline-md text-[20px] text-on-background leading-tight mb-2 group-hover:text-primary transition-colors">Traditional Crafts: Jewelry</h3>
+</div>
+<div class="flex justify-between items-end mt-4 pt-4 border-t border-outline-variant/50">
+<span class="font-body-md text-body-md font-semibold text-primary">0.60 DA</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors" data-icon="bookmark_border">bookmark_border</span>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="stamp-card bg-surface p-4 flex flex-col cursor-pointer group">
+<div class="stamp-inset bg-surface-container p-4 mb-4 flex justify-center items-center aspect-square relative overflow-hidden">
+<img class="w-3/4 h-3/4 object-contain shadow-sm group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A pristine digital archive image of a 1980s Algerian stamp featuring local flora. The illustration is a botanical drawing of a desert rose, executed in delicate pastel pinks and muted greens. The stamp is perfectly centered with clean, sharp perforations. The lighting is completely flat to ensure accurate color reproduction, consistent with strict museum standards. The aesthetic emphasizes clarity, preservation, and a light, airy scholarly environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaQTlJDLntCtOiUsUDnl4G-uCXIregDBJ2nOLu3J81FnkrHiLebLJQfUxVyFW0mkfVkc8sbzBcnVqi02_5l_6TDV_Ht3sDjNmR0AsN4MKnxCXdA0D0jks_xm-CyRMl5PkCix-jrB5y9piW-R2xK8xqiC7mOhTSFrnGTAniVMYGEgtUfnucN5SAqCM1PJklog2kumCm46iqTOzes0TtNHXo5ecLaz3I18EaNi84OGHsiSkRGpTbfVXk"/>
+</div>
+<div class="flex-grow">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">1982 • Flora</p>
+<h3 class="font-headline-md text-[20px] text-on-background leading-tight mb-2 group-hover:text-primary transition-colors">Desert Rose (Adenium)</h3>
+</div>
+<div class="flex justify-between items-end mt-4 pt-4 border-t border-outline-variant/50">
+<span class="font-body-md text-body-md font-semibold text-primary">2.00 DA</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors" data-icon="bookmark_border">bookmark_border</span>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex justify-center items-center gap-2">
+<button class="p-2 border border-outline-variant rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center border-b-2 border-secondary text-primary font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">3</button>
+<span class="text-on-surface-variant">...</span>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">12</button>
+<button class="p-2 border border-outline-variant rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop mt-20 bg-surface-container-highest dark:bg-on-background border-t border-outline-variant bg-surface-container-highest">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-center md:text-left">
+<span class="font-display-lg text-headline-md text-primary block mb-2 italic">Philately DZ</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Algerian Philately Encyclopedia. A Digital Conservatory.</p>
+</div>
+<nav class="flex flex-wrap justify-center md:justify-end gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary opacity-90 hover:opacity-100 transition-opacity" href="#">Historical Context</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary opacity-90 hover:opacity-100 transition-opacity" href="#">Philately Dictionary</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary opacity-90 hover:opacity-100 transition-opacity" href="#">User Contributions</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary opacity-90 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+</nav>
+</div>
+</footer>
+</body></html>

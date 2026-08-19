@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>لوحة التحكم - موسوعة الطوابع الجزائرية</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-primary-fixed": "#00210d",
+                "on-secondary-fixed-variant": "#5d4201",
+                "on-background": "#191c1d",
+                "on-secondary-fixed": "#261900",
+                "primary-fixed-dim": "#86d89d",
+                "on-tertiary-fixed": "#410008",
+                "secondary-container": "#fed488",
+                "surface-bright": "#f8f9fa",
+                "inverse-surface": "#2e3132",
+                "on-surface-variant": "#3f4940",
+                "primary-fixed": "#a1f5b7",
+                "on-surface": "#191c1d",
+                "surface-container-high": "#e7e8e9",
+                "surface-variant": "#e1e3e4",
+                "surface-tint": "#146c3c",
+                "on-primary": "#ffffff",
+                "on-primary-fixed-variant": "#00522a",
+                "on-secondary": "#ffffff",
+                "on-primary-container": "#89dba0",
+                "on-error-container": "#93000a",
+                "secondary-fixed-dim": "#e9c176",
+                "surface-container": "#edeeef",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed-variant": "#92001f",
+                "ink": "#1A202C",
+                "primary-container": "#006233",
+                "tertiary-container": "#ad0027",
+                "secondary": "#775a19",
+                "on-secondary-container": "#785a1a",
+                "parchment-base": "#FDFCF8",
+                "inverse-primary": "#86d89d",
+                "tertiary-fixed": "#ffdad9",
+                "surface-container-low": "#f3f4f5",
+                "surface": "#f8f9fa",
+                "secondary-fixed": "#ffdea5",
+                "tertiary-fixed-dim": "#ffb3b2",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-highest": "#e1e3e4",
+                "background": "#f8f9fa",
+                "primary": "#004824",
+                "error-container": "#ffdad6",
+                "tertiary": "#81001a",
+                "on-error": "#ffffff",
+                "on-tertiary-container": "#ffb8b7",
+                "on-tertiary": "#ffffff",
+                "outline-variant": "#bfc9be",
+                "outline": "#6f7a70",
+                "border-subtle": "#E5E7EB",
+                "surface-dim": "#d9dadb",
+                "inverse-on-surface": "#f0f1f2"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "16px",
+                "margin-desktop": "40px",
+                "container-max": "1280px",
+                "unit": "8px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "label-sm": [
+                        "Libre Franklin"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "caption": [
+                        "Libre Franklin"
+                ],
+                "body-lg": [
+                        "Libre Franklin"
+                ],
+                "body-md": [
+                        "Libre Franklin"
+                ]
+        },
+        "fontSize": {
+                "label-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "36px",
+                        {
+                                "lineHeight": "44px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "caption": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: theme('colors.parchment-base');
+            color: theme('colors.ink');
+        }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-low border-l border-outline-variant flex flex-col h-full py-8 px-4 gap-4 w-64 fixed right-0 top-0 z-50 transition-all duration-150 ease-in-out hidden md:flex">
+<div class="mb-8 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-surface flex items-center justify-center mb-4 overflow-hidden border border-outline-variant shadow-sm">
+<img alt="Digital Conservatory Logo" class="object-cover w-full h-full" data-alt="A macro shot of a vintage Algerian stamp, highly detailed, showing intricate engraving lines and a rich emerald green color, representing the 'Modern Heritage Archive' logo in a digital conservatory setting. The lighting is soft and museum-like." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDThRrTHyYfafIDyvWoEvTlI4fEHSdyU-CmF745n5sySG-gq0_uFJmng3DCE7jBiknZMsLBcYUyB-0_U-B48jSdj_kOlxP2NfceJM2MQ8VG2t1STuy3BuhnIuaNNS28r-LAnTGT9Rtp2CRJerFsHXLQWltHUcTzVwYQgotLsClU9-D65PgGK8Vt3rCw1M7sVwEzO8MbhkAxPl9Tn9_E8UZyCYDG09KiVZivjg0STXOQ4wUs0XYrPaYv"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary text-center">Admin Panel</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-1 text-center uppercase tracking-widest">Modern Heritage Archive</p>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary border-r-4 border-primary font-semibold bg-surface-container transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">potted_plant</span>
+<span class="font-label-sm text-label-sm">Stamps</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-sm text-label-sm">Eras</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-sm text-label-sm">Series</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-sm text-label-sm">Categories</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-sm text-label-sm">Users</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</div>
+<div class="mt-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-sm text-label-sm">Log Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col md:mr-64 h-screen overflow-y-auto">
+<!-- TopNavBar (Mobile only for Dashboard intent based on context, but rendering as requested) -->
+<header class="flex justify-between items-center px-gutter w-full sticky top-0 z-40 bg-parchment-base border-b border-outline-variant w-full h-16 md:hidden">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant p-2 -mr-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-display-lg-mobile text-headline-sm text-primary">Admin Panel</h1>
+</div>
+<div class="flex items-center gap-2 text-primary cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined hover:text-primary transition-colors duration-200 p-2">notifications</span>
+<span class="material-symbols-outlined hover:text-primary transition-colors duration-200 p-2">help</span>
+</div>
+</header>
+<div class="p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full flex-1">
+<div class="mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">لوحة التحكم</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">نظرة عامة على نشاطات موسوعة الطوابع الجزائرية</p>
+</div>
+<!-- Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<!-- Stat Card 1 -->
+<div class="bg-surface border border-outline-variant rounded p-6 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between mb-2">
+<div class="bg-primary/10 p-2 rounded">
+<span class="material-symbols-outlined text-primary text-2xl">potted_plant</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-2 py-1 rounded text-xs">+12 هذا الأسبوع</span>
+</div>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface-variant mb-1">إجمالي الطوابع</h3>
+<p class="font-display-lg text-display-lg text-primary">5,240</p>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface border border-outline-variant rounded p-6 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between mb-2">
+<div class="bg-secondary/10 p-2 rounded">
+<span class="material-symbols-outlined text-secondary text-2xl">auto_stories</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary/10 px-2 py-1 rounded text-xs">+2 هذا الأسبوع</span>
+</div>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface-variant mb-1">إجمالي السلاسل</h3>
+<p class="font-display-lg text-display-lg text-primary">145</p>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface border border-outline-variant rounded p-6 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between mb-2">
+<div class="bg-tertiary/10 p-2 rounded">
+<span class="material-symbols-outlined text-tertiary text-2xl">edit_document</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary/10 px-2 py-1 rounded text-xs">بحاجة للمراجعة</span>
+</div>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface-variant mb-1">مساهمات معلقة</h3>
+<p class="font-display-lg text-display-lg text-primary">12</p>
+</div>
+</div>
+<!-- Stat Card 4 -->
+<div class="bg-surface border border-outline-variant rounded p-6 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between mb-2">
+<div class="bg-outline/10 p-2 rounded">
+<span class="material-symbols-outlined text-outline text-2xl">group</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline bg-outline/10 px-2 py-1 rounded text-xs">+5 هذا الشهر</span>
+</div>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface-variant mb-1">المستخدمين المسجلين</h3>
+<p class="font-display-lg text-display-lg text-primary">89</p>
+</div>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+<!-- Chart 1: Stamps per Year -->
+<div class="bg-surface border border-outline-variant rounded-lg p-6 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-primary mb-6">إضافة الطوابع عبر الزمن</h3>
+<div class="w-full h-64 relative">
+<canvas id="stampsChart"></canvas>
+</div>
+</div>
+<!-- Chart 2: Categories -->
+<div class="bg-surface border border-outline-variant rounded-lg p-6 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-primary mb-6">توزيع الطوابع حسب الفئة</h3>
+<div class="w-full h-64 relative flex justify-center">
+<canvas id="categoriesChart"></canvas>
+</div>
+</div>
+</div>
+<!-- Content Area: Recent & Approvals -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Pending Approvals (Bento Style) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md text-primary flex items-center gap-2 border-b border-outline-variant pb-2 inline-flex w-fit">
+<span class="material-symbols-outlined">gavel</span>
+                        الموافقات المعلقة
+                    </h3>
+<div class="grid grid-cols-1 gap-4">
+<!-- Approval Card 1 -->
+<div class="bg-surface flex gap-4 p-4 border border-outline-variant rounded items-start shadow-sm hover:shadow-md transition-shadow">
+<div class="w-24 h-24 bg-surface-container border border-outline-variant p-1 shadow-inner flex-shrink-0">
+<img alt="Stamp thumbnail" class="w-full h-full object-cover" data-alt="A vintage Algerian stamp depicting a historical monument, textured paper edges with perforations, sepia tones with a touch of faded red, archival museum setting, soft directional lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9attw9Vkh355bWwCT8L1lh_u0SufrEAQz2jWANQs1uyJkEiTG8spBEqVI96prw2w0TdmaeJidYCb7ES6k8pYX_zCFdAJqREnoDvugDWm7b-Hx2ZRA9eClXXb0NpMrUvxhR4cvSzy2h_wxcNDsAsDZfB2UXz-igWaoElUZv3TWweaxqsFmkVec2Ux2i6l83oA6SkIwkn4pA5cKnQI9c5Nff6WnG0S2Pgxh6K2cr1Wof95DY8S-G-ji"/>
+</div>
+<div class="flex-1 flex flex-col justify-between h-24">
+<div>
+<h4 class="font-body-lg text-body-lg text-ink font-semibold line-clamp-1">طابع الاستقلال 1962</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">تعديل بواسطة: أحمد م.</p>
+</div>
+<div class="flex gap-2 justify-end">
+<button class="bg-surface hover:bg-surface-variant text-ink font-label-sm text-label-sm px-4 py-2 rounded border border-outline flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span>
+                                        تحرير
+                                    </button>
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-4 py-2 rounded flex items-center gap-2 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-sm">check</span>
+                                        موافقة
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Approval Card 2 -->
+<div class="bg-surface flex gap-4 p-4 border border-outline-variant rounded items-start shadow-sm hover:shadow-md transition-shadow">
+<div class="w-24 h-24 bg-surface-container border border-outline-variant p-1 shadow-inner flex-shrink-0">
+<img alt="Stamp thumbnail" class="w-full h-full object-cover" data-alt="A classic Algerian postal stamp featuring local flora, rich deep green and gold colors, printed on textured aged paper, realistic perforations, museum archival lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3z5VAhI5TuqjOuSf8Zj9epOpLUeTDyJvsFaK9jwMMRJxI8CcbYoWb2lI-6DZiYhPZelsiG2re-ls8T5rGP4hs5pbj6lJnESFqUpDUmiSpiTqNbxAO32JUx7NXz4wDtJSpZ8UvRpL28KjkuEMPLb7vlYzGimLxAHZllktUHuqazzvHNbu0QVadIuBCGqMhJ5HnYx7MTfbvX6VPA6nWm5CWlRsCAksFz3gDOtqMUvoJzelel2y8QFsI"/>
+</div>
+<div class="flex-1 flex flex-col justify-between h-24">
+<div>
+<h4 class="font-body-lg text-body-lg text-ink font-semibold line-clamp-1">سلسلة النباتات المحلية</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">إضافة جديدة: ليلى ك.</p>
+</div>
+<div class="flex gap-2 justify-end">
+<button class="bg-surface hover:bg-surface-variant text-ink font-label-sm text-label-sm px-4 py-2 rounded border border-outline flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span>
+                                        تحرير
+                                    </button>
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-4 py-2 rounded flex items-center gap-2 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-sm">check</span>
+                                        موافقة
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<button class="text-primary font-label-sm text-label-sm hover:underline mt-2 self-start flex items-center gap-1">
+                        عرض جميع الطلبات (12)
+                        <span class="material-symbols-outlined text-sm">arrow_back</span>
+</button>
+</div>
+<!-- Recent Activities -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md text-primary flex items-center gap-2 border-b border-outline-variant pb-2 inline-flex w-fit">
+<span class="material-symbols-outlined">history</span>
+                        النشاطات الأخيرة
+                    </h3>
+<div class="bg-surface border border-outline-variant rounded p-6 shadow-sm relative">
+<!-- Vertical Timeline Line -->
+<div class="absolute right-8 top-8 bottom-8 w-px bg-outline-variant"></div>
+<ul class="flex flex-col gap-8 relative z-10">
+<!-- Activity 1 -->
+<li class="flex items-start gap-4">
+<div class="w-8 h-8 rounded bg-surface border border-primary flex items-center justify-center flex-shrink-0 z-10 mt-1">
+<span class="material-symbols-outlined text-primary text-sm">edit</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-ink">تم تعديل وصف <strong>طابع الأمير عبد القادر</strong></p>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-caption text-caption text-on-surface-variant">بواسطة: كريم</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-caption text-caption text-on-surface-variant">قبل ساعتين</span>
+</div>
+</div>
+</li>
+<!-- Activity 2 -->
+<li class="flex items-start gap-4">
+<div class="w-8 h-8 rounded bg-surface border border-secondary flex items-center justify-center flex-shrink-0 z-10 mt-1">
+<span class="material-symbols-outlined text-secondary text-sm">add</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-ink">تمت إضافة <strong>سلسلة الاستقلال 1962</strong></p>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-caption text-caption text-on-surface-variant">بواسطة: أمينة</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-caption text-caption text-on-surface-variant">قبل 5 ساعات</span>
+</div>
+</div>
+</li>
+<!-- Activity 3 -->
+<li class="flex items-start gap-4">
+<div class="w-8 h-8 rounded bg-surface border border-tertiary flex items-center justify-center flex-shrink-0 z-10 mt-1">
+<span class="material-symbols-outlined text-tertiary text-sm">delete</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-ink">تم حذف مسودة <strong>طابع بريدي تالف</strong></p>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-caption text-caption text-on-surface-variant">بواسطة: يوسف</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-caption text-caption text-on-surface-variant">أمس</span>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="h-24"></div> <!-- Bottom padding -->
+</div>
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Chart 1: Line Chart
+        const ctxLine = document.getElementById('stampsChart').getContext('2d');
+        new Chart(ctxLine, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'إضافة الطوابع',
+                    data: [65, 80, 120, 105, 140, 180],
+                    borderColor: '#004824',
+                    backgroundColor: 'rgba(0, 72, 36, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#e1e3e4' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Chart 2: Doughnut Chart
+        const ctxDoughnut = document.getElementById('categoriesChart').getContext('2d');
+        new Chart(ctxDoughnut, {
+            type: 'doughnut',
+            data: {
+                labels: ['تاريخية', 'نباتات', 'حيوانات', 'شخصيات'],
+                datasets: [{
+                    data: [45, 25, 20, 10],
+                    backgroundColor: [
+                        '#004824', // Primary
+                        '#775a19', // Secondary
+                        '#81001a', // Tertiary
+                        '#86d89d'  // Primary Dim
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            font: { family: 'Libre Franklin' }
+                        }
+                    }
+                },
+                cutout: '70%'
+            }
+        });
+    });
+</script>
+</body></html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Algerian Philately Encyclopedia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#8fd6a5",
+                        "on-background": "#1b1c19",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary-fixed-variant": "#92001f",
+                        "outline": "#707971",
+                        "primary": "#004524",
+                        "outline-variant": "#bfc9bf",
+                        "surface": "#fbf9f4",
+                        "on-primary-container": "#8fd5a4",
+                        "secondary-fixed-dim": "#ffb3b2",
+                        "on-secondary-fixed": "#410008",
+                        "tertiary-fixed-dim": "#f7bd48",
+                        "inverse-on-surface": "#f2f1ec",
+                        "tertiary-container": "#6c4d00",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#f6bd47",
+                        "secondary": "#ba002a",
+                        "surface-container": "#f0eee9",
+                        "surface-bright": "#fbf9f4",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-tertiary-fixed": "#271900",
+                        "on-primary-fixed-variant": "#01522c",
+                        "on-surface-variant": "#404941",
+                        "background": "#fbf9f4",
+                        "primary-fixed-dim": "#8fd6a5",
+                        "tertiary-fixed": "#ffdea6",
+                        "surface-container-high": "#eae8e3",
+                        "surface-variant": "#e4e2dd",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#155e37",
+                        "tertiary": "#4f3700",
+                        "on-surface": "#1b1c19",
+                        "secondary-container": "#e2213d",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container-low": "#f5f3ee",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#abf3bf",
+                        "inverse-surface": "#30312e",
+                        "surface-tint": "#256b42",
+                        "on-primary-fixed": "#00210f",
+                        "secondary-fixed": "#ffdad9",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .stamp-edge {
+            mask-image: radial-gradient(circle at 10px 10px, transparent 10px, black 11px);
+            mask-size: 20px 20px;
+            mask-position: -10px -10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased relative min-h-screen font-body-md text-body-md overflow-x-hidden">
+<div class="texture-overlay fixed inset-0 z-50"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/90 backdrop-blur-md border-b border-outline-variant dark:border-outline flat no shadows">
+<div class="flex items-center gap-4">
+<img alt="Algerian Stamps Encyclopedia Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4F9UzTyazc_i8zmogsvnOd9IN9HqaRyu2yKtGscQuYdzT4Lr-zUyBFE51IRpRTdt5yhxJl6ihUZYB6Ug5axxunD9QuM3_0Q_Ct3k8yhEGPdsgkL2W2pq_7BRyhsaoEfglpXcnshoYXtpj0EG_UNX3sbrrDCtJAgkrl3AV9nyEmggT8ZvzoSc60gGpghsXaqoyQJ61YzrveV35MvEYJyjp1zk5dPTHXIHZj5pPWLtZk8_QCylIMPFI">
+<h1 class="font-display-lg text-headline-sm text-primary dark:text-primary-fixed italic">Philately DZ</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-300 font-label-caps" href="#">Periods</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-300 font-label-caps" href="#">Categories</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-300 font-label-caps" href="#">Museum</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary transition-colors duration-300 font-label-caps" href="#">Archive</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed scale-95 active:opacity-80 transition-all hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="text-primary dark:text-primary-fixed scale-95 active:opacity-80 transition-all hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-primary dark:text-primary-fixed scale-95 active:opacity-80 transition-all hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-24 pb-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Hero Section -->
+<section class="relative rounded-xl overflow-hidden mb-24 min-h-[70vh] flex flex-col justify-center items-center text-center p-8 bg-surface-container border border-[#d4af37] shadow-[0_4px_30px_rgba(0,0,0,0.05)]">
+<div class="absolute inset-0 bg-[url('placeholder')] bg-cover bg-center opacity-20 blur-sm" data-alt="A macro photograph of vintage Algerian postage stamps arranged artistically, creating a blurred, textured background. Warm, golden hour lighting highlights the paper grain and historical hues of deep red, faded green, and sepia. High contrast, elegant composition, modern heritage aesthetic."></div>
+<div class="relative z-10 max-w-4xl mx-auto space-y-8">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary" dir="rtl">
+                    اكتشف تاريخ الجزائر من خلال طوابعها
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto" dir="rtl">
+                    رحلة رقمية عبر تاريخ الجزائر وثقافتها وشخصياتها ومعالمها من خلال آلاف الطوابع البريدية.
+                </p>
+<!-- Search Bar -->
+<div class="mt-8 mb-12 relative max-w-2xl mx-auto w-full group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full bg-surface py-4 pl-12 pr-12 border-b-2 border-outline focus:border-primary outline-none transition-colors duration-300 font-body-md text-body-md" placeholder="Search by year, theme, or motif..." type="text">
+<button class="absolute inset-y-0 right-0 pr-4 flex items-center text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">image_search</span>
+</button>
+</div>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded font-label-caps hover:bg-primary-container transition-colors">Explore Stamps</button>
+<button class="bg-transparent border border-[#d4af37] text-on-surface px-8 py-3 rounded font-label-caps hover:bg-surface-container-high transition-colors">Browse by Year</button>
+<button class="bg-transparent border border-[#d4af37] text-on-surface px-8 py-3 rounded font-label-caps hover:bg-surface-container-high transition-colors">Advanced Search</button>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 py-12 border-y border-outline-variant">
+<div class="text-center">
+<h3 class="font-display-lg text-headline-md text-primary">+5,000</h3>
+<p class="font-label-caps text-on-surface-variant mt-2">Stamps</p>
+</div>
+<div class="text-center">
+<h3 class="font-display-lg text-headline-md text-primary">+500</h3>
+<p class="font-label-caps text-on-surface-variant mt-2">Series</p>
+</div>
+<div class="text-center">
+<h3 class="font-display-lg text-headline-md text-primary">+100</h3>
+<p class="font-label-caps text-on-surface-variant mt-2">Years Documented</p>
+</div>
+</section>
+<!-- Featured Eras Bento Grid -->
+<section class="mb-24 bg-surface-container-low rounded-xl border border-[#d4af37] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.05)]">
+    <div class="p-8 md:p-12">
+        <div class="flex items-center gap-4 mb-8 border-b border-outline-variant pb-4">
+            <span class="material-symbols-outlined text-secondary text-3xl">workspace_premium</span>
+            <h2 class="font-display-lg text-headline-md md:text-display-lg text-primary m-0">Stamp of the Month (طابع الشهر)</h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <!-- Left Column: Image -->
+            <div class="lg:col-span-5 relative group">
+                <div class="absolute -top-4 -left-4 z-10 bg-secondary text-on-secondary px-4 py-1 font-label-caps text-label-caps rounded shadow-md">Archival Highlight</div>
+                <div class="bg-surface-bright p-6 rounded-lg border border-outline-variant shadow-sm">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds" alt="1962 Independence Commemorative Stamp" class="w-full h-auto object-contain drop-shadow-md transition-transform duration-700 group-hover:scale-105">
+                </div>
+            </div>
+            <!-- Right Column: Content -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+                <div dir="rtl">
+                    <h3 class="font-headline-md text-headline-md text-primary mb-4">1962 Independence Commemorative (ذكرى الاستقلال 1962)</h3>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-6">
+                        يمثل هذا الطابع أول إصدار بريدي سيادي للجمهورية الجزائرية، صدر بعد أيام قليلة من إعلان الاستقلال الرسمي. كان إنجازاً لوجستياً وفنياً هائلاً، صُمم في سرية تامة ليعلن للعالم ميلاد أمة جديدة.
+                    </p>
+                </div>
+                <div class="grid grid-cols-3 gap-4 py-4 border-y border-outline-variant/30 font-body-md text-body-md">
+                    <div>
+                        <p class="text-on-surface-variant font-semibold">Year</p>
+                        <p class="text-primary">1962</p>
+                    </div>
+                    <div>
+                        <p class="text-on-surface-variant font-semibold">Denomination</p>
+                        <p class="text-primary">1+2 F</p>
+                    </div>
+                    <div>
+                        <p class="text-on-surface-variant font-semibold">Designer</p>
+                        <p class="text-primary">Ali Khodja</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button class="bg-primary text-on-primary px-10 py-4 rounded font-label-caps hover:bg-primary-container transition-colors shadow-sm flex items-center gap-2">
+                        View Full History (عرض التاريخ الكامل)
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><section class="mb-24">
+<div class="flex justify-between items-end mb-8">
+<h2 class="font-headline-md text-headline-md text-primary">Featured Eras</h2>
+<a class="font-label-caps text-secondary border-b-2 border-secondary pb-1 hover:text-primary transition-colors" href="#">View Timeline</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Colonial Period -->
+<div class="md:col-span-8 group cursor-pointer relative overflow-hidden rounded-xl border border-[#d4af37] bg-surface min-h-[300px]">
+<div class="absolute inset-0 bg-[url('placeholder')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A high-resolution scan of a vintage Algerian stamp from the French Colonial period. Intricate engraving details, faded muted blues and reds, set against a pristine, light-mode museum gallery backdrop. Minimalist and authoritative."></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-sm text-on-primary">Colonial Period</h3>
+<p class="font-body-md text-surface-container-high mt-2 max-w-md">Early philatelic issues reflecting the administrative and architectural landscape of the era.</p>
+</div>
+</div>
+<!-- The Revolution -->
+<div class="md:col-span-4 group cursor-pointer relative overflow-hidden rounded-xl border border-[#d4af37] bg-surface min-h-[300px]">
+<div class="absolute inset-0 bg-[url('placeholder')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A striking, bold Algerian stamp from the Revolution era. Strong contrasts, dynamic typography, symbols of resistance. The image is presented on a clean, off-white parchment texture surface, emphasizing its historical weight."></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-sm text-on-primary">The Revolution</h3>
+<p class="font-body-md text-surface-container-high mt-2">1954 - 1962</p>
+</div>
+</div>
+<!-- Independence Era -->
+<div class="md:col-span-6 group cursor-pointer relative overflow-hidden rounded-xl border border-[#d4af37] bg-surface min-h-[300px]">
+<div class="absolute inset-0 bg-[url('placeholder')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A vibrant stamp celebrating Algerian Independence, featuring iconic landmarks and national symbols. Clean lines, bright colors, elegantly displayed within a modern digital archive interface setting."></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-sm text-on-primary">Independence Era</h3>
+<p class="font-body-md text-surface-container-high mt-2">Building a new national identity through design.</p>
+</div>
+</div>
+<!-- Modern Algeria -->
+<div class="md:col-span-6 group cursor-pointer relative overflow-hidden rounded-xl border border-[#d4af37] bg-surface min-h-[300px]">
+<div class="absolute inset-0 bg-[url('placeholder')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A contemporary Algerian postage stamp showcasing modern achievements, technology, or modern art. Crisp details, bright lighting, presented as a high-end artifact in a minimalist digital gallery."></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-sm text-on-primary">Modern Algeria</h3>
+<p class="font-body-md text-surface-container-high mt-2">Contemporary themes and modern printing techniques.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<section class="mb-24">
+    <div class="flex justify-between items-end mb-8">
+        <h2 class="font-display-lg text-headline-md text-primary" dir="rtl">أخبار الإصدارات الجديدة</h2>
+        <a class="font-label-caps text-secondary border-b-2 border-secondary pb-1 hover:text-primary transition-colors" href="#">View All News</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <!-- News Card 1 -->
+        <div class="bg-surface-container rounded-xl border border-outline-variant overflow-hidden shadow-sm hover:shadow-md transition-all">
+            <div class="h-48 bg-surface-bright flex items-center justify-center p-4">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds" alt="New Stamp Issue" class="h-full w-auto object-contain drop-shadow-sm">
+            </div>
+            <div class="p-6" dir="rtl">
+                <p class="text-label-caps text-secondary mb-2">نوفمبر 2024</p>
+                <h3 class="font-headline-sm text-primary mb-3">ذكرى ستون عاماً للبريد الجزائري</h3>
+                <p class="font-body-md text-on-surface-variant mb-4 line-clamp-2">إصدار خاص يخلد مسيرة ستة عقود من الخدمة البريدية والسيادة الوطنية في مجال الاتصالات.</p>
+                <a href="#" class="text-secondary font-semibold flex items-center gap-1 hover:underline">
+                    اقرأ المزيد
+                    <span class="material-symbols-outlined text-sm">arrow_back</span>
+                </a>
+            </div>
+        </div>
+        <!-- News Card 2 -->
+        <div class="bg-surface-container rounded-xl border border-outline-variant overflow-hidden shadow-sm hover:shadow-md transition-all">
+            <div class="h-48 bg-surface-bright flex items-center justify-center p-4">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds" alt="New Stamp Issue" class="h-full w-auto object-contain drop-shadow-sm">
+            </div>
+            <div class="p-6" dir="rtl">
+                <p class="text-label-caps text-secondary mb-2">أكتوبر 2024</p>
+                <h3 class="font-headline-sm text-primary mb-3">التراث المعماري الصحراوي</h3>
+                <p class="font-body-md text-on-surface-variant mb-4 line-clamp-2">سلسلة جديدة تسلط الضوء على جماليات العمارة التقليدية في مناطق الجنوب الجزائري الكبير.</p>
+                <a href="#" class="text-secondary font-semibold flex items-center gap-1 hover:underline">
+                    اقرأ المزيد
+                    <span class="material-symbols-outlined text-sm">arrow_back</span>
+                </a>
+            </div>
+        </div>
+        <!-- News Card 3 -->
+        <div class="bg-surface-container rounded-xl border border-outline-variant overflow-hidden shadow-sm hover:shadow-md transition-all">
+            <div class="h-48 bg-surface-bright flex items-center justify-center p-4">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds" alt="New Stamp Issue" class="h-full w-auto object-contain drop-shadow-sm">
+            </div>
+            <div class="p-6" dir="rtl">
+                <p class="text-label-caps text-secondary mb-2">سبتمبر 2024</p>
+                <h3 class="font-headline-sm text-primary mb-3">حماية البيئة والتنوع البيولوجي</h3>
+                <p class="font-body-md text-on-surface-variant mb-4 line-clamp-2">طوابع توعوية تبرز أهمية الحفاظ على الأنواع النادرة في الحظائر الوطنية الجزائرية.</p>
+                <a href="#" class="text-secondary font-semibold flex items-center gap-1 hover:underline">
+                    اقرأ المزيد
+                    <span class="material-symbols-outlined text-sm">arrow_back</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section><footer class="w-full py-12 px-margin-mobile md:px-margin-desktop mt-20 bg-surface-container-highest dark:bg-on-background border-t border-outline-variant flat">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div>
+<h4 class="font-display-lg text-headline-md text-primary mb-2">Philately DZ</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Algerian Philately Encyclopedia. A Digital Conservatory.</p>
+</div>
+<nav class="flex flex-wrap gap-6 justify-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary opacity-90 hover:opacity-100 transition-opacity" href="#">Historical Context</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary opacity-90 hover:opacity-100 transition-opacity" href="#">Philately Dictionary</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary opacity-90 hover:opacity-100 transition-opacity" href="#">User Contributions</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary opacity-90 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+</nav>
+</div>
+</footer>
+
+
+</body></html>

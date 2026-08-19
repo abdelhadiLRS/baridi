@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stamp Detail - 1962 Independence Commemorative</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-primary": "#8fd6a5",
+                      "on-background": "#1b1c19",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#dbdad5",
+                      "on-secondary-fixed-variant": "#92001f",
+                      "outline": "#707971",
+                      "primary": "#004524",
+                      "outline-variant": "#bfc9bf",
+                      "surface": "#fbf9f4",
+                      "on-primary-container": "#8fd5a4",
+                      "secondary-fixed-dim": "#ffb3b2",
+                      "on-secondary-fixed": "#410008",
+                      "tertiary-fixed-dim": "#f7bd48",
+                      "inverse-on-surface": "#f2f1ec",
+                      "tertiary-container": "#6c4d00",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#f6bd47",
+                      "secondary": "#ba002a",
+                      "surface-container": "#f0eee9",
+                      "surface-bright": "#fbf9f4",
+                      "surface-container-highest": "#e4e2dd",
+                      "on-tertiary-fixed": "#271900",
+                      "on-primary-fixed-variant": "#01522c",
+                      "on-surface-variant": "#404941",
+                      "background": "#fbf9f4",
+                      "primary-fixed-dim": "#8fd6a5",
+                      "tertiary-fixed": "#ffdea6",
+                      "surface-container-high": "#eae8e3",
+                      "surface-variant": "#e4e2dd",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#155e37",
+                      "tertiary": "#4f3700",
+                      "on-surface": "#1b1c19",
+                      "secondary-container": "#e2213d",
+                      "on-secondary-container": "#fffbff",
+                      "surface-container-low": "#f5f3ee",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#5d4200",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#abf3bf",
+                      "inverse-surface": "#30312e",
+                      "surface-tint": "#256b42",
+                      "on-primary-fixed": "#00210f",
+                      "secondary-fixed": "#ffdad9",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "container-max": "1280px",
+                      "unit": "8px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "label-caps": ["Inter"],
+                      "headline-md": ["Playfair Display"],
+                      "headline-sm": ["Playfair Display"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Texture Overlay for Modern Heritage Feel */
+        .texture-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        
+        /* Lens Zoom Effect */
+        .img-magnifier-container {
+            position: relative;
+        }
+        .img-magnifier-glass {
+            position: absolute;
+            border: 1px solid #707971; /* outline */
+            border-radius: 50%;
+            cursor: none;
+            width: 150px;
+            height: 150px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(10px); /* Glassmorphism */
+            background-color: rgba(251, 249, 244, 0.1); /* surface-tint */
+            display: none; /* Hidden by default */
+        }
+        
+        .artifact-card {
+            border: 1px solid #d4af37; /* Brass/Gold suggestion */
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); /* very soft highly diffused */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col relative selection:bg-primary-container selection:text-on-primary-container">
+<div class="texture-overlay"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<img alt="Algerian Stamps Encyclopedia Logo" class="h-10 w-10 object-contain mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4F9UzTyazc_i8zmogsvnOd9IN9HqaRyu2yKtGscQuYdzT4Lr-zUyBFE51IRpRTdt5yhxJl6ihUZYB6Ug5axxunD9QuM3_0Q_Ct3k8yhEGPdsgkL2W2pq_7BRyhsaoEfglpXcnshoYXtpj0EG_UNX3sbrrDCtJAgkrl3AV9nyEmggT8ZvzoSc60gGpghsXaqoyQJ61YzrveV35MvEYJyjp1zk5dPTHXIHZj5pPWLtZk8_QCylIMPFI"/>
+<h1 class="font-display-lg text-headline-sm text-primary italic font-bold tracking-tight">Philately DZ</h1>
+</div>
+<nav class="hidden md:flex gap-8">
+<!-- Independent Detail Page, not directly active in top level nav unless specified -->
+<a class="font-display-lg text-headline-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Periods</a>
+<a class="font-display-lg text-headline-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Categories</a>
+<a class="font-display-lg text-headline-sm text-secondary border-b-2 border-secondary font-bold pb-1" href="#">Museum</a>
+<a class="font-display-lg text-headline-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Archive</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-primary hover:text-primary transition-colors duration-300 scale-95 active:opacity-80 transition-all p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">language</span>
+</button>
+<button class="text-primary hover:text-primary transition-colors duration-300 scale-95 active:opacity-80 transition-all p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+<button class="text-primary hover:text-primary transition-colors duration-300 scale-95 active:opacity-80 transition-all p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Breadcrumb / Header -->
+<div class="mb-12">
+<nav aria-label="Breadcrumb" class="flex text-sm text-on-surface-variant mb-4 font-label-caps">
+<ol class="inline-flex items-center space-x-1 md:space-x-3">
+<li class="inline-flex items-center">
+<a class="hover:text-primary transition-colors" href="#">Museum</a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-sm mx-1">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Independence Era</a>
+</div>
+</li>
+<li aria-current="page">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-sm mx-1">chevron_right</span>
+<span class="text-secondary font-semibold">1962 Independence Commemorative</span>
+</div>
+</li>
+</ol>
+</nav>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">1962 Independence Commemorative</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A symbol of national sovereignty and the dawn of a new era.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-16">
+<!-- Stamp Inspection Viewer (Left Col - 7 spans) -->
+<div class="lg:col-span-7 artifact-card bg-surface-bright p-8 rounded flex flex-col items-center justify-center relative">
+<div class="absolute top-4 right-4 flex gap-2">
+<button class="p-2 rounded-full bg-surface-container hover:bg-surface-container-highest transition-colors text-primary" onclick="toggleZoom()" title="Toggle Zoom Lens">
+<span class="material-symbols-outlined" id="zoom-icon">zoom_in</span>
+</button>
+</div>
+<div class="img-magnifier-container relative max-w-full">
+<img class="w-full h-auto max-h-[600px] object-contain mx-auto drop-shadow-md" data-alt="A highly detailed, ultra-high-resolution macro photograph of a rare 1962 Algerian Independence commemorative stamp. The stamp features intricate engravings of the Algerian flag and a rising sun in rich, historically accurate colors like deep emerald green, faded crimson, and aged gold. The paper texture is highly visible, showing genuine physical perforations along the edges and a subtle, authentic archival patina. The lighting is soft, museum-quality top-down illumination that highlights the physical tactility and slight embossing of the ink. The aesthetic is premium, educational, and deeply reverent, capturing the artifact in a light-mode, minimalist setting." id="stamp-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds"/>
+</div>
+<p class="mt-6 text-center font-label-caps text-label-caps text-on-surface-variant flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">touch_app</span> Hover to inspect details
+                </p>
+</div>
+<!-- Metadata Card (Right Col - 5 spans) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Action Buttons -->
+<div class="flex gap-4 mb-4">
+<button class="flex-1 bg-primary text-on-primary font-body-md text-body-md py-3 px-6 rounded-lg font-semibold flex justify-center items-center gap-2 hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span> Add to Collection
+                    </button>
+<button class="p-3 border border-[#d4af37] text-tertiary rounded-lg hover:bg-surface-container transition-colors flex items-center justify-center bg-transparent">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+<button class="p-3 border border-[#d4af37] text-tertiary rounded-lg hover:bg-surface-container transition-colors flex items-center justify-center bg-transparent">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">share</span>
+</button>
+</div>
+<!-- Ledger-style Metadata Table -->
+<div class="bg-surface-container-lowest p-6 rounded artifact-card flex-grow">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6 border-b border-outline-variant pb-2">Artifact Metadata</h3>
+<dl class="grid grid-cols-1 gap-y-4 font-body-md text-body-md">
+<div class="flex justify-between border-b border-outline-variant/50 pb-2">
+<dt class="text-on-surface-variant font-semibold">Catalog Number</dt>
+<dd class="text-on-background font-mono">DZ-001962</dd>
+</div>
+<div class="flex justify-between border-b border-outline-variant/50 pb-2">
+<dt class="text-on-surface-variant font-semibold">Issue Year</dt>
+<dd class="text-on-background">1962</dd>
+</div>
+<div class="flex justify-between border-b border-outline-variant/50 pb-2">
+<dt class="text-on-surface-variant font-semibold">Exact Date</dt>
+<dd class="text-on-background">July 5, 1962</dd>
+</div>
+<div class="flex justify-between border-b border-outline-variant/50 pb-2">
+<dt class="text-on-surface-variant font-semibold">Denomination</dt>
+<dd class="text-on-background">1+2 F (Francs)</dd>
+</div>
+<div class="flex justify-between border-b border-outline-variant/50 pb-2">
+<dt class="text-on-surface-variant font-semibold">Perforation</dt>
+<dd class="text-on-background">13 x 13½</dd>
+</div>
+<div class="flex justify-between border-b border-outline-variant/50 pb-2">
+<dt class="text-on-surface-variant font-semibold">Printing Tech</dt>
+<dd class="text-on-background">Engraving (Taille-douce)</dd>
+</div>
+<div class="flex justify-between border-b border-outline-variant/50 pb-2">
+<dt class="text-on-surface-variant font-semibold">Designer</dt>
+<dd class="text-on-background">Ali Khodja</dd>
+</div>
+</dl>
+</div>
+</div>
+</div>
+<!-- Narrative Sections (Centered 8 col reading width) -->
+<div class="max-w-[800px] mx-auto flex flex-col gap-12 mb-20">
+<section class="prose prose-stone max-w-none">
+<div class="flex items-center gap-4 mb-4 border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined text-secondary text-3xl">auto_stories</span>
+<h2 class="font-headline-md text-headline-md text-primary m-0">The Story of the Stamp (قصة الطابع)</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    Issued merely days after the formal declaration of independence, this stamp represents the first sovereign postal emission of the Algerian Republic. It was a monumental logistical and artistic achievement, designed in secret and printed rapidly to replace colonial issues. The stamp served not just as postage, but as a tangible piece of freedom that citizens could hold in their hands, signaling to the world the birth of a new nation.
+                </p>
+</section>
+<section class="prose prose-stone max-w-none">
+<div class="flex items-center gap-4 mb-4 border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined text-secondary text-3xl">visibility</span>
+<h2 class="font-headline-md text-headline-md text-primary m-0">What's on the Stamp? (ماذا يظهر على الطابع؟)</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    The design features a central motif of a breaking chain, a universal symbol of liberation. Surmounting the broken links is the crescent and star, echoing the national flag. The background utilizes a subtle gradient meant to evoke the sunrise over the Atlas Mountains. The typography is entirely in Arabic script—a deliberate departure from dual-language colonial issues—proclaiming "République Algérienne" in classical calligraphy.
+                </p>
+</section>
+<section class="bg-surface-container p-8 rounded-lg border-l-4 border-secondary shadow-sm">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary text-3xl">info</span>
+<h2 class="font-headline-sm text-headline-sm text-primary m-0">Philatelic Notes (ملاحظات لهواة الجمع)</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-0">
+                    This specific issue is known for several minor printing varieties due to the haste of its production. Look closely at the star's points; in roughly 1 in 500 sheets, the top point is noticeably blunted (Catalog: DZ-001962a). Mint condition examples with perfect centering are increasingly rare. The "+2 F" surcharge was instituted as a mandatory contribution to a national solidarity fund for war orphans.
+                </p>
+</section>
+</div>
+<!-- Similar Stamps Row -->
+<section class="mt-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-8 border-b border-outline-variant pb-2 inline-block">Explore Related Archives</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Item 1 -->
+<a class="group flex flex-col items-center bg-surface-container-lowest p-4 rounded artifact-card hover:shadow-md transition-shadow" href="#">
+<div class="bg-cover bg-center w-full aspect-square mb-4 drop-shadow-sm border border-outline-variant group-hover:border-[#d4af37] transition-colors" data-alt="A beautifully composed, high-resolution museum photograph of a 1963 Algerian stamp featuring the Emir Abdelkader. The stamp is set against a textured, minimalist parchment background. The colors are rich, historical earth tones and muted greens. Soft, directional light mode illumination highlights the physical texture of the paper and the sharp perforations. The mood is authoritative, historical, and premium." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUAw64DTLtKLr2cY3FgylleioFawTLzS0idiQ9ho9wx4J6LXNv2kWi4C7SucNFoOYPYtvTm51tZX672tPoFm12ugiBXzVkd367qIJwxg6BccDUVBkzWvBK6Sg9Cx_vEIw3F8VaoeDwscLRVrN0h7LKuPDvpo51wLUsZEfILTSRidN2AWXZ1PPwSqX8LFid40F9nv-rcMCFLeZE-O5lQKwice_1CAfLOuwUgXb5Y18Zn-42nb881lcD')"></div>
+<span class="font-body-md text-body-md font-semibold text-primary text-center">1963 Emir Abdelkader</span>
+</a>
+<!-- Item 2 -->
+<a class="group flex flex-col items-center bg-surface-container-lowest p-4 rounded artifact-card hover:shadow-md transition-shadow" href="#">
+<div class="bg-cover bg-center w-full aspect-square mb-4 drop-shadow-sm border border-outline-variant group-hover:border-[#d4af37] transition-colors" data-alt="A beautifully composed, high-resolution museum photograph of a 1964 Algerian stamp depicting the Martyrs Monument. The stamp is set against a textured, minimalist parchment background. The colors feature striking architectural grays and deep sky blues. Soft, directional light mode illumination highlights the physical texture of the paper and the sharp perforations. The mood is authoritative, historical, and premium." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUXoZ78YcUUioT-gjZA4GomkSuJCPbCmGMClWBreMbreAnX_iCm4TFpy858Ec33cPeWdcUmp_YIZ1HRDjTa5ixO3AsEtTDLUnZ3HZHe4ZTSDM98pD4O-JFktUJYBqHgc5JFshplqWk8SUUhtzeWBJK8fa1sEdP2dTKQxU4tnp5ky1B1Ft3ecnk5R668bvnMgfauCDdHg_C58PQgN6fGP7-GXR4efbrPiAPkD_nxLGrfUUsda6IyuMM')"></div>
+<span class="font-body-md text-body-md font-semibold text-primary text-center">1964 Martyrs Monument</span>
+</a>
+<!-- Item 3 -->
+<a class="group flex flex-col items-center bg-surface-container-lowest p-4 rounded artifact-card hover:shadow-md transition-shadow" href="#">
+<div class="bg-cover bg-center w-full aspect-square mb-4 drop-shadow-sm border border-outline-variant group-hover:border-[#d4af37] transition-colors" data-alt="A beautifully composed, high-resolution museum photograph of a 1965 Algerian stamp showcasing traditional Berber jewelry. The stamp is set against a textured, minimalist parchment background. The colors are vibrant reds, corals, and silvers. Soft, directional light mode illumination highlights the physical texture of the paper and the sharp perforations. The mood is authoritative, historical, and premium." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFJk5g7MWTctP4g1amhK00x08jatldiTNCk02OVAub8SPVr60AS0iSoiy2l9c53llfjImrFcsCxpcbdTY45NLugcquXPOvf3PZHRZ9W6s3D244zVkRDXFrw524Ij7Lebw3o7pAddda0NsuKyEdPUhHBjC7EWERYtgDUUy6heutIs0BVHNLOXkaM7Gbb-MAEkF6IxYZlq7handxOtR_vYEQp5ipEKFMR9NJsa5fiRdaoS5XPWTvs9Dn')"></div>
+<span class="font-body-md text-body-md font-semibold text-primary text-center">1965 Traditional Jewelry</span>
+</a>
+<!-- Item 4 -->
+<a class="group flex flex-col items-center bg-surface-container-lowest p-4 rounded artifact-card hover:shadow-md transition-shadow" href="#">
+<div class="bg-cover bg-center w-full aspect-square mb-4 drop-shadow-sm border border-outline-variant group-hover:border-[#d4af37] transition-colors" data-alt="A beautifully composed, high-resolution museum photograph of a 1962 provisional overprint stamp from Algeria. A colonial French stamp with an Arabic overprint. The stamp is set against a textured, minimalist parchment background. Soft, directional light mode illumination highlights the physical texture of the paper and the sharp perforations. The mood is authoritative, historical, and premium." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6KMwYrpqWBFLYXGCye1KFSZ3i32aHtERlxhkwqVRuEYjuJeCX177_5HEsyj81A1aO8p2CBUor1BLxTmoVZqLOVQGlQbFl3kJHEHpsDo_JK8UyRZa-cU-MyXbWvkqY-IILPzwKhNmeDJ0of2shjM-EyvhCRtfB14kZSHd11MWenTE4y_gh9lBT35BQzHyX1pwuqv6Xz9Fl3iXHoLZ6pQygE6-RvC0e8SyZAoEdVN5IBH31B0QVn3qj')"></div>
+<span class="font-body-md text-body-md font-semibold text-primary text-center">1962 Provisional Overprint</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop mt-20 border-t border-outline-variant bg-surface-container-highest">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<h2 class="font-display-lg text-headline-md text-primary italic font-bold">Philately DZ</h2>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-90 hover:opacity-100 transition-opacity text-center md:text-left max-w-sm">
+                    © 2024 Algerian Philately Encyclopedia. A Digital Conservatory.
+                </p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all" href="#">Historical Context</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all" href="#">Philately Dictionary</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all" href="#">User Contributions</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline decoration-secondary transition-all" href="#">Privacy Policy</a>
+</nav>
+</div>
+</footer>
+<script>
+        /* Magnifying Glass Logic */
+        let zoomEnabled = true;
+
+        function toggleZoom() {
+            zoomEnabled = !zoomEnabled;
+            const glass = document.getElementById("magnifier-glass");
+            const icon = document.getElementById("zoom-icon");
+            if(glass) {
+                if(!zoomEnabled) {
+                    glass.style.display = "none";
+                    icon.innerText = "zoom_out";
+                } else {
+                    icon.innerText = "zoom_in";
+                    // Will show again on mousemove if enabled
+                }
+            }
+        }
+
+        function magnify(imgID, zoom) {
+            var img, glass, w, h, bw;
+            img = document.getElementById(imgID);
+
+            /* Create magnifier glass: */
+            glass = document.createElement("DIV");
+            glass.setAttribute("class", "img-magnifier-glass");
+            glass.setAttribute("id", "magnifier-glass");
+
+            /* Insert magnifier glass: */
+            img.parentElement.insertBefore(glass, img);
+
+            /* Set background properties for the magnifier glass: */
+            glass.style.backgroundImage = "url('" + img.src + "')";
+            glass.style.backgroundRepeat = "no-repeat";
+            glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+            bw = 3;
+            w = glass.offsetWidth / 2;
+            h = glass.offsetHeight / 2;
+
+            /* Execute a function when someone moves the magnifier glass over the image: */
+            glass.addEventListener("mousemove", moveMagnifier);
+            img.addEventListener("mousemove", moveMagnifier);
+            
+            // Hide glass when leaving image
+            img.addEventListener("mouseleave", function() {
+                glass.style.display = "none";
+            });
+            glass.addEventListener("mouseleave", function() {
+                glass.style.display = "none";
+            });
+
+            /*and also for touch screens:*/
+            glass.addEventListener("touchmove", moveMagnifier);
+            img.addEventListener("touchmove", moveMagnifier);
+
+            function moveMagnifier(e) {
+                if(!zoomEnabled) return;
+                
+                var pos, x, y;
+                /* Prevent any other actions that may occur when moving over the image */
+                e.preventDefault();
+                /* Get the cursor's x and y positions: */
+                pos = getCursorPos(e);
+                x = pos.x;
+                y = pos.y;
+                
+                /* Show glass if hovering */
+                glass.style.display = "block";
+
+                /* Prevent the magnifier glass from being positioned outside the image: */
+                if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+                if (x < w / zoom) {x = w / zoom;}
+                if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+                if (y < h / zoom) {y = h / zoom;}
+                
+                /* Set the position of the magnifier glass: */
+                glass.style.left = (x - w) + "px";
+                glass.style.top = (y - h) + "px";
+                
+                /* Display what the magnifier glass "sees": */
+                glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+            }
+
+            function getCursorPos(e) {
+                var a, x = 0, y = 0;
+                e = e || window.event;
+                /* Get the x and y positions of the image: */
+                a = img.getBoundingClientRect();
+                /* Calculate the cursor's x and y coordinates, relative to the image: */
+                x = e.pageX - a.left;
+                y = e.pageY - a.top;
+                /* Consider any page scrolling: */
+                x = x - window.pageXOffset;
+                y = y - window.pageYOffset;
+                return {x : x, y : y};
+            }
+        }
+
+        // Initialize magnifier after image loads to get correct dimensions
+        window.onload = function() {
+            setTimeout(() => {
+                magnify("stamp-image", 2.5); // Zoom level
+            }, 500); // small delay to ensure rendering
+        };
+    </script>
+</body></html>

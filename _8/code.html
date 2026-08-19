@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مساهمات المجتمع - موسوعة الطوابع الجزائرية</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#004524",
+                        "primary-container": "#155e37",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-primary-container": "#8fd5a4",
+                        "on-background": "#1b1c19",
+                        "surface-dim": "#dbdad5",
+                        "on-primary-fixed": "#00210f",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "on-secondary-fixed": "#410008",
+                        "tertiary-container": "#6c4d00",
+                        "surface-container-high": "#eae8e3",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#707971",
+                        "tertiary": "#4f3700",
+                        "outline-variant": "#bfc9bf",
+                        "surface-tint": "#256b42",
+                        "primary-fixed-dim": "#8fd6a5",
+                        "on-surface": "#1b1c19",
+                        "surface-variant": "#e4e2dd",
+                        "secondary-fixed-dim": "#ffb3b2",
+                        "on-tertiary-container": "#f6bd47",
+                        "on-secondary-container": "#fffbff",
+                        "secondary-container": "#e2213d",
+                        "background": "#fbf9f4",
+                        "primary-fixed": "#abf3bf",
+                        "surface-container": "#f0eee9",
+                        "surface": "#fbf9f4",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e4e2dd",
+                        "inverse-surface": "#30312e",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdad9",
+                        "surface-bright": "#fbf9f4",
+                        "inverse-primary": "#8fd6a5",
+                        "tertiary-fixed-dim": "#f7bd48",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f5f3ee",
+                        "on-secondary-fixed-variant": "#92001f",
+                        "on-surface-variant": "#404941",
+                        "tertiary-fixed": "#ffdea6",
+                        "on-tertiary-fixed": "#271900",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#01522c",
+                        "secondary": "#ba002a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.04"/%3E%3C/svg%3E');
+        }
+        .glass-panel {
+            background: rgba(251, 249, 244, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid theme('colors.tertiary-fixed-dim');
+        }
+        .stamp-card {
+            border: 1px solid theme('colors.tertiary-fixed-dim');
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .texture-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.04"/%3E%3C/svg%3E');
+        }
+    </style>
+</head>
+<body class="flex flex-col md:flex-row min-h-screen">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex bg-surface-container dark:bg-inverse-surface h-screen w-64 fixed right-0 top-0 bg-surface-container border-l border-outline-variant flex-col py-8 px-4 gap-4 z-50">
+<div class="mb-8 flex flex-col items-center gap-2">
+<img alt="Digital Conservatory Logo" class="w-16 h-16 rounded-full border border-tertiary-fixed-dim object-cover mb-2" data-alt="A highly detailed, elegant digital conservatory logo featuring a stylized classic stamp silhouette in deep emerald green and brass accents, conveying authority and heritage. The design is clean, minimalist, and sits on a parchment-like textured background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu_80US0fWrAIVuh4IUUFeYuwyW8aQEkk_45TRomz4aLOiY27gW5fJpcg5SjQJM3lN4uKUOlMQBu_M7SDpUifuY3V04tr9EbK5BeP6hSUn8N70w4wskDLLzTgYm5R7PfpOH8FZBjrAP-cX-BKywkArWhEVBf4_3s-Fq49JzwyDUJr0Ljs3N30sU-iLFmzi1kR9I6LjeZGbiUp3eAHDV88pQtMhweoHMhFF4ZzwDldsjLN1P0EvIBaA"/>
+<h1 class="font-headline-sm text-headline-sm text-primary text-center">Admin Panel</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant text-center">Modern Heritage Archive</p>
+</div>
+<ul class="flex flex-col gap-2 flex-grow">
+<li>
+<a class="flex items-center gap-3 p-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-all duration-150 ease-in-out font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-all duration-150 ease-in-out font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">potted_plant</span>
+                    Stamps
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-all duration-150 ease-in-out font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">history</span>
+                    Eras
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-all duration-150 ease-in-out font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">auto_stories</span>
+                    Series
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 rounded text-primary border-b-2 border-secondary font-semibold hover:bg-surface-container-high transition-all duration-150 ease-in-out font-label-caps text-label-caps bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+                    Users
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-all duration-150 ease-in-out font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+<div class="mt-auto">
+<a class="flex items-center gap-3 p-3 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-all duration-150 ease-in-out font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">logout</span>
+                Log Out
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 md:mr-64 flex flex-col min-h-screen">
+<!-- TopNavBar (Mobile & Desktop Header) -->
+<header class="bg-background dark:bg-background text-primary dark:text-primary-fixed font-body-md text-body-md w-full h-16 bg-background border-b border-outline-variant dark:border-outline flat no shadows flex justify-between items-center px-gutter sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<!-- Mobile Menu Button (Hidden on Desktop) -->
+<button class="md:hidden text-primary hover:text-primary-container transition-colors duration-200 cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="font-display-lg text-headline-sm text-primary dark:text-primary-fixed">مساهمات المجتمع</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined">search</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined">help</span>
+</button>
+<img alt="Administrator profile" class="w-8 h-8 rounded-full border border-tertiary-fixed-dim object-cover ml-2 cursor-pointer active:opacity-70" data-alt="A small, circular avatar portrait of a professional administrator, subtle lighting, modern heritage style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqY8ci17E2jlaqRNjf06nyqR8FknJkI4aSCkqbsiC67iAs32EIC0occ9fx9VkY3MZmg__y96s7NSvpcTPQ4v2Dz-zzi0Afi-0cPREbrJjldffamya9talk1Or8XRwXzHFcwROcIikCX8lM_1ekgj8RFzsilktEitTEtKYQPpy9Je6ecHX9ZLaknvS9DGe-nFKTEDbWInUp9WMqVP9iElc-DYPVU6YJXomZLz6zi9kMvDanyZzc7yyH"/>
+</div>
+</header>
+<main class="flex-1 p-margin-mobile md:p-margin-desktop bg-background grid grid-cols-1 lg:grid-cols-12 gap-gutter max-w-container-max mx-auto w-full">
+<!-- Left Side: User Submission Data (Spans 7 cols on lg) -->
+<section class="lg:col-span-7 flex flex-col gap-6">
+<div class="flex justify-between items-end border-b border-outline-variant pb-2">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">المساهم: Ahmed M.</p>
+<h3 class="font-headline-md text-headline-md text-primary">طابع بريد الاستقلال - 1962</h3>
+</div>
+<span class="font-label-caps text-label-caps text-surface-tint bg-primary-fixed px-2 py-1 rounded">قيد المراجعة</span>
+</div>
+<!-- Bento Grid for Submission Images -->
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 relative stamp-card bg-surface p-4 flex justify-center items-center h-64 rounded-lg overflow-hidden group">
+<div class="texture-overlay"></div>
+<img alt="Submitted Stamp Front" class="object-contain h-full w-full relative z-10 transition-transform duration-500 group-hover:scale-105" data-alt="A highly detailed macro photograph of a vintage 1962 Algerian independence postage stamp. The stamp features intricate engravings, slightly faded colors indicating age, and precise perforations along the edges. It rests on a textured, off-white parchment background under soft, diffused gallery lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWklxys6QTDwOi7uUqJ11EemO9lSu0IDWHztDRESjBrj2YVs7JZWGs-_llcDNqcfEEkT5AdnfQqZYVG4GgOCfXwAXoCmuZHfPH2BAcOTC6FTGIMWCRp_ywWn9Sx2vBEFH37aCBZPzt8SjwmPmT_GZZbvdUmtfMPJkgYnYJ5JzUiEAHpPg3DGbxXjM5ms9i8fO5Vo9-3UYM-FnDwHKnLaFQOW3nBCikNqdVq6FfNyzsa58ULovbdufV"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-4xl">zoom_in</span>
+</div>
+</div>
+<div class="relative stamp-card bg-surface p-2 flex justify-center items-center h-32 rounded-lg">
+<div class="texture-overlay"></div>
+<img alt="Submitted Stamp Back" class="object-contain h-full w-full relative z-10" data-alt="A highly detailed macro photograph showing the reverse side of a vintage postage stamp. The back reveals original, slightly aged gum (adhesive), a faint watermark barely visible, and a soft, textured paper grain typical of historical archival documents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0OxxLt2Qhg4Id70j8IZFAhdgQg9oEXJZR2C0M-YMnUARcqxnqWnEN0kqT5H9lBxnjW0CSB5LHEfXyobxOBeIZZiRPpuTrVBoCcwvYRzZWkEOhdN6FnNXJ9yBlEaXHnfFHt3O0bvhUI4RQQG8Mijn9SpTCSKrd3S6Ed4N3kKNUAPHxubelotWTA57uCQxgKBxaHNqBifzXIQmB8ok1RspNvWAMnK1wnFM_XZKPt40Vf_87WzUdx6N3"/>
+</div>
+<div class="relative stamp-card bg-surface p-2 flex justify-center items-center h-32 rounded-lg">
+<div class="texture-overlay"></div>
+<img alt="Submitted Detail" class="object-contain h-full w-full relative z-10" data-alt="A macro close-up shot focusing on the postmark and cancellation details of a vintage stamp. The black ink of the cancellation stamp is slightly smudged, showing dates from the 1960s, stamped heavily onto the delicate, textured paper." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH1KLw_9s-oWy_zDHPQu8g5cwNLx_KkRivaPOl11h_0CpjgrPZ3DjFVs33bF5zv6gL81MH0sj3OQmu7FmbbyxHyp4ZSSYcj1qqq1MuckEzmMedWQeoTM-pHB8pAgnu_mFtxtVR0--JYoMDAdtyAQNUmVVsHteIE0gwxb9GtosUi6N6cSvX1x2S2filf5DFuZFgUYyksl8_4Nw9JThfWvAEFbW8d1aQaP7vcUDMmsPnpOq3C4fJz8kg"/>
+</div>
+</div>
+<!-- Submission Metadata -->
+<div class="bg-surface-container-low rounded-lg p-6 border border-outline-variant relative overflow-hidden">
+<div class="texture-overlay"></div>
+<h4 class="font-body-lg text-body-lg text-primary mb-4 font-semibold border-b border-outline-variant pb-2 inline-block">البيانات المقدمة</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
+<div class="flex flex-col border-b border-outline-variant/50 pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-1">السنة</span>
+<span class="font-body-md text-body-md text-on-background">1962</span>
+</div>
+<div class="flex flex-col border-b border-outline-variant/50 pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-1">القيمة</span>
+<span class="font-body-md text-body-md text-on-background">25 فرنك قديم</span>
+</div>
+<div class="flex flex-col border-b border-outline-variant/50 pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-1">اللون</span>
+<span class="font-body-md text-body-md text-on-background">أخضر زمردي</span>
+</div>
+<div class="flex flex-col border-b border-outline-variant/50 pb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-1">الحالة</span>
+<span class="font-body-md text-body-md text-on-background">مستعمل (مختوم)</span>
+</div>
+<div class="flex flex-col md:col-span-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-1">ملاحظات المساهم</span>
+<p class="font-body-md text-body-md text-on-background leading-relaxed">
+                                تم العثور على هذا الطابع في مجموعة جدي. الختم البريدي يشير إلى مدينة قسنطينة في نوفمبر 1962. الحالة جيدة مع بعض التآكل الطفيف في الحواف العلوية.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Side: Verification & Actions (Spans 5 cols on lg) -->
+<section class="lg:col-span-5 flex flex-col gap-6">
+<!-- Verification Checklist Glass Panel -->
+<div class="glass-panel rounded-lg p-6 shadow-sm">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">fact_check</span>
+                        قائمة التحقق
+                    </h4>
+<ul class="flex flex-col gap-4 font-body-md text-body-md">
+<li class="flex items-start gap-3">
+<input class="mt-1 rounded text-primary focus:ring-primary-container form-checkbox border-outline-variant w-5 h-5 bg-background cursor-pointer" id="check-img" type="checkbox"/>
+<label class="text-on-background cursor-pointer select-none" for="check-img">جودة الصورة ووضوح التفاصيل (الدقة العالية)</label>
+</li>
+<li class="flex items-start gap-3">
+<input class="mt-1 rounded text-primary focus:ring-primary-container form-checkbox border-outline-variant w-5 h-5 bg-background cursor-pointer" id="check-data" type="checkbox"/>
+<label class="text-on-background cursor-pointer select-none" for="check-data">تطابق البيانات المدخلة مع المراجع التاريخية</label>
+</li>
+<li class="flex items-start gap-3">
+<input class="mt-1 rounded text-primary focus:ring-primary-container form-checkbox border-outline-variant w-5 h-5 bg-background cursor-pointer" id="check-dup" type="checkbox"/>
+<label class="text-on-background cursor-pointer select-none" for="check-dup">التحقق من عدم وجود تكرار (نسخة أفضل متوفرة؟)</label>
+</li>
+<li class="flex items-start gap-3">
+<input class="mt-1 rounded text-primary focus:ring-primary-container form-checkbox border-outline-variant w-5 h-5 bg-background cursor-pointer" id="check-auth" type="checkbox"/>
+<label class="text-on-background cursor-pointer select-none" for="check-auth">المصادقة على العلامة المائية (إن وجدت)</label>
+</li>
+</ul>
+</div>
+<!-- AI Source Comparison (Conceptual) -->
+<div class="bg-surface-container rounded-lg p-6 border border-outline-variant relative">
+<div class="texture-overlay"></div>
+<div class="flex justify-between items-center mb-4 border-b border-outline-variant pb-2">
+<h4 class="font-body-lg text-body-lg text-primary font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined">compare</span>
+                            مقارنة الأرشيف
+                        </h4>
+<span class="font-label-caps text-label-caps text-on-surface-variant">تطابق 85%</span>
+</div>
+<div class="flex gap-4 items-center">
+<div class="w-1/2 flex flex-col items-center gap-2">
+<div class="w-full h-24 stamp-card bg-surface flex justify-center items-center opacity-70">
+<img alt="Archive Reference" class="object-contain h-full w-full" data-alt="A reference image from a digital archive showing a pristine, uncirculated version of the 1962 Algerian independence stamp. The colors are vibrant emerald green, edges are perfectly sharp, and the background is a neutral digital grey." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGGUygLZKVeB2wXTly---GvPmrDQEzSihXWZtCiQ28ELI5Ip4MxckPsBFTHnrTQuQjWzQIx4OwyA6iRYfmGExbnVGNRr-8GoANEnM6T7tMoaDu99peaUNel8If1orr9glvaT97VtyV566Gz--0leLrcF9oftYtee2XhmCNpaslcmCRxX4g1E4XQLUe8vg3yaF5I9aTQZy3vpw5B-4LNDLdNFtnGYXPEsXVdnVBBM39yFVasYfhKPYx"/>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">المرجع المعتمد</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-3xl">sync_alt</span>
+<div class="w-1/2 flex flex-col items-center gap-2">
+<div class="w-full h-24 stamp-card bg-surface flex justify-center items-center">
+<img alt="Submission Thumbnail" class="object-contain h-full w-full" data-alt="A thumbnail version of the user-submitted 1962 stamp, showing slight wear and a cancellation postmark, highlighting the differences compared to the pristine reference copy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn6uoBkOtB1d9SYQcDJaOplddPtMrKGBj04KD9CVhn4vgeV4Q1bq6igaqRsA3Q8oyFhf9925jYcKviRUnsZQ26aa6C7NPzHXAumI9NOdRRk4kGdos3iV2_O2OqcKb4AIHa6hvq00wxmqkJLXrgDYgQgBUBEoMOE9tlr8uTQjjxLwH7j7v6xC9OI_HE5uanLN8Mzy2O1PQ_qzpZCl8yAI9LmF97FcHhqf9bFydi9WPgCJr7qr3FzVCI"/>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">المقدم</span>
+</div>
+</div>
+<div class="mt-4 text-sm font-body-md text-on-surface-variant bg-background p-3 rounded border border-outline-variant/30">
+<p><strong>ملاحظة النظام:</strong> التطابق اللوني جيد. الختم يغطي 15% من مساحة الرسم الأساسي.</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-auto flex flex-col gap-3 pt-4 border-t border-outline-variant">
+<button class="w-full bg-primary text-on-primary py-3 px-4 rounded-md font-body-lg text-body-lg font-semibold hover:bg-primary-container transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        قبول واعتماد للإضافة
+                    </button>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-transparent border border-tertiary-fixed-dim text-tertiary-container py-3 px-4 rounded-md font-body-md text-body-md hover:bg-surface-container-high transition-colors duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">feedback</span>
+                            طلب معلومات
+                        </button>
+<button class="bg-transparent border border-error text-error py-3 px-4 rounded-md font-body-md text-body-md hover:bg-error-container transition-colors duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">cancel</span>
+                            رفض
+                        </button>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

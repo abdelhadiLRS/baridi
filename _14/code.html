@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Algerian Philately Encyclopedia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "outline-variant": "#bfc9be",
+                "secondary-container": "#fed488",
+                "secondary-fixed": "#ffdea5",
+                "secondary-fixed-dim": "#e9c176",
+                "surface-container-low": "#f3f4f5",
+                "primary-fixed-dim": "#86d89d",
+                "background": "#f8f9fa",
+                "on-secondary-fixed-variant": "#5d4201",
+                "tertiary-fixed": "#ffdad9",
+                "primary-container": "#006233",
+                "surface-dim": "#d9dadb",
+                "on-secondary": "#ffffff",
+                "on-tertiary-fixed": "#410008",
+                "outline": "#6f7a70",
+                "on-error-container": "#93000a",
+                "primary-fixed": "#a1f5b7",
+                "error-container": "#ffdad6",
+                "on-primary-fixed-variant": "#00522a",
+                "on-surface": "#191c1d",
+                "surface-variant": "#e1e3e4",
+                "secondary": "#775a19",
+                "on-primary": "#ffffff",
+                "surface-container": "#edeeef",
+                "tertiary": "#81001a",
+                "ink": "#1A202C",
+                "surface-container-high": "#e7e8e9",
+                "on-tertiary-fixed-variant": "#92001f",
+                "on-tertiary-container": "#ffb8b7",
+                "parchment-base": "#FDFCF8",
+                "primary": "#004824",
+                "on-tertiary": "#ffffff",
+                "surface-bright": "#f8f9fa",
+                "border-subtle": "#E5E7EB",
+                "tertiary-container": "#ad0027",
+                "on-secondary-fixed": "#261900",
+                "on-background": "#191c1d",
+                "inverse-surface": "#2e3132",
+                "surface-container-highest": "#e1e3e4",
+                "surface": "#f8f9fa",
+                "surface-tint": "#146c3c",
+                "tertiary-fixed-dim": "#ffb3b2",
+                "on-primary-fixed": "#00210d",
+                "inverse-on-surface": "#f0f1f2",
+                "error": "#ba1a1a",
+                "on-primary-container": "#89dba0",
+                "on-error": "#ffffff",
+                "on-secondary-container": "#785a1a",
+                "inverse-primary": "#86d89d",
+                "surface-container-lowest": "#ffffff",
+                "on-surface-variant": "#3f4940"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "container-max": "1280px",
+                "unit": "8px",
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "margin-desktop": "40px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Libre Franklin"
+                ],
+                "caption": [
+                        "Libre Franklin"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "body-lg": [
+                        "Libre Franklin"
+                ],
+                "label-sm": [
+                        "Libre Franklin"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "caption": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "36px",
+                        {
+                                "lineHeight": "44px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased relative min-h-screen font-body-md overflow-x-hidden">
+<div class="texture-overlay fixed inset-0 z-50"></div>
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest border-b border-border-subtle w-full z-40 relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">local_post_office</span>
+<h1 class="font-headline-lg text-primary italic">Philately DZ</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm uppercase tracking-wider" href="#">Periods</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm uppercase tracking-wider" href="#">Categories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm uppercase tracking-wider" href="#">Museum</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm uppercase tracking-wider" href="#">Archive</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="bg-primary w-full relative overflow-hidden">
+<!-- Background pattern -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-32 relative z-10 flex flex-col md:flex-row-reverse items-center gap-12" dir="rtl">
+<!-- Text Content -->
+<div class="flex-1 text-center md:text-right space-y-6">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary">
+                طوابع تروي تاريخ الجزائر
+            </h2>
+<p class="font-body-lg text-on-primary/90 max-w-xl">
+                اكتشف تاريخ الجزائر وثقافتها وتراثها من خلال الطوابع البريدية التي وثقت ذاكرة الوطن.
+            </p>
+<div class="flex flex-wrap gap-4 justify-center md:justify-start pt-4">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-3 rounded-full font-label-sm flex items-center gap-2 hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-sm">auto_stories</span>
+                    تصفح الأرشيف
+                </button>
+<button class="bg-transparent border border-on-primary/30 text-on-primary px-8 py-3 rounded-full font-label-sm hover:bg-on-primary/10 transition-colors">
+                    استكشف الطوابع
+                </button>
+</div>
+</div>
+<!-- Image Content -->
+<div class="flex-1 flex justify-center md:justify-end">
+<div class="relative transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+<div class="bg-surface-container-lowest p-3 shadow-2xl rounded-sm border border-border-subtle inline-block">
+<img alt="Prominent Algerian Stamp" class="w-64 md:w-80 h-auto border border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content -->
+<main class="pb-24">
+<!-- Featured Eras Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20">
+<div class="text-center mb-12" dir="rtl">
+<h2 class="font-headline-lg text-primary mb-4">الحقب الزمنية</h2>
+<p class="font-body-md text-on-surface-variant">تطور الطوابع البريدية عبر مراحل التاريخ الجزائري</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" dir="rtl">
+<!-- Era Card 1 -->
+<div class="group relative h-64 overflow-hidden rounded-xl border border-border-subtle bg-surface-container-low flex items-end p-6 cursor-pointer hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent z-10"></div>
+<div class="relative z-20 w-full text-center">
+<h3 class="font-headline-md text-on-primary">Colonial Period</h3>
+<p class="font-body-md text-surface-dim mt-1 opacity-0 group-hover:opacity-100 transition-opacity">1830 - 1962</p>
+</div>
+</div>
+<!-- Era Card 2 -->
+<div class="group relative h-64 overflow-hidden rounded-xl border border-border-subtle bg-surface-container-low flex items-end p-6 cursor-pointer hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent z-10"></div>
+<div class="relative z-20 w-full text-center">
+<h3 class="font-headline-md text-on-primary">Revolution</h3>
+<p class="font-body-md text-surface-dim mt-1 opacity-0 group-hover:opacity-100 transition-opacity">1954 - 1962</p>
+</div>
+</div>
+<!-- Era Card 3 -->
+<div class="group relative h-64 overflow-hidden rounded-xl border border-border-subtle bg-surface-container-low flex items-end p-6 cursor-pointer hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent z-10"></div>
+<div class="relative z-20 w-full text-center">
+<h3 class="font-headline-md text-on-primary">Independence Era</h3>
+<p class="font-body-md text-surface-dim mt-1 opacity-0 group-hover:opacity-100 transition-opacity">1962 - 1970</p>
+</div>
+</div>
+<!-- Era Card 4 -->
+<div class="group relative h-64 overflow-hidden rounded-xl border border-border-subtle bg-surface-container-low flex items-end p-6 cursor-pointer hover:border-primary/50 transition-colors">
+<div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent z-10"></div>
+<div class="relative z-20 w-full text-center">
+<h3 class="font-headline-md text-on-primary">Modern Algeria</h3>
+<p class="font-body-md text-surface-dim mt-1 opacity-0 group-hover:opacity-100 transition-opacity">1970 - Present</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Gallery Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 border-t border-border-subtle">
+<div class="flex flex-col md:flex-row justify-between items-center mb-10" dir="rtl">
+<div>
+<h2 class="font-headline-lg text-primary mb-2">المعرض الرئيسي</h2>
+<p class="font-body-md text-on-surface-variant">تصفح مجموعتنا الكاملة من الطوابع</p>
+</div>
+<div class="mt-6 md:mt-0 flex gap-3">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    تصفية
+                </button>
+</div>
+</div>
+<!-- Gallery Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6" dir="rtl">
+<!-- Stamp Card -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+<div class="p-4 bg-surface-container-low flex justify-center items-center h-48">
+<img alt="Stamp" class="max-h-full w-auto object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds"/>
+</div>
+<div class="p-4 text-center border-t border-border-subtle">
+<h3 class="font-label-sm text-on-surface mb-1 truncate">Wheat Sheaves</h3>
+<div class="flex justify-between items-center text-caption text-on-surface-variant mt-2">
+<span>1962</span>
+<span>0.20 د.ج</span>
+</div>
+</div>
+</div>
+<!-- Stamp Card -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+<div class="p-4 bg-surface-container-low flex justify-center items-center h-48">
+<img alt="Stamp" class="max-h-full w-auto object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds"/>
+</div>
+<div class="p-4 text-center border-t border-border-subtle">
+<h3 class="font-label-sm text-on-surface mb-1 truncate">Marianne</h3>
+<div class="flex justify-between items-center text-caption text-on-surface-variant mt-2">
+<span>1958</span>
+<span>1.00 F</span>
+</div>
+</div>
+</div>
+<!-- Stamp Card -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+<div class="p-4 bg-surface-container-low flex justify-center items-center h-48">
+<img alt="Stamp" class="max-h-full w-auto object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds"/>
+</div>
+<div class="p-4 text-center border-t border-border-subtle">
+<h3 class="font-label-sm text-on-surface mb-1 truncate">Kherrata Straits</h3>
+<div class="flex justify-between items-center text-caption text-on-surface-variant mt-2">
+<span>1964</span>
+<span>0.45 د.ج</span>
+</div>
+</div>
+</div>
+<!-- Stamp Card -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+<div class="p-4 bg-surface-container-low flex justify-center items-center h-48">
+<img alt="Stamp" class="max-h-full w-auto object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds"/>
+</div>
+<div class="p-4 text-center border-t border-border-subtle">
+<h3 class="font-label-sm text-on-surface mb-1 truncate">The Harvester</h3>
+<div class="flex justify-between items-center text-caption text-on-surface-variant mt-2">
+<span>1965</span>
+<span>0.10 د.ج</span>
+</div>
+</div>
+</div>
+<!-- Stamp Card -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+<div class="p-4 bg-surface-container-low flex justify-center items-center h-48">
+<img alt="Stamp" class="max-h-full w-auto object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds"/>
+</div>
+<div class="p-4 text-center border-t border-border-subtle">
+<h3 class="font-label-sm text-on-surface mb-1 truncate">Great Mosque Tlemcen</h3>
+<div class="flex justify-between items-center text-caption text-on-surface-variant mt-2">
+<span>1966</span>
+<span>0.50 د.ج</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-sm hover:bg-primary-container transition-colors inline-flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                تحميل المزيد
+            </button>
+</div>
+</section>
+</main>
+<!-- Stats Section (Full Width Dark Green) -->
+<section class="bg-primary py-16 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center" dir="rtl">
+<div>
+<div class="flex justify-center items-center gap-2 mb-2">
+<h3 class="font-display-lg text-display-lg-mobile text-on-primary m-0">+5,000</h3>
+<span class="material-symbols-outlined text-secondary-container text-4xl">local_offer</span>
+</div>
+<p class="font-body-md text-on-primary/80">Stamps</p>
+</div>
+<div>
+<div class="flex justify-center items-center gap-2 mb-2">
+<h3 class="font-display-lg text-display-lg-mobile text-on-primary m-0">+500</h3>
+<span class="material-symbols-outlined text-secondary-container text-4xl">folder_open</span>
+</div>
+<p class="font-body-md text-on-primary/80">Series</p>
+</div>
+<div>
+<div class="flex justify-center items-center gap-2 mb-2">
+<h3 class="font-display-lg text-display-lg-mobile text-on-primary m-0">+100</h3>
+<span class="material-symbols-outlined text-secondary-container text-4xl">calendar_month</span>
+</div>
+<p class="font-body-md text-on-primary/80">Years Documented</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-ink text-surface-dim pt-16 pb-8 px-margin-mobile md:px-margin-desktop border-t-4 border-primary">
+<div class="max-w-container-max mx-auto" dir="rtl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+<div class="md:col-span-6 space-y-4">
+<div class="flex items-center gap-3 text-on-secondary">
+<span class="material-symbols-outlined text-primary-fixed-dim text-3xl">local_post_office</span>
+<h4 class="font-headline-md text-on-secondary m-0">عن الأرشيف</h4>
+</div>
+<p class="font-body-md text-surface-dim leading-relaxed max-w-xl">
+                    ذاكرة الجزائر هو مشروع توثيقي شامل يهدف إلى حفظ ودراسة الطوابع البريدية الجزائرية منذ استقلال الدولة في عام 1962. يوفر الأرشيف التوثيق العلمي الدقيق لكل طابع، مع توفير معلومات شاملة عن تاريخ الإصدار، الرسم، طريقة الطباعة والموضوع الثقافي. يعتبر هذا المرجع منصة موثوقة للباحثين والدارسين في مجالات التاريخ والفن والثقافة الجزائرية.
+                </p>
+</div>
+<div class="md:col-span-3">
+<h4 class="font-headline-md text-on-secondary mb-6">روابط سريعة</h4>
+<ul class="space-y-3 font-body-md">
+<li><a class="hover:text-primary-fixed-dim transition-colors" href="#">المعرض الرئيسي</a></li>
+<li><a class="hover:text-primary-fixed-dim transition-colors" href="#">المجموعات</a></li>
+<li><a class="hover:text-primary-fixed-dim transition-colors" href="#">عن الأرشيف</a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h4 class="font-headline-md text-on-secondary mb-6">تابعنا</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary/20 text-primary-fixed-dim flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/20 text-primary-fixed-dim flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-surface-variant/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-body-md text-surface-dim/70">
+<p>تنويه: هذا الموقع غير مخصص للتجارة أو البيع. جميع الطوابع المعروضة هي لأغراض توثيقية وتاريخية حصرياً.</p>
+<p>© جميع الحقوق محفوظة. ذاكرة الجزائر 2024</p>
+</div>
+</div>
+</footer>
+</body></html>
