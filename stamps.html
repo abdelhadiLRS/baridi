@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الموسوعة الكاملة للطوابع | ذاكرة الجزائر</title>
+  <meta name="description" content="تصفح جميع الطوابع البريدية الجزائرية الموثقة مع إمكانية الفلترة والبحث المتقدم.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">🇩🇿</div>
+        <div class="brand-title">
+          <span>ذاكرة الجزائر</span>
+          <span class="brand-sub">موسوعة الطوابع البريدية</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">الرئيسية</a>
+        <a href="stamps.html" class="nav-link active" data-i18n="nav_encyclopedia">الموسوعة</a>
+        <a href="archive.html" class="nav-link" data-i18n="nav_archive">الأرشيف</a>
+        <a href="years.html" class="nav-link" data-i18n="nav_years">السنوات</a>
+        <a href="categories.html" class="nav-link" data-i18n="nav_categories">التصنيفات</a>
+        <a href="dictionary.html" class="nav-link" data-i18n="nav_dictionary">القاموس</a>
+        <a href="guide.html" class="nav-link" data-i18n="nav_guide">الدليل</a>
+        <a href="visual-search.html" class="nav-link" data-i18n="nav_visual_search">البحث البصري</a>
+        <a href="collection.html" class="nav-link" data-i18n="nav_collection">مجموعتي (<span class="collection-count-badge">0</span>)</a>
+        <a href="about.html" class="nav-link" data-i18n="nav_about">عن الأرشيف</a>
+        <a href="admin.html" class="nav-link" data-i18n="nav_admin">الإدارة</a>
+      </nav>
+
+      <div class="header-actions">
+        <select class="lang-select" id="langSelect">
+          <option value="ar">العربية (RTL)</option>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <a href="index.html">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">الموسوعة الكاملة</span>
+      </nav>
+
+      <h1 style="margin-bottom: 0.5rem;">موسوعة الطوابع الجزائرية</h1>
+      <p style="margin-bottom: 1.5rem;">استعرض جميع الطوابع الموثقة مع إمكانية البحث الدقيق والتصفية حسب السنة والتصنيف والسلسلة.</p>
+
+      <!-- Filter Panel -->
+      <div class="filter-panel">
+        <div class="filter-grid">
+          <div class="filter-group">
+            <label for="searchInput">بحث سريع</label>
+            <input type="text" id="searchInput" class="search-input" placeholder="اسم، سنة، رسام..." style="padding: 0.5rem;">
+          </div>
+          <div class="filter-group">
+            <label for="categoryFilter">التصنيف</label>
+            <select id="categoryFilter" class="filter-select">
+              <option value="">جميع التصنيفات</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="yearFilter">السنة</label>
+            <select id="yearFilter" class="filter-select">
+              <option value="">جميع السنوات</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="seriesFilter">السلسلة البريدية</label>
+            <select id="seriesFilter" class="filter-select">
+              <option value="">جميع السلاسل</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="sortSelect">الترتيب</label>
+            <select id="sortSelect" class="filter-select">
+              <option value="year_desc">من الأحدث إلى الأقدم</option>
+              <option value="year_asc">من الأقدم إلى الأحدث</option>
+              <option value="title">حسب الاسم أبجدياً</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Info Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+        <div>عدد النتائج المطابقة: <strong id="resultsCount" style="color: var(--primary-green);">0</strong> طابع</div>
+      </div>
+
+      <!-- Stamp Cards Grid -->
+      <div class="stamp-grid" id="stampsGrid">
+        <!-- Populated dynamically via JS -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p data-i18n="footer_rights">© جميع الحقوق محفوظة | ذاكرة الجزائر - موسوعة الطوابع البريدية الجزائرية</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/stamps.js"></script>
+  <script src="js/search.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', initSearchPage);
+  </script>
+</body>
+</html>

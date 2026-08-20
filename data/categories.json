@@ -1,0 +1,51 @@
+[
+  {
+    "id": "revolution",
+    "name_ar": "الثورة والسيادة",
+    "name_en": "Revolution & Sovereignty",
+    "name_fr": "Révolution & Souveraineté",
+    "count": 4
+  },
+  {
+    "id": "heritage",
+    "name_ar": "تراث وثقافة",
+    "name_en": "Heritage & Culture",
+    "name_fr": "Patrimoine & Culture",
+    "count": 2
+  },
+  {
+    "id": "figures",
+    "name_ar": "شخصيات تاريخية",
+    "name_en": "Historical Figures",
+    "name_fr": "Personnages Historiques",
+    "count": 1
+  },
+  {
+    "id": "nature",
+    "name_ar": "طبيعة وبيئة",
+    "name_en": "Nature & Fauna",
+    "name_fr": "Nature & Faune",
+    "count": 1
+  },
+  {
+    "id": "sports",
+    "name_ar": "رياضة",
+    "name_en": "Sports",
+    "name_fr": "Sports",
+    "count": 2
+  },
+  {
+    "id": "transport",
+    "name_ar": "مواصلات وتنمية",
+    "name_en": "Transport & Development",
+    "name_fr": "Transports & Développement",
+    "count": 1
+  },
+  {
+    "id": "international",
+    "name_ar": "أحداث دولية",
+    "name_en": "International Affairs",
+    "name_fr": "Affaires Internationales",
+    "count": 1
+  }
+]

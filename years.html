@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التسلسل الزمني والسنوات | ذاكرة الجزائر</title>
+  <meta name="description" content="تصفح جميع الإصدارات البريدية الجزائرية مرتبة حسب السنوات منذ الاستقلال.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">🇩🇿</div>
+        <div class="brand-title">
+          <span>ذاكرة الجزائر</span>
+          <span class="brand-sub">موسوعة الطوابع البريدية</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="stamps.html" class="nav-link">الموسوعة</a>
+        <a href="archive.html" class="nav-link">الأرشيف</a>
+        <a href="years.html" class="nav-link active">السنوات</a>
+        <a href="categories.html" class="nav-link">التصنيفات</a>
+        <a href="dictionary.html" class="nav-link">القاموس</a>
+        <a href="guide.html" class="nav-link">الدليل</a>
+        <a href="visual-search.html" class="nav-link">البحث البصري</a>
+        <a href="collection.html" class="nav-link">مجموعتي (<span class="collection-count-badge">0</span>)</a>
+        <a href="about.html" class="nav-link">عن الأرشيف</a>
+        <a href="admin.html" class="nav-link">الإدارة</a>
+      </nav>
+
+      <div class="header-actions">
+        <select class="lang-select" id="langSelect">
+          <option value="ar">العربية (RTL)</option>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="index.html">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">التصفح حسب السنوات</span>
+      </nav>
+
+      <h1 style="margin-bottom: 0.5rem;">التسلسل الزمني لإصدارات الطوابع</h1>
+      <p style="margin-bottom: 2rem;">اختر سنة معينة للاطلاع على جميع الطوابع والتصاميم البريدية الصادرة خلالها.</p>
+
+      <div class="stamp-grid" id="yearsGrid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+        <!-- Populated dynamically -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© جميع الحقوق محفوظة | ذاكرة الجزائر - موسوعة الطوابع البريدية الجزائرية</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const years = await fetchJSON('data/years.json') || [];
+      const container = document.getElementById('yearsGrid');
+      if (container) {
+        container.innerHTML = years.map(item => `
+          <div class="stat-card">
+            <div class="stat-number" style="font-size: 2rem;">${item.year}</div>
+            <div class="stat-label" style="margin-bottom: 1rem;">${item.count} طابع موثق</div>
+            <a href="stamps.html?year=${item.year}" class="btn btn-sm btn-primary">عرض طوابع ${item.year}</a>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

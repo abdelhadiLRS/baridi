@@ -1,0 +1,56 @@
+[
+  {
+    "id": "philately",
+    "term_ar": "هواية جمع الطوابع (Philately)",
+    "term_en": "Philately",
+    "term_fr": "Philatélie",
+    "definition_ar": "دراسة وجمع الطوابع البريدية والبريد التاريخي والأغطية والأختام ذات الصلة.",
+    "definition_en": "The collection and study of postage stamps and postal history.",
+    "definition_fr": "L'étude et la collection des timbres-poste et de l'histoire postale."
+  },
+  {
+    "id": "perforation",
+    "term_ar": "التثقيب (Perforation)",
+    "term_en": "Perforation",
+    "term_fr": "Dentelure",
+    "definition_ar": "صفوف الصفائح المثقوبة الصغيرة بين الطوابع لتسهيل فصلها من الورقة الرئيسية.",
+    "definition_en": "Small holes punched between stamps to make them easy to separate.",
+    "definition_fr": "Petits trous perforés entre les timbres pour faciliter leur séparation."
+  },
+  {
+    "id": "watermark",
+    "term_ar": "العلامة المائية (Watermark)",
+    "term_en": "Watermark",
+    "term_fr": "Filigrane",
+    "definition_ar": "تصميم أو نمط شفاف يوضع في ورقة الطابع أثناء صناعتها لمنع التزوير والتحقق من الأصالة.",
+    "definition_en": "A subtle pattern impressed into stamp paper during manufacturing to prevent counterfeiting.",
+    "definition_fr": "Motif incrusté dans le papier du timbre lors de sa fabrication pour éviter la contrefaçon."
+  },
+  {
+    "id": "fdc",
+    "term_ar": "غلاف اليوم الأول (First Day Cover - FDC)",
+    "term_en": "First Day Cover (FDC)",
+    "term_fr": "Enveloppe Premier Jour",
+    "definition_ar": "مظروف بريدي يضم طابعاً ملصقاً ومختوماً بختم تذكاري خاص في اليوم الأول لإصداره الرسمي.",
+    "definition_en": "An envelope with a stamp cancelled on its official first day of issue.",
+    "definition_fr": "Enveloppe affranchie d'un timbre oblitéré le premier jour de sa mise en vente."
+  },
+  {
+    "id": "denomination",
+    "term_ar": "القيمة الاسمية (Denomination)",
+    "term_en": "Denomination",
+    "term_fr": "Valeur faciale",
+    "definition_ar": "المبلغ المالي المطبوع على وجه الطابع والذي يحدد تكلفة الخدمة البريدية المغطاة.",
+    "definition_en": "The face value or monetary amount printed directly on the stamp.",
+    "definition_fr": "La valeur monétaire imprimée directement sur le timbre."
+  },
+  {
+    "id": "commemorative",
+    "term_ar": "طابع تذكاري (Commemorative Stamp)",
+    "term_en": "Commemorative Stamp",
+    "term_fr": "Timbre Commémoratif",
+    "definition_ar": "طابع بريدي يُصدر لفترة محدودة لتخليد شخصية تاريخية أو حادثة وطنية أو مناسبة هامة.",
+    "definition_en": "A stamp issued to honor a person, event, or anniversary for a limited time.",
+    "definition_fr": "Timbre émis en quantité limitée pour célébrer un événement ou un personnage."
+  }
+]

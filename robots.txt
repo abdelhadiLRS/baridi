@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdelhadilrs.github.io/baridi/sitemap.xml

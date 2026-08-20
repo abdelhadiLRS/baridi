@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم والإدارة | ذاكرة الجزائر</title>
+  <meta name="description" content="لوحة تحكم الأرشيف وإدارة الطوابع والمساهمات.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚙️</div>
+        <div class="brand-title">
+          <span>لوحة الإدارة</span>
+          <span class="brand-sub">ذاكرة الجزائر</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="stamps.html" class="nav-link">الموسوعة</a>
+        <a href="admin.html" class="nav-link active">لوحة الإدارة</a>
+      </nav>
+
+      <div class="header-actions">
+        <select class="lang-select" id="langSelect">
+          <option value="ar">العربية (RTL)</option>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="index.html">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">لوحة التحكم الإدارية</span>
+      </nav>
+
+      <h1 style="margin-bottom: 0.5rem;">لوحة التحكم والإدارة المحظورة</h1>
+      <p style="margin-bottom: 2rem;">إدارة بيانات الطوابع، الإحصائيات الحقيقية، وإضافة طوابع جديدة إلى الأرشيف.</p>
+
+      <!-- Real Statistics Widgets -->
+      <section style="margin-bottom: 2.5rem;">
+        <h2>الإحصائيات الميدانية الفعلية</h2>
+        <div class="stats-grid" style="margin-top: 1rem;">
+          <div class="stat-card">
+            <div class="stat-number" id="statTotalStamps">0</div>
+            <div class="stat-label">إجمالي الطوابع الموثقة</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="statTotalYears">0</div>
+            <div class="stat-label">عدد السنوات</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="statTotalCategories">0</div>
+            <div class="stat-label">عدد التصنيفات</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="statTotalSeries">0</div>
+            <div class="stat-label">عدد السلاسل</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add Stamp Form Section -->
+      <section style="margin-bottom: 3rem; background-color: var(--surface-bright); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+        <h2 style="margin-bottom: 1rem; color: var(--primary-green);">إضافة طابع بريدي جديد للأرشيف</h2>
+
+        <form id="addStampForm">
+          <div class="filter-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+            <div class="filter-group">
+              <label for="stampTitleInput">اسم/عنوان الطابع *</label>
+              <input type="text" id="stampTitleInput" class="form-control" required placeholder="مثال: طابع ذكرى الاستقلال">
+            </div>
+            <div class="filter-group">
+              <label for="stampYearInput">سنة الإصدار *</label>
+              <input type="number" id="stampYearInput" class="form-control" required min="1830" max="2026" placeholder="2024">
+            </div>
+            <div class="filter-group">
+              <label for="stampDenomInput">القيمة الاسمية</label>
+              <input type="text" id="stampDenomInput" class="form-control" placeholder="25.00 DA">
+            </div>
+            <div class="filter-group">
+              <label for="stampCategoryInput">التصنيف</label>
+              <input type="text" id="stampCategoryInput" class="form-control" placeholder="الثورة والسيادة">
+            </div>
+            <div class="filter-group">
+              <label for="stampSeriesInput">السلسلة البريدية</label>
+              <input type="text" id="stampSeriesInput" class="form-control" placeholder="أعياد وطنية">
+            </div>
+            <div class="filter-group">
+              <label for="stampDesignerInput">المصمم/الرسام</label>
+              <input type="text" id="stampDesignerInput" class="form-control" placeholder="علي علي خوجة">
+            </div>
+          </div>
+
+          <div class="filter-group" style="margin-bottom: 1rem;">
+            <label for="stampImageInput">رابط صورة الطابع (URL)</label>
+            <input type="url" id="stampImageInput" class="form-control" placeholder="https://...">
+          </div>
+
+          <div class="filter-group" style="margin-bottom: 1.5rem;">
+            <label for="stampDescInput">الوصف والسياق التاريخي</label>
+            <textarea id="stampDescInput" class="form-control" rows="3" placeholder="تفاصيل الإصدار والمناسبة التاريخية..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">حفظ الطابع في السجل المحلي</button>
+        </form>
+      </section>
+
+      <!-- Stamps Management Data Table -->
+      <section style="margin-bottom: 3rem;">
+        <h2 style="margin-bottom: 1rem;">جدول إدارة وتحديث الطوابع</h2>
+        <div class="data-table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>الصورة</th>
+                <th>عنوان الطابع</th>
+                <th>السنة</th>
+                <th>القيمة</th>
+                <th>التصنيف</th>
+                <th>الإجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="adminTableBody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Community Contributions Review -->
+      <section style="background-color: var(--surface-bright); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+        <h2 style="margin-bottom: 0.5rem; color: var(--gold-dark);">مساهمات المجتمع والأرشيفيين</h2>
+        <p style="font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 1rem;">مراجعة المقترحات والتصحيحات المقدمة من هواة الطوابع والباحثين.</p>
+        <div class="empty-state" style="padding: 1.5rem;">
+          <p style="margin-bottom: 0;">لا توجد مساهمات معلقة بحاجة إلى المراجعة حالياً.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© جميع الحقوق محفوظة | ذاكرة الجزائر - لوحة التحكم الإدارية</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/stamps.js"></script>
+  <script src="js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', initAdminDashboard);
+  </script>
+</body>
+</html>

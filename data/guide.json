@@ -1,0 +1,30 @@
+[
+  {
+    "step": 1,
+    "title_ar": "1. تحديد هدف المجموعة (Defining Your Focus)",
+    "title_en": "1. Defining Your Focus",
+    "title_fr": "1. Définir votre objectif",
+    "content_ar": "اختر المحور الذي تود التركيز عليه، مثل جمع طوابع حقبة الاستقلال (1962-1970)، أو جمع موضوع محدد كشخصيات الثورة الجزائرية، أو الصناعات التقليدية، أو الطوابع البريدية الجوية."
+  },
+  {
+    "step": 2,
+    "title_ar": "2. الأدوات الأساسية لهواة الجمع (Essential Philately Tools)",
+    "title_en": "2. Essential Philately Tools",
+    "title_fr": "2. Outils essentiels du collectionneur",
+    "content_ar": "احرص على امتلاك الأدوات الطوابعية الضرورية: منقط الطوابع الخفيف (Stamp Tongs) لتجنب الملامسة المباشرة باليد، عدسة مكبرة دقيقة (Magnifying Glass) للتحقق من تفاصيل الطباعة والتثقيب، وألبوم حماية خالي من الحموضة (Acid-Free Album)."
+  },
+  {
+    "step": 3,
+    "title_ar": "3. العناية بالطوابع والحفظ العلمي (Stamp Care & Preservation)",
+    "title_en": "3. Stamp Care & Preservation",
+    "title_fr": "3. Soin et préservation des timbres",
+    "content_ar": "احفظ الألبوم في مكان جاف ومعتدل الحرارة بعيداً عن أشعة الشمس المباشرة والرطوبة العالية. لا تستخدم الصمغ أو الشريط اللاصق أبداً، بل استخدم الحوامل الشفافة التخصصية (Stamp Mounts)."
+  },
+  {
+    "step": 4,
+    "title_ar": "4. معايير تقييم الطابع وجودته (Stamp Grading & Condition)",
+    "title_en": "4. Stamp Grading & Condition",
+    "title_fr": "4. Évaluation et état du timbre",
+    "content_ar": "تعتمد قيمة الطابع التوثيقية والجمالية على سلامة التثقيب، وضوح الألوان، خلو الورق من البقع أو التمزق، وجود الصمغ الأصلي (MNH - Mint Never Hinged) أو نظافة ختم اليوم الأول (FDC)."
+  }
+]
