@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة الطوابع | لوحة التحكم</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚙️</div>
+        <div class="brand-title">
+          <span>إدارة الطوابع</span>
+          <span class="brand-sub">ذاكرة الجزائر</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="stamps.html" class="nav-link active">إدارة الطوابع</a>
+        <a href="series.html" class="nav-link">السلاسل</a>
+        <a href="import.html" class="nav-link">الاستيراد</a>
+        <a href="../index.html" class="nav-link">الموقع 🌐</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="index.html">لوحة الإدارة</a>
+        <span class="separator">/</span>
+        <span class="current">إدارة الطوابع</span>
+      </nav>
+
+      <h1 style="margin-bottom: 1.5rem;">سجل الطوابع البريدية</h1>
+
+      <!-- Add Stamp Form -->
+      <div style="background-color: var(--surface-bright); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin-bottom: 2.5rem;">
+        <h2 style="margin-bottom: 1rem; color: var(--primary-green-dark);">إضافة طابع بريدي جديد</h2>
+        <form id="addStampAdminForm">
+          <div class="filter-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+            <div class="filter-group">
+              <label>عنوان الطابع *</label>
+              <input type="text" id="admTitle" class="form-control" required placeholder="اسم الطابع">
+            </div>
+            <div class="filter-group">
+              <label>السنة *</label>
+              <input type="number" id="admYear" class="form-control" required placeholder="2024">
+            </div>
+            <div class="filter-group">
+              <label>القيمة الاسمية</label>
+              <input type="text" id="admDenom" class="form-control" placeholder="25.00 DA">
+            </div>
+            <div class="filter-group">
+              <label>التصنيف</label>
+              <input type="text" id="admCategory" class="form-control" placeholder="الثورة والسيادة">
+            </div>
+            <div class="filter-group">
+              <label>السلسلة</label>
+              <input type="text" id="admSeries" class="form-control" placeholder="أعياد وطنية">
+            </div>
+            <div class="filter-group">
+              <label>المصمم</label>
+              <input type="text" id="admDesigner" class="form-control" placeholder="علي علي خوجة">
+            </div>
+          </div>
+          <div class="filter-group" style="margin-bottom: 1rem;">
+            <label>رابط الصورة (URL)</label>
+            <input type="url" id="admImg" class="form-control" placeholder="https://...">
+          </div>
+          <div class="filter-group" style="margin-bottom: 1.5rem;">
+            <label>الوصف والقصة التاريخية</label>
+            <textarea id="admDesc" class="form-control" rows="3" placeholder="تفاصيل الإصدار والمناسبة التاريخية..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">حفظ في الأرشيف المحلي</button>
+        </form>
+      </div>
+
+      <!-- Stamps Table -->
+      <h2>سجل الطوابع الحالي</h2>
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>الصورة</th>
+              <th>اسم الطابع</th>
+              <th>السنة</th>
+              <th>القيمة</th>
+              <th>التصنيف</th>
+              <th>الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="adminStampsTableBody">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© لوحة التحكم الإدارية | ذاكرة الجزائر</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/stamps.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      async function loadTable() {
+        const stamps = await getAllStamps();
+        const tbody = document.getElementById('adminStampsTableBody');
+        if (tbody) {
+          tbody.innerHTML = stamps.map(s => `
+            <tr>
+              <td><img src="${s.image}" style="width: 40px; height: 40px; object-fit: contain;"></td>
+              <td><strong>${s.title}</strong></td>
+              <td>${s.year || '-'}</td>
+              <td><span class="badge badge-gold">${s.denomination || '-'}</span></td>
+              <td><span class="badge badge-primary">${s.category || '-'}</span></td>
+              <td>
+                <a href="../stamp.html?id=${s.id}" class="btn btn-sm btn-outline" target="_blank">معاينة</a>
+                <button class="btn btn-sm btn-danger" onclick="removeLocalStamp('${s.id}')">حذف</button>
+              </td>
+            </tr>
+          `).join('');
+        }
+      }
+
+      window.removeLocalStamp = (id) => {
+        if (!confirm('هل أنت تأكد من الحذف من السجل المحلي؟')) return;
+        let customStamps = JSON.parse(localStorage.getItem('baridi_custom_stamps') || '[]');
+        customStamps = customStamps.filter(s => s.id !== id);
+        localStorage.setItem('baridi_custom_stamps', JSON.stringify(customStamps));
+        loadTable();
+      };
+
+      document.getElementById('addStampAdminForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const newStamp = {
+          id: `custom-${Date.now()}`,
+          title: document.getElementById('admTitle').value,
+          year: parseInt(document.getElementById('admYear').value),
+          denomination: document.getElementById('admDenom').value,
+          category: document.getElementById('admCategory').value,
+          series: document.getElementById('admSeries').value,
+          designer: document.getElementById('admDesigner').value,
+          image: document.getElementById('admImg').value || 'https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds',
+          description: document.getElementById('admDesc').value,
+          historical_context: document.getElementById('admDesc').value
+        };
+
+        let customStamps = JSON.parse(localStorage.getItem('baridi_custom_stamps') || '[]');
+        customStamps.push(newStamp);
+        localStorage.setItem('baridi_custom_stamps', JSON.stringify(customStamps));
+
+        alert('تمت إضافة الطابع بنجاح!');
+        e.target.reset();
+        loadTable();
+      });
+
+      loadTable();
+    });
+  </script>
+</body>
+</html>

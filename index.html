@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
 
-  <!-- Typography Fallback Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -34,16 +33,16 @@
 
       <nav class="main-nav" id="mainNav">
         <a href="index.html" class="nav-link active" data-i18n="nav_home">الرئيسية</a>
-        <a href="stamps.html" class="nav-link" data-i18n="nav_encyclopedia">الموسوعة</a>
         <a href="archive.html" class="nav-link" data-i18n="nav_archive">الأرشيف</a>
-        <a href="years.html" class="nav-link" data-i18n="nav_years">السنوات</a>
-        <a href="categories.html" class="nav-link" data-i18n="nav_categories">التصنيفات</a>
-        <a href="dictionary.html" class="nav-link" data-i18n="nav_dictionary">القاموس</a>
-        <a href="guide.html" class="nav-link" data-i18n="nav_guide">الدليل</a>
+        <a href="periods.html" class="nav-link">الحقب</a>
+        <a href="series.html" class="nav-link" data-i18n="nav_series">السلاسل</a>
+        <a href="exhibitions.html" class="nav-link">المعارض</a>
+        <a href="designers.html" class="nav-link">المصممون</a>
+        <a href="glossary.html" class="nav-link" data-i18n="nav_dictionary">القاموس</a>
         <a href="visual-search.html" class="nav-link" data-i18n="nav_visual_search">البحث البصري</a>
-        <a href="collection.html" class="nav-link" data-i18n="nav_collection">مجموعتي (<span class="collection-count-badge">0</span>)</a>
-        <a href="about.html" class="nav-link" data-i18n="nav_about">عن الأرشيف</a>
-        <a href="admin.html" class="nav-link" data-i18n="nav_admin">الإدارة</a>
+        <a href="my-collection.html" class="nav-link" data-i18n="nav_collection">مجموعتي (<span class="collection-count-badge">0</span>)</a>
+        <a href="statistics.html" class="nav-link">الإحصائيات</a>
+        <a href="admin/index.html" class="nav-link" data-i18n="nav_admin">الإدارة</a>
       </nav>
 
       <div class="header-actions">
@@ -66,10 +65,28 @@
         <h1 class="hero-title" data-i18n="site_title">طوابع تروي تاريخ الجزائر</h1>
         <p class="hero-subtitle" data-i18n="site_desc">اكتشف أضخم أرشيف رقمي توثيقي للطوابع البريدية الجزائرية التي وثقت محطات النضال، التراث، والثقافة الوطنية منذ عام 1962.</p>
 
-        <form action="stamps.html" method="GET" class="search-box-container">
-          <input type="text" name="q" class="search-input" placeholder="ابحث عن طابع بالاسم، السنة، السلسلة..." data-i18n="search_placeholder">
+        <form action="search.html" method="GET" class="search-box-container">
+          <input type="text" name="q" class="search-input" placeholder="ابحث عن طابع بالاسم، السنة، السلسلة، المصمم..." data-i18n="search_placeholder">
           <button type="submit" class="btn btn-primary" data-i18n="btn_search">بحث في الموسوعة</button>
         </form>
+      </section>
+
+      <!-- Stamp of the Month Feature Card -->
+      <section style="margin-bottom: 3rem; background-color: var(--surface-bright); border: 1px solid var(--gold); border-radius: var(--radius-md); padding: 2rem;" id="stampOfMonthSection">
+        <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 260px; text-align: center;">
+            <span class="badge badge-gold" style="margin-bottom: 0.75rem; font-size: 0.85rem;">★ طابع الشهر المميز</span>
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_V5G1_J6bJJn22nOnECiomkQyLxAqQOEBJsAolj0FiBcr-6pTwNkfQjI7JKSl15-ztHzeZxR-T3z9oI9GeIrI_WpDeRJ49UXgHTBwJ637WUF1iucyUaV594Fxk2LQ3_jst_WafyRagmYZci6OTPLfjIuV3C_rz_xkIIBlA5xv1qmbYAghY9kwdxNgK78AicU_t1DyTRbl6KM81wumfg3pKGGjXlOYgqCQBHVMOz5uA3BZZI1bibds" alt="Stamp of the Month" style="max-height: 220px; margin: 0 auto; filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));">
+          </div>
+          <div style="flex: 2; min-width: 300px;">
+            <span class="badge badge-primary">1962 • 1+1 F</span>
+            <h2 style="font-size: 1.75rem; margin-top: 0.5rem; color: var(--primary-green-dark);">ذكرى الاستقلال 1962 — أول طابع للسيادة الوطنية</h2>
+            <p style="color: var(--ink); line-height: 1.7; margin-top: 0.75rem;">
+              يمثل هذا الطابع أول إصدار بريدي سيادي للجمهورية الجزائرية الديمقراطية الشعبية، صدر بعد أيام قليلة من إعلان الاستقلال الرسمي في أول نوفمبر 1962، صُمم بوساطة الفنان علي علي خوجة.
+            </p>
+            <a href="stamp.html?id=1962-independence-commemorative" class="btn btn-primary" style="margin-top: 1rem;">قراءة قصة الطابع والتفاصيل ←</a>
+          </div>
+        </div>
       </section>
 
       <!-- Live Statistics Grid -->
@@ -77,40 +94,43 @@
         <h2 style="text-align: center; margin-bottom: 1.5rem;" data-i18n="stats_title">إحصائيات الأرشيف</h2>
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-number" id="homeStatStamps">12</div>
+            <div class="stat-number">12</div>
             <div class="stat-label" data-i18n="stats_stamps_count">طابع موثق</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" id="homeStatYears">60+</div>
+            <div class="stat-number">60+</div>
             <div class="stat-label" data-i18n="stats_years_count">عاماً من التاريخ</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" id="homeStatCategories">7</div>
-            <div class="stat-label" data-i18n="stats_categories_count">تصنيفات رئيسية</div>
+            <div class="stat-number">6</div>
+            <div class="stat-label">حقب تاريخية</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" id="homeStatSeries">11</div>
+            <div class="stat-number">11</div>
             <div class="stat-label" data-i18n="stats_series_count">سلاسل بريدية</div>
           </div>
         </div>
       </section>
 
-      <!-- Featured Stamps Section -->
+      <!-- Virtual Exhibitions Preview -->
       <section style="margin-bottom: 3rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-          <h2 data-i18n="featured_stamps">طوابع مميزة</h2>
-          <a href="stamps.html" class="btn btn-outline" data-i18n="btn_explore">عرض الجميع ←</a>
+          <h2>المعارض الافتراضية القصصية</h2>
+          <a href="exhibitions.html" class="btn btn-outline">جميع المعارض ←</a>
         </div>
-        <div class="stamp-grid" id="featuredStampsGrid">
+        <div class="stamp-grid" id="homeExhibitionsGrid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
           <!-- Populated dynamically via JS -->
         </div>
       </section>
 
-      <!-- Historical Eras Section -->
+      <!-- Latest Additions Section -->
       <section style="margin-bottom: 3rem;">
-        <h2 style="margin-bottom: 1.5rem;">تصفح حسب الحقب الزمنية</h2>
-        <div class="filter-grid" id="erasHomeGrid">
-          <!-- Populated dynamically -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <h2 data-i18n="latest_stamps">أحدث الإضافات للموسوعة</h2>
+          <a href="latest.html" class="btn btn-outline">عرض الأحدث ←</a>
+        </div>
+        <div class="stamp-grid" id="latestStampsGrid">
+          <!-- Populated dynamically via JS -->
         </div>
       </section>
 
@@ -128,26 +148,30 @@
         <div class="footer-links">
           <h4>التصفح</h4>
           <ul>
-            <li><a href="stamps.html">الموسوعة الكاملة</a></li>
-            <li><a href="archive.html">الأرشيف التاريخي</a></li>
-            <li><a href="years.html">السنوات</a></li>
-            <li><a href="categories.html">التصنيفات</a></li>
+            <li><a href="archive.html">الأرشيف الكامل</a></li>
+            <li><a href="periods.html">الحقب التاريخية</a></li>
+            <li><a href="series.html">السلاسل البريدية</a></li>
+            <li><a href="exhibitions.html">المعارض الافتراضية</a></li>
           </ul>
         </div>
         <div class="footer-links">
-          <h4>المعرفة</h4>
+          <h4>المعرفة والأدوات</h4>
           <ul>
-            <li><a href="dictionary.html">قاموس الطوابعية</a></li>
-            <li><a href="guide.html">دليل جمع الطوابع</a></li>
+            <li><a href="glossary.html">قاموس الطوابعية</a></li>
+            <li><a href="designers.html">دليل المصممين</a></li>
             <li><a href="visual-search.html">البحث البصري</a></li>
-            <li><a href="collection.html">مجموعتي المفضلة</a></li>
+            <li><a href="my-collection.html">مجموعتي الشخصية</a></li>
+            <li><a href="statistics.html">الرسوم البيانية الإحصائية</a></li>
           </ul>
         </div>
         <div class="footer-links">
-          <h4>عن الأرشيف</h4>
+          <h4>المعلومات والإدارة</h4>
           <ul>
             <li><a href="about.html">حول المشروع</a></li>
-            <li><a href="admin.html">لوحة التحكم</a></li>
+            <li><a href="sources.html">المصادر والمراجع</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+            <li><a href="privacy.html">الخصوصية والشروط</a></li>
+            <li><a href="admin/index.html">لوحة الإدارة</a></li>
           </ul>
         </div>
       </div>
@@ -165,22 +189,23 @@
     document.addEventListener('DOMContentLoaded', async () => {
       const stamps = await getAllStamps();
 
-      // Render featured stamps
-      const featuredGrid = document.getElementById('featuredStampsGrid');
-      if (featuredGrid) {
-        const featured = stamps.filter(s => s.featured).slice(0, 4);
-        featuredGrid.innerHTML = featured.map(createStampCardHTML).join('');
+      // Render Latest Additions
+      const latestGrid = document.getElementById('latestStampsGrid');
+      if (latestGrid) {
+        const latest = [...stamps].sort((a,b) => (b.year || 0) - (a.year || 0)).slice(0, 4);
+        latestGrid.innerHTML = latest.map(createStampCardHTML).join('');
       }
 
-      // Render Eras
-      const eras = await fetchJSON('data/eras.json') || [];
-      const erasGrid = document.getElementById('erasHomeGrid');
-      if (erasGrid) {
-        erasGrid.innerHTML = eras.map(era => `
-          <div class="stat-card" style="text-align: right; border-left: 3px solid var(--primary-green);">
-            <span class="badge badge-primary">${era.years}</span>
-            <h3 style="margin-top: 0.5rem;"><a href="stamps.html?q=${encodeURIComponent(era.years)}">${era.name_ar}</a></h3>
-            <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--ink-muted);">${era.description}</p>
+      // Render Home Exhibitions Preview
+      const exhibitions = await fetchJSON('data/exhibitions.json') || [];
+      const exGrid = document.getElementById('homeExhibitionsGrid');
+      if (exGrid) {
+        exGrid.innerHTML = exhibitions.map(ex => `
+          <div class="stamp-card" style="padding: 1.25rem;">
+            <img src="${ex.cover_image}" style="height: 180px; width: 100%; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1rem;">
+            <h3 style="font-size: 1.2rem; color: var(--primary-green-dark); margin-bottom: 0.5rem;">${ex.title_ar}</h3>
+            <p style="font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 1rem;">${ex.subtitle_ar}</p>
+            <a href="exhibition.html?id=${ex.id}" class="btn btn-sm btn-gold">دخول المعرض القصصي ←</a>
           </div>
         `).join('');
       }

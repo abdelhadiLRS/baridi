@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أحدث الإضافات | ذاكرة الجزائر</title>
+  <meta name="description" content="أحدث الطوابع والإصدارات البريدية المضافة حديثاً إلى أرشيف الموسوعة.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">🇩🇿</div>
+        <div class="brand-title">
+          <span>ذاكرة الجزائر</span>
+          <span class="brand-sub">موسوعة الطوابع البريدية</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="archive.html" class="nav-link">الأرشيف</a>
+        <a href="periods.html" class="nav-link">الحقب</a>
+        <a href="series.html" class="nav-link">السلاسل</a>
+        <a href="exhibitions.html" class="nav-link">المعارض</a>
+        <a href="designers.html" class="nav-link">المصممون</a>
+        <a href="glossary.html" class="nav-link">القاموس</a>
+        <a href="visual-search.html" class="nav-link">البحث البصري</a>
+        <a href="my-collection.html" class="nav-link">مجموعتي (<span class="collection-count-badge">0</span>)</a>
+        <a href="statistics.html" class="nav-link">الإحصائيات</a>
+        <a href="admin/index.html" class="nav-link">الإدارة</a>
+      </nav>
+
+      <div class="header-actions">
+        <select class="lang-select" id="langSelect">
+          <option value="ar">العربية (RTL)</option>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="index.html">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">أحدث الإضافات</span>
+      </nav>
+
+      <h1 style="margin-bottom: 0.5rem;">أحدث الإضافات والألبومات</h1>
+      <p style="margin-bottom: 2rem;">استعرض أحدث القطع والألبومات البريدية التي تم توثيقها في موسوعة ذاكرة الجزائر.</p>
+
+      <div class="stamp-grid" id="latestFullGrid">
+        <!-- Rendered dynamically -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© جميع الحقوق محفوظة | ذاكرة الجزائر - موسوعة الطوابع البريدية الجزائرية</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/stamps.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const allStamps = await getAllStamps();
+      const sorted = [...allStamps].sort((a,b) => (b.year || 0) - (a.year || 0));
+      const container = document.getElementById('latestFullGrid');
+      if (container) {
+        container.innerHTML = sorted.map(createStampCardHTML).join('');
+      }
+    });
+  </script>
+</body>
+</html>

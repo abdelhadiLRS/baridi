@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استيراد وتصدير البيانات | لوحة التحكم</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-logo-icon">📥</div>
+        <div class="brand-title">
+          <span>استيراد البيانات</span>
+          <span class="brand-sub">ذاكرة الجزائر</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="stamps.html" class="nav-link">الطوابع</a>
+        <a href="import.html" class="nav-link active">الاستيراد</a>
+        <a href="../index.html" class="nav-link">الموقع 🌐</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="index.html">لوحة الإدارة</a>
+        <span class="separator">/</span>
+        <span class="current">استيراد وتصحيح البيانات</span>
+      </nav>
+
+      <h1 style="margin-bottom: 0.5rem;">أداة استيراد وقراءة سجلات JSON / CSV</h1>
+      <p style="margin-bottom: 2rem;">يمكنك رفع أو لصق كود JSON لتحديث السجلات ومراجعة صحتها قبل الحفظ النهائي.</p>
+
+      <div style="background-color: var(--surface-bright); border: 1px solid var(--border-subtle); padding: 2rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+        <h2 style="margin-bottom: 1rem; color: var(--primary-green-dark);">لصق مصفوفة JSON للطوابع</h2>
+        <textarea id="jsonImportArea" class="form-control" rows="8" placeholder='[{"id":"1962-stamp","title":"طابع تجريبي","year":1962}]' style="font-family: monospace; font-size: 0.9rem; margin-bottom: 1rem;"></textarea>
+
+        <div style="display: flex; gap: 1rem;">
+          <button type="button" class="btn btn-primary" onclick="validateAndImportJSON()">التحقق واستيراد البيانات</button>
+          <button type="button" class="btn btn-secondary" onclick="exportCurrentDatabase()">تصدير قاعدة البيانات الحالية (JSON)</button>
+        </div>
+      </div>
+
+      <div id="importPreviewStatus" style="display: none;" class="stat-card">
+        <!-- Rendered preview status -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© لوحة التحكم الإدارية | ذاكرة الجزائر</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/stamps.js"></script>
+  <script>
+    async function validateAndImportJSON() {
+      const txt = document.getElementById('jsonImportArea').value.trim();
+      const statusDiv = document.getElementById('importPreviewStatus');
+
+      if (!txt) {
+        alert('يرجى كتابة أو لصق كود JSON أولاً.');
+        return;
+      }
+
+      try {
+        const parsed = JSON.parse(txt);
+        if (!Array.isArray(parsed)) {
+          throw new Error('يجب أن تكون صيغة JSON مصفوفة أليفة (Array) من كائنات الطوابع.');
+        }
+
+        let customStamps = JSON.parse(localStorage.getItem('baridi_custom_stamps') || '[]');
+        customStamps = [...customStamps, ...parsed];
+        localStorage.setItem('baridi_custom_stamps', JSON.stringify(customStamps));
+
+        statusDiv.style.display = 'block';
+        statusDiv.innerHTML = `
+          <h3 style="color: var(--primary-green);">✅ تم استيراد وحفظ ${parsed.length} سجلات بنجاح إلى الأرشيف المحلي!</h3>
+          <p>تم دمج الطوابع واستعراضها الآن في جدول الموسوعة.</p>
+        `;
+      } catch (err) {
+        statusDiv.style.display = 'block';
+        statusDiv.innerHTML = `
+          <h3 style="color: var(--archive-red);">❌ خطأ في تنسيق JSON:</h3>
+          <p>${err.message}</p>
+        `;
+      }
+    }
+
+    async function exportCurrentDatabase() {
+      const stamps = await getAllStamps();
+      const str = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(stamps, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", str);
+      downloadAnchor.setAttribute("download", "algerian_stamps_export.json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    }
+  </script>
+</body>
+</html>

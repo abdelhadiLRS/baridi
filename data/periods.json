@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ottoman",
+    "name_ar": "العهد العثماني وبدايات البريد (Ottoman Era)",
+    "name_en": "Ottoman & Early Postal History",
+    "name_fr": "Époque Ottoman et Poste Ancienne",
+    "years": "1516 - 1830",
+    "description": "أنظمة المراسلة والبريد الزجلي والتنظيمي في إيالة الجزائر البحرية قل استخدام الطوابع الحديثة."
+  },
+  {
+    "id": "colonial",
+    "name_ar": "الفترة الاستعمارية (Colonial Period)",
+    "name_en": "Colonial Postal Period",
+    "name_fr": "Période Coloniale",
+    "years": "1830 - 1962",
+    "description": "الطوابع البريدية الفرنسية والموشحة بأسماء المدن الجزائرية واستخدامات البريد العسكري والتنفيذي."
+  },
+  {
+    "id": "revolution",
+    "name_ar": "مرحلة الثورة التحريرية (Revolution Era)",
+    "name_en": "Liberation War Era",
+    "name_fr": "Guerre de Libération Nationale",
+    "years": "1954 - 1962",
+    "description": "منشورات وأختام جبهة التحرير الوطني ورسائل المجاهدين الموجهة للهيئات الدولية قبل الاستقلال."
+  },
+  {
+    "id": "independence-dawn",
+    "name_ar": "فجر الاستقلال والسيادة (Dawn of Independence)",
+    "name_en": "Dawn of Independence",
+    "name_fr": "Aube de l'Indépendance",
+    "years": "1962 - 1970",
+    "description": "تأسيس مؤسسة البريد السيادية وإصدار أول طابع بريدي وطني بوشاح العلم الوطني عام 1962."
+  },
+  {
+    "id": "building-nation",
+    "name_ar": "عصر التنمية والبناء (National Construction)",
+    "name_en": "Modern Nation Building",
+    "name_fr": "Construction Nationale",
+    "years": "1970 - 2000",
+    "description": "توثيق التأميمات، الثورة الزراعية، الصناعات الثقيلة، والأحداث الرياضية والدبلوماسية الكبرى."
+  },
+  {
+    "id": "modern-algeria",
+    "name_ar": "الجمهورية الحديثة (Modern Republic)",
+    "name_en": "Modern Algeria Era",
+    "name_fr": "Algérie Moderne",
+    "years": "2000 - الآن",
+    "description": "الإصدارات التذكارية الرقمية الحديثة، اليوبيلات الذهبية، والتضامن الإنساني والدولي."
+  }
+]

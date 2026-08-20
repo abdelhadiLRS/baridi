@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الإحصائيات والتحليلات | ذاكرة الجزائر</title>
+  <meta name="description" content="إحصائيات وتحليلات توزيع الطوابع الجزائرية حسب العقود والمصممين والموضوعات.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">📊</div>
+        <div class="brand-title">
+          <span>الإحصائيات والتحليلات</span>
+          <span class="brand-sub">ذاكرة الجزائر</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="archive.html" class="nav-link">الأرشيف</a>
+        <a href="periods.html" class="nav-link">الحقب</a>
+        <a href="series.html" class="nav-link">السلاسل</a>
+        <a href="statistics.html" class="nav-link active">الإحصائيات</a>
+        <a href="admin/index.html" class="nav-link">الإدارة</a>
+      </nav>
+
+      <div class="header-actions">
+        <select class="lang-select" id="langSelect">
+          <option value="ar">العربية (RTL)</option>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="index.html">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">الإحصائيات والتحليلات التفاعلية</span>
+      </nav>
+
+      <h1 style="margin-bottom: 0.5rem;">تحليلات توزيع الطوابع والمصممين</h1>
+      <p style="margin-bottom: 2rem;">بيانات رسمية مستخرجة حياً من القاعدة التوثيقية للطوابع البريدية الجزائرية.</p>
+
+      <!-- Stats Numbers Overview -->
+      <div class="stats-grid" style="margin-bottom: 3rem;">
+        <div class="stat-card">
+          <div class="stat-number" id="statsStampsNum">0</div>
+          <div class="stat-label">طابع موثق في الأرشيف</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="statsYearsNum">0</div>
+          <div class="stat-label">سنوات الإصدار الموثقة</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="statsCategoriesNum">0</div>
+          <div class="stat-label">موضوعات وتصنيفات</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="statsSeriesNum">0</div>
+          <div class="stat-label">سلسلة تذكارية صريحة</div>
+        </div>
+      </div>
+
+      <!-- Categories Distribution Breakdown -->
+      <section style="margin-bottom: 3rem; background-color: var(--surface-bright); border: 1px solid var(--border-subtle); padding: 2rem; border-radius: var(--radius-md);">
+        <h2 style="margin-bottom: 1.5rem; color: var(--primary-green-dark);">توزيع الطوابع حسب التصنيف والموضوع</h2>
+        <div id="categoryBreakdown" style="display: flex; flex-direction: column; gap: 1rem;">
+          <!-- Generated via JS -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© جميع الحقوق محفوظة | ذاكرة الجزائر - موسوعة الطوابع البريدية الجزائرية</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/stamps.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const stamps = await getAllStamps();
+
+      document.getElementById('statsStampsNum').textContent = stamps.length;
+
+      const years = [...new Set(stamps.map(s => s.year).filter(Boolean))];
+      document.getElementById('statsYearsNum').textContent = years.length;
+
+      const cats = [...new Set(stamps.map(s => s.category).filter(Boolean))];
+      document.getElementById('statsCategoriesNum').textContent = cats.length;
+
+      const series = [...new Set(stamps.map(s => s.series).filter(Boolean))];
+      document.getElementById('statsSeriesNum').textContent = series.length;
+
+      // Category breakdown
+      const catCounts = {};
+      stamps.forEach(s => {
+        if (s.category) catCounts[s.category] = (catCounts[s.category] || 0) + 1;
+      });
+
+      const container = document.getElementById('categoryBreakdown');
+      if (container) {
+        container.innerHTML = Object.keys(catCounts).map(cat => {
+          const count = catCounts[cat];
+          const pct = Math.round((count / stamps.length) * 100);
+          return `
+            <div>
+              <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 0.25rem;">
+                <span>${cat}</span>
+                <span style="color: var(--primary-green);">${count} طوابع (${pct}%)</span>
+              </div>
+              <div style="width: 100%; height: 10px; background-color: var(--border-subtle); border-radius: 5px; overflow: hidden;">
+                <div style="width: ${pct}%; height: 100%; background-color: var(--primary-green);"></div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    });
+  </script>
+</body>
+</html>

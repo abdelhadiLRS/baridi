@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المعارض الافتراضية القصصية | ذاكرة الجزائر</title>
+  <meta name="description" content="معارض افتراضية قصصية مستندة إلى تاريخ الطوابع والأحداث الوطنية.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">🇩🇿</div>
+        <div class="brand-title">
+          <span>ذاكرة الجزائر</span>
+          <span class="brand-sub">موسوعة الطوابع البريدية</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="archive.html" class="nav-link">الأرشيف</a>
+        <a href="periods.html" class="nav-link">الحقب</a>
+        <a href="series.html" class="nav-link">السلاسل</a>
+        <a href="exhibitions.html" class="nav-link active">المعارض</a>
+        <a href="designers.html" class="nav-link">المصممون</a>
+        <a href="glossary.html" class="nav-link">القاموس</a>
+        <a href="visual-search.html" class="nav-link">البحث البصري</a>
+        <a href="my-collection.html" class="nav-link">مجموعتي (<span class="collection-count-badge">0</span>)</a>
+        <a href="statistics.html" class="nav-link">الإحصائيات</a>
+        <a href="admin/index.html" class="nav-link">الإدارة</a>
+      </nav>
+
+      <div class="header-actions">
+        <select class="lang-select" id="langSelect">
+          <option value="ar">العربية (RTL)</option>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="index.html">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">المعارض الافتراضية</span>
+      </nav>
+
+      <h1 style="margin-bottom: 0.5rem;">المعارض الافتراضية القصصية</h1>
+      <p style="margin-bottom: 2rem;">معارض موضوعية تفاعلية تسرد الأحداث التاريخية الكبرى من خلال الطوابع والوثائق الأرشيفية.</p>
+
+      <div class="stamp-grid" id="exhibitionsFullGrid" style="grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));">
+        <!-- Populated dynamically -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© جميع الحقوق محفوظة | ذاكرة الجزائر - موسوعة الطوابع البريدية الجزائرية</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const exhibitions = await fetchJSON('data/exhibitions.json') || [];
+      const container = document.getElementById('exhibitionsFullGrid');
+      if (container) {
+        container.innerHTML = exhibitions.map(ex => `
+          <div class="stamp-card" style="padding: 1.5rem;">
+            <img src="${ex.cover_image}" style="height: 220px; width: 100%; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 1.25rem;">
+            <h2 style="font-size: 1.4rem; color: var(--primary-green-dark); margin-bottom: 0.5rem;">${ex.title_ar}</h2>
+            <p style="font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 1.25rem; line-height: 1.6;">${ex.description_ar}</p>
+            <a href="exhibition.html?id=${ex.id}" class="btn btn-gold">زيارة المعرض الآن ←</a>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

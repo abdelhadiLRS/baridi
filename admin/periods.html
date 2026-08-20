@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة الحقب | لوحة التحكم</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚙️</div>
+        <div class="brand-title">
+          <span>إدارة الحقب التاريخية</span>
+          <span class="brand-sub">ذاكرة الجزائر</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="stamps.html" class="nav-link">الطوابع</a>
+        <a href="periods.html" class="nav-link active">الحقب</a>
+        <a href="../index.html" class="nav-link">الموقع 🌐</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="index.html">لوحة الإدارة</a>
+        <span class="separator">/</span>
+        <span class="current">إدارة الحقب التاريخية</span>
+      </nav>
+
+      <h1 style="margin-bottom: 1.5rem;">سجل الحقب والعهود التاريخية</h1>
+
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>رمز الحقبة</th>
+              <th>عنوان الحقبة</th>
+              <th>النطاق الزمني</th>
+              <th>الوصف والتأطير</th>
+            </tr>
+          </thead>
+          <tbody id="admPeriodsTable">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© لوحة التحكم الإدارية | ذاكرة الجزائر</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const periods = await fetchJSON('../data/periods.json') || [];
+      const tbody = document.getElementById('admPeriodsTable');
+      if (tbody) {
+        tbody.innerHTML = periods.map(p => `
+          <tr>
+            <td><code>${p.id}</code></td>
+            <td><strong>${p.name_ar}</strong></td>
+            <td><span class="badge badge-gold">${p.years}</span></td>
+            <td><span style="font-size: 0.85rem;">${p.description}</span></td>
+          </tr>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

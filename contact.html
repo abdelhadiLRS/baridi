@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بنا | ذاكرة الجزائر</title>
+  <meta name="description" content="تواصل مع فريق التوثيق والأرشيف التاريخي للطوابع البريدية الجزائرية.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">🇩🇿</div>
+        <div class="brand-title">
+          <span>ذاكرة الجزائر</span>
+          <span class="brand-sub">موسوعة الطوابع البريدية</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="archive.html" class="nav-link">الأرشيف</a>
+        <a href="about.html" class="nav-link">عن الأرشيف</a>
+        <a href="contact.html" class="nav-link active">اتصل بنا</a>
+      </nav>
+
+      <div class="header-actions">
+        <select class="lang-select" id="langSelect">
+          <option value="ar">العربية (RTL)</option>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="index.html">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">اتصل بنا</span>
+      </nav>
+
+      <div style="max-width: 700px; margin: 0 auto; background-color: var(--surface-bright); padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+        <h1 style="color: var(--primary-green-dark); margin-bottom: 0.5rem;">تواصل مع فريق الأرشيف</h1>
+        <p style="color: var(--ink-muted); margin-bottom: 2rem;">نرحب بتساؤلات الباحثين وهواة جمع الطوابع والمساهمين بالصور والوثائق التاريخية.</p>
+
+        <form onsubmit="event.preventDefault(); alert('تم إرسال رسالتك بنجاح! شكراً لتواصلك مع أرشيف ذاكرة الجزائر.'); this.reset();">
+          <div class="filter-group" style="margin-bottom: 1rem;">
+            <label for="contactName">الاسم الكامل *</label>
+            <input type="text" id="contactName" class="form-control" required placeholder="اسمك الكامل">
+          </div>
+          <div class="filter-group" style="margin-bottom: 1rem;">
+            <label for="contactEmail">البريد الإلكتروني *</label>
+            <input type="email" id="contactEmail" class="form-control" required placeholder="email@domain.com">
+          </div>
+          <div class="filter-group" style="margin-bottom: 1.5rem;">
+            <label for="contactMsg">الرسالة أو الاستفسار *</label>
+            <textarea id="contactMsg" class="form-control" rows="4" required placeholder="اكتب استفسارك أو ملاحظاتك التوثيقية هنا..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© جميع الحقوق محفوظة | ذاكرة الجزائر - موسوعة الطوابع البريدية الجزائرية</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

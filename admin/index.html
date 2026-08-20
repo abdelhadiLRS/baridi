@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم الرئيسية | ذاكرة الجزائر</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚙️</div>
+        <div class="brand-title">
+          <span>لوحة التحكم الرئيسية</span>
+          <span class="brand-sub">ذاكرة الجزائر</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link active">الرئيسية</a>
+        <a href="stamps.html" class="nav-link">إدارة الطوابع</a>
+        <a href="series.html" class="nav-link">إدارة السلاسل</a>
+        <a href="periods.html" class="nav-link">إدارة الحقب</a>
+        <a href="designers.html" class="nav-link">إدارة المصممين</a>
+        <a href="exhibitions.html" class="nav-link">إدارة المعارض</a>
+        <a href="import.html" class="nav-link">الاستيراد</a>
+        <a href="contributions.html" class="nav-link">المساهمات</a>
+        <a href="../index.html" class="nav-link">معاينة الموقع 🌐</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="../index.html">الرئيسية</a>
+        <span class="separator">/</span>
+        <span class="current">لوحة الإدارة</span>
+      </nav>
+
+      <h1 style="margin-bottom: 0.5rem;">نظام إدارة محتوى موسوعة الطوابع</h1>
+      <p style="margin-bottom: 2rem;">إدارة القطع التوثيقية، السلاسل، الحقب، والمصممين، مع إمكانية استيراد وتصدير البيانات.</p>
+
+      <div class="stats-grid" style="margin-bottom: 3rem;">
+        <div class="stat-card">
+          <div class="stat-number" id="admStampsCount">0</div>
+          <div class="stat-label">طوابع مسجلة</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="admSeriesCount">0</div>
+          <div class="stat-label">سلاسل بريدية</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="admDesignersCount">0</div>
+          <div class="stat-label">مصممون ورسامون</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="admExhibitionsCount">0</div>
+          <div class="stat-label">معارض قصصية</div>
+        </div>
+      </div>
+
+      <div class="filter-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+        <div class="stat-card" style="text-align: right;">
+          <h3><a href="stamps.html">إدارة الطوابع ←</a></h3>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.5rem;">إضافة، تعديل، وحذف الطوابع البريدية والمعلومات الأثرية.</p>
+        </div>
+        <div class="stat-card" style="text-align: right;">
+          <h3><a href="series.html">إدارة السلاسل ←</a></h3>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.5rem;">تنظيم الطوابع ضمن سلاسل بريدية تذكارية.</p>
+        </div>
+        <div class="stat-card" style="text-align: right;">
+          <h3><a href="import.html">استيراد البيانات ←</a></h3>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.5rem;">رفع ملفات JSON أو CSV لتحديث الأرشيف بمرونة.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© لوحة التحكم الإدارية | ذاكرة الجزائر</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/stamps.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const stamps = await getAllStamps();
+      const series = await fetchJSON('../data/series.json') || [];
+      const designers = await fetchJSON('../data/designers.json') || [];
+      const exhibitions = await fetchJSON('../data/exhibitions.json') || [];
+
+      document.getElementById('admStampsCount').textContent = stamps.length;
+      document.getElementById('admSeriesCount').textContent = series.length;
+      document.getElementById('admDesignersCount').textContent = designers.length;
+      document.getElementById('admExhibitionsCount').textContent = exhibitions.length;
+    });
+  </script>
+</body>
+</html>

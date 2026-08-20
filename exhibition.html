@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معرض افتراضي | ذاكرة الجزائر</title>
+  <meta name="description" content="زيارة معرض افتراضي قصصي للطوابع الجزائرية.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">🇩🇿</div>
+        <div class="brand-title">
+          <span>ذاكرة الجزائر</span>
+          <span class="brand-sub">موسوعة الطوابع البريدية</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="archive.html" class="nav-link">الأرشيف</a>
+        <a href="periods.html" class="nav-link">الحقب</a>
+        <a href="series.html" class="nav-link">السلاسل</a>
+        <a href="exhibitions.html" class="nav-link active">المعارض</a>
+        <a href="designers.html" class="nav-link">المصممون</a>
+        <a href="glossary.html" class="nav-link">القاموس</a>
+        <a href="visual-search.html" class="nav-link">البحث البصري</a>
+        <a href="my-collection.html" class="nav-link">مجموعتي (<span class="collection-count-badge">0</span>)</a>
+        <a href="statistics.html" class="nav-link">الإحصائيات</a>
+        <a href="admin/index.html" class="nav-link">الإدارة</a>
+      </nav>
+
+      <div class="header-actions">
+        <select class="lang-select" id="langSelect">
+          <option value="ar">العربية (RTL)</option>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="index.html">الرئيسية</a>
+        <span class="separator">/</span>
+        <a href="exhibitions.html">المعارض الافتراضية</a>
+        <span class="separator">/</span>
+        <span class="current" id="exBreadcrumb">المعرض القصصي</span>
+      </nav>
+
+      <div style="background-color: var(--surface-bright); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 2.5rem; margin-bottom: 2.5rem;" id="exHeaderBlock">
+        <h1 id="exTitle" style="color: var(--primary-green-dark); margin-bottom: 0.75rem;">...</h1>
+        <p id="exSubtitle" style="font-size: 1.1rem; color: var(--gold-dark); font-weight: 600; margin-bottom: 1rem;">...</p>
+        <p id="exDesc" style="color: var(--ink); line-height: 1.7; margin-bottom: 0;">...</p>
+      </div>
+
+      <h2 style="margin-bottom: 1.5rem;">معروضات وطوابع هذا المعرض القصصي</h2>
+      <div class="stamp-grid" id="exStampsGrid">
+        <!-- Rendered dynamically -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© جميع الحقوق محفوظة | ذاكرة الجزائر - موسوعة الطوابع البريدية الجزائرية</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/stamps.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const exId = urlParams.get('id');
+
+      const exhibitions = await fetchJSON('data/exhibitions.json') || [];
+      const allStamps = await getAllStamps();
+
+      const ex = exhibitions.find(e => e.id === exId) || exhibitions[0];
+
+      document.getElementById('exTitle').textContent = ex.title_ar;
+      document.getElementById('exBreadcrumb').textContent = ex.title_ar;
+      document.getElementById('exSubtitle').textContent = ex.subtitle_ar;
+      document.getElementById('exDesc').textContent = ex.description_ar;
+
+      const exStamps = allStamps.filter(s => (ex.stamp_ids || []).includes(s.id));
+
+      const container = document.getElementById('exStampsGrid');
+      if (container) {
+        if (exStamps.length === 0) {
+          container.innerHTML = '<div class="empty-state" style="grid-column: 1/-1;"><p>لا توجد طوابع محددة لهذا المعرض حالياً.</p></div>';
+        } else {
+          container.innerHTML = exStamps.map(createStampCardHTML).join('');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
