@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة المعارض | لوحة التحكم</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-logo-icon">⚙️</div>
+        <div class="brand-title">
+          <span>إدارة المعارض</span>
+          <span class="brand-sub">ذاكرة الجزائر</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="stamps.html" class="nav-link">الطوابع</a>
+        <a href="exhibitions.html" class="nav-link active">المعارض</a>
+        <a href="../index.html" class="nav-link">الموقع 🌐</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumbs">
+        <a href="index.html">لوحة الإدارة</a>
+        <span class="separator">/</span>
+        <span class="current">إدارة المعارض القصصية</span>
+      </nav>
+
+      <h1 style="margin-bottom: 1.5rem;">سجل المعارض الافتراضية</h1>
+
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>رمز المعرض</th>
+              <th>عنوان المعرض</th>
+              <th>الوصف والتأطير القصصي</th>
+              <th>عدد المعروضات</th>
+            </tr>
+          </thead>
+          <tbody id="admExhibitionsTable">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>© لوحة التحكم الإدارية | ذاكرة الجزائر</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const exhibitions = await fetchJSON('../data/exhibitions.json') || [];
+      const tbody = document.getElementById('admExhibitionsTable');
+      if (tbody) {
+        tbody.innerHTML = exhibitions.map(e => `
+          <tr>
+            <td><code>${e.id}</code></td>
+            <td><strong>${e.title_ar}</strong></td>
+            <td><span style="font-size: 0.85rem;">${e.subtitle_ar}</span></td>
+            <td><span class="badge badge-primary">${(e.stamp_ids || []).length} طوابع</span></td>
+          </tr>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

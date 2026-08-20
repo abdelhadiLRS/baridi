@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ali-khodja",
+    "name_ar": "علي علي خوجة (Ali Ali-Khodja)",
+    "name_en": "Ali Ali-Khodja",
+    "name_fr": "Ali Ali-Khodja",
+    "bio_ar": "أحد قامات الفن التشكيلي الجزائري ومصمم أول طابع بريدي للجمهورية الجزائرية المستقلة عام 1962.",
+    "years_active": "1962 - 2010",
+    "stamps_count": 14
+  },
+  {
+    "id": "mohammed-racim",
+    "name_ar": "محمد راسم (Mohammed Racim)",
+    "name_en": "Mohammed Racim",
+    "name_fr": "Mohammed Racim",
+    "bio_ar": "رائد فن المنمنمات الإسلامية والجزائرية، صمم العديد من الطوابع التاريخية والتراثية العالية الجمال.",
+    "years_active": "1930 - 1975",
+    "stamps_count": 22
+  },
+  {
+    "id": "mohammed-temmam",
+    "name_ar": "محمد تمام (Mohammed Temmam)",
+    "name_en": "Mohammed Temmam",
+    "name_fr": "Mohammed Temmam",
+    "bio_ar": "فنان تشكيلي وزخرفي صمم سلاسل بريدية توثق الألعاب المتوسطية والتراث الجزائري.",
+    "years_active": "1963 - 1988",
+    "stamps_count": 18
+  },
+  {
+    "id": "bachir-yelles",
+    "name_ar": "بشير يني / يلس (Bachir Yelles)",
+    "name_en": "Bachir Yelles",
+    "name_fr": "Bachir Yelles",
+    "bio_ar": "مؤسس المدرسة الوطنية للفنون الجميلة بالجزائر المستقلة ومصمم معالم ومؤسسات طوابعية خالدة.",
+    "years_active": "1962 - 2005",
+    "stamps_count": 15
+  }
+]
