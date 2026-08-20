@@ -1,0 +1,68 @@
+[
+  {
+    "id": "dawn-of-independence",
+    "name_ar": "فجر الاستقلال",
+    "name_en": "Dawn of Independence",
+    "year": 1962
+  },
+  {
+    "id": "historical-figures",
+    "name_ar": "شخصيات تاريخية",
+    "name_en": "Historical Figures",
+    "year": 1963
+  },
+  {
+    "id": "traditional-crafts",
+    "name_ar": "الصناعات التقليدية",
+    "name_en": "Traditional Crafts",
+    "year": 1964
+  },
+  {
+    "id": "airmail",
+    "name_ar": "البريد الجوي",
+    "name_en": "Airmail Series",
+    "year": 1965
+  },
+  {
+    "id": "national-holidays",
+    "name_ar": "أعياد وطنية",
+    "name_en": "National Holidays",
+    "year": 1972
+  },
+  {
+    "id": "mediterranean-games",
+    "name_ar": "ألعاب البحر الأبيض المتوسط",
+    "name_en": "Mediterranean Games",
+    "year": 1975
+  },
+  {
+    "id": "wildlife",
+    "name_ar": "البيئة والحياة البرية",
+    "name_en": "Wildlife & Fauna",
+    "year": 1982
+  },
+  {
+    "id": "unesco-heritage",
+    "name_ar": "معالم وتراث اليونسكو",
+    "name_en": "UNESCO World Heritage",
+    "year": 1990
+  },
+  {
+    "id": "golden-jubilee-revolution",
+    "name_ar": "اليوبيل الذهبي للثورة",
+    "name_en": "Golden Jubilee Revolution",
+    "year": 2004
+  },
+  {
+    "id": "golden-jubilee-independence",
+    "name_ar": "خمسينية الاستقلال",
+    "name_en": "Independence Jubilee",
+    "year": 2012
+  },
+  {
+    "id": "solidarity-diplomacy",
+    "name_ar": "تضامن ودبلوماسية",
+    "name_en": "Solidarity & Diplomacy",
+    "year": 2019
+  }
+]

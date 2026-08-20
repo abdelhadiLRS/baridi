@@ -1,0 +1,34 @@
+[
+  {
+    "id": "pre-1962",
+    "name_ar": "فترة ما قبل الاستقلال (Colonial Period)",
+    "name_en": "Pre-Independence Period",
+    "name_fr": "Période Coloniale",
+    "years": "1830 - 1962",
+    "description": "الطوابع البريدية المستخدمة في الجزائر قبل استقلالها والقطع النادرة للبريد الاستعماري."
+  },
+  {
+    "id": "1962-1970",
+    "name_ar": "فجر الاستقلال (Dawn of Independence)",
+    "name_en": "Dawn of Independence",
+    "name_fr": "Aube de l'Indépendance",
+    "years": "1962 - 1970",
+    "description": "أول الطوابع الجزائرية الوطنية وتأسيس المؤسسة البريدية السيادية بعد الاستقلال مباشرة."
+  },
+  {
+    "id": "1970-2000",
+    "name_ar": "عصر البناء والتنمية (Modern Nation Building)",
+    "name_en": "Modern Nation Building",
+    "name_fr": "Construction Nationale",
+    "years": "1970 - 2000",
+    "description": "تطور الهوية البصرية والموضوعات الوطنية، الثورة الزراعية والصناعية والتراث."
+  },
+  {
+    "id": "2000-present",
+    "name_ar": "الجمهورية الحديثة (Modern Algeria)",
+    "name_en": "Modern Algeria Era",
+    "name_fr": "Algérie Moderne",
+    "years": "2000 - الآن",
+    "description": "الإصدارات الرقمية الحديثة، اليوبيل الذهبي، الفضاء، والتضامن الدولي."
+  }
+]

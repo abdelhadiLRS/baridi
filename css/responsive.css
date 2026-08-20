@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Algerian Stamps Encyclopedia - Responsive Rules (css/responsive.css)
+   Mobile-First Architecture across 320px, 375px, 768px, 1024px, 1280px, 1920px
+   ========================================================================== */
+
+/* Mobile Navigation Overlay Drawer */
+@media (max-width: 991px) {
+  .site-header .main-nav {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background-color: var(--surface-bright);
+    border-bottom: 2px solid var(--primary-green);
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    box-shadow: var(--shadow-hover);
+    gap: 0.5rem;
+  }
+
+  .site-header .main-nav.open {
+    display: flex;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box-container {
+    flex-direction: column;
+  }
+
+  .search-input, .search-box-container .btn {
+    width: 100%;
+  }
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .stamp-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+/* Large Screens (1440px+) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1380px;
+  }
+}
+
+/* Mobile Screen Safeguards (Prevent Horizontal Scroll, Overflowing Text/Images) */
+@media (max-width: 480px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem; }
+
+  .stamp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موسوعة الطوابع الجزائرية | ذاكرة الجزائر</title>
+  <meta name="description" content="الأرشيف الرقمي الشامل للطوابع البريدية الجزائرية وتاريخ السيادة الوطنية منذ الاستقلال.">
+  <meta property="og:title" content="موسوعة الطوابع الجزائرية">
+  <meta property="og:description" content="الأرشيف الرقمي الشامل للطوابع البريدية الجزائرية.">
+  <meta property="og:type" content="website">
+
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Typography Fallback Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">🇩🇿</div>
+        <div class="brand-title">
+          <span>ذاكرة الجزائر</span>
+          <span class="brand-sub">موسوعة الطوابع البريدية</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link active" data-i18n="nav_home">الرئيسية</a>
+        <a href="stamps.html" class="nav-link" data-i18n="nav_encyclopedia">الموسوعة</a>
+        <a href="archive.html" class="nav-link" data-i18n="nav_archive">الأرشيف</a>
+        <a href="years.html" class="nav-link" data-i18n="nav_years">السنوات</a>
+        <a href="categories.html" class="nav-link" data-i18n="nav_categories">التصنيفات</a>
+        <a href="dictionary.html" class="nav-link" data-i18n="nav_dictionary">القاموس</a>
+        <a href="guide.html" class="nav-link" data-i18n="nav_guide">الدليل</a>
+        <a href="visual-search.html" class="nav-link" data-i18n="nav_visual_search">البحث البصري</a>
+        <a href="collection.html" class="nav-link" data-i18n="nav_collection">مجموعتي (<span class="collection-count-badge">0</span>)</a>
+        <a href="about.html" class="nav-link" data-i18n="nav_about">عن الأرشيف</a>
+        <a href="admin.html" class="nav-link" data-i18n="nav_admin">الإدارة</a>
+      </nav>
+
+      <div class="header-actions">
+        <select class="lang-select" id="langSelect" aria-label="اختر اللغة">
+          <option value="ar">العربية (RTL)</option>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="القائمة">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <div class="container">
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h1 class="hero-title" data-i18n="site_title">طوابع تروي تاريخ الجزائر</h1>
+        <p class="hero-subtitle" data-i18n="site_desc">اكتشف أضخم أرشيف رقمي توثيقي للطوابع البريدية الجزائرية التي وثقت محطات النضال، التراث، والثقافة الوطنية منذ عام 1962.</p>
+
+        <form action="stamps.html" method="GET" class="search-box-container">
+          <input type="text" name="q" class="search-input" placeholder="ابحث عن طابع بالاسم، السنة، السلسلة..." data-i18n="search_placeholder">
+          <button type="submit" class="btn btn-primary" data-i18n="btn_search">بحث في الموسوعة</button>
+        </form>
+      </section>
+
+      <!-- Live Statistics Grid -->
+      <section style="margin-bottom: 3rem;">
+        <h2 style="text-align: center; margin-bottom: 1.5rem;" data-i18n="stats_title">إحصائيات الأرشيف</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="homeStatStamps">12</div>
+            <div class="stat-label" data-i18n="stats_stamps_count">طابع موثق</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="homeStatYears">60+</div>
+            <div class="stat-label" data-i18n="stats_years_count">عاماً من التاريخ</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="homeStatCategories">7</div>
+            <div class="stat-label" data-i18n="stats_categories_count">تصنيفات رئيسية</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="homeStatSeries">11</div>
+            <div class="stat-label" data-i18n="stats_series_count">سلاسل بريدية</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Stamps Section -->
+      <section style="margin-bottom: 3rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <h2 data-i18n="featured_stamps">طوابع مميزة</h2>
+          <a href="stamps.html" class="btn btn-outline" data-i18n="btn_explore">عرض الجميع ←</a>
+        </div>
+        <div class="stamp-grid" id="featuredStampsGrid">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- Historical Eras Section -->
+      <section style="margin-bottom: 3rem;">
+        <h2 style="margin-bottom: 1.5rem;">تصفح حسب الحقب الزمنية</h2>
+        <div class="filter-grid" id="erasHomeGrid">
+          <!-- Populated dynamically -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3>ذاكرة الجزائر</h3>
+          <p>منصة توثيقية تاريخية معتمدة للحفاظ على الذاكرة الجماعية والتراث البريدي للجمهورية الجزائرية الديمقراطية الشعبية.</p>
+        </div>
+        <div class="footer-links">
+          <h4>التصفح</h4>
+          <ul>
+            <li><a href="stamps.html">الموسوعة الكاملة</a></li>
+            <li><a href="archive.html">الأرشيف التاريخي</a></li>
+            <li><a href="years.html">السنوات</a></li>
+            <li><a href="categories.html">التصنيفات</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>المعرفة</h4>
+          <ul>
+            <li><a href="dictionary.html">قاموس الطوابعية</a></li>
+            <li><a href="guide.html">دليل جمع الطوابع</a></li>
+            <li><a href="visual-search.html">البحث البصري</a></li>
+            <li><a href="collection.html">مجموعتي المفضلة</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>عن الأرشيف</h4>
+          <ul>
+            <li><a href="about.html">حول المشروع</a></li>
+            <li><a href="admin.html">لوحة التحكم</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_rights">© جميع الحقوق محفوظة | ذاكرة الجزائر - موسوعة الطوابع البريدية الجزائرية</p>
+        <p class="footer-disclaimer" data-i18n="footer_disclaimer">تنويه: هذا الموقع غير مخصص للتجارة أو البيع. جميع الطوابع المعروضة لأغراض توثيقية وتاريخية حصرياً.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/stamps.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const stamps = await getAllStamps();
+
+      // Render featured stamps
+      const featuredGrid = document.getElementById('featuredStampsGrid');
+      if (featuredGrid) {
+        const featured = stamps.filter(s => s.featured).slice(0, 4);
+        featuredGrid.innerHTML = featured.map(createStampCardHTML).join('');
+      }
+
+      // Render Eras
+      const eras = await fetchJSON('data/eras.json') || [];
+      const erasGrid = document.getElementById('erasHomeGrid');
+      if (erasGrid) {
+        erasGrid.innerHTML = eras.map(era => `
+          <div class="stat-card" style="text-align: right; border-left: 3px solid var(--primary-green);">
+            <span class="badge badge-primary">${era.years}</span>
+            <h3 style="margin-top: 0.5rem;"><a href="stamps.html?q=${encodeURIComponent(era.years)}">${era.name_ar}</a></h3>
+            <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--ink-muted);">${era.description}</p>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>
